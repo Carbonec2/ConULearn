@@ -1,3 +1,7 @@
 # SOEN341Project
-# Sophia
-# Wei
+
+**Team Members**
+
+- Sophia
+- Wei
+- Alex
