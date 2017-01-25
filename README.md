@@ -4,5 +4,5 @@
 
 - Sophia
 - Wei
-- Alex Zhang (alzha)
+- Alex Zhang (z-alex)
 - Helen Zhang (Helen2hang)
