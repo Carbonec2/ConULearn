@@ -15,5 +15,4 @@ class ConnectController {
             return $result;
         }
     }
-
 }

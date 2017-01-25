@@ -111,7 +111,7 @@ class UserDAO implements DAO {
 
         $sql->execute();
 
-        $result = $sql->fetchAll(PDO::FETCH_OBJ);
+        $result = $sql->fetch(PDO::FETCH_OBJ);
         
         $returnObject->id = $result->id;
         $returnObject->user = $result->user;
@@ -120,7 +120,7 @@ class UserDAO implements DAO {
 
         $returnObject->error = new stdClass();
 
-        if (count($result) > 1) {
+        if (count($result) < 1) {
             //Return a non-existing user error
             $returnObject->error->ok = false;
             $returnObject->error->nonExistingUser = true;

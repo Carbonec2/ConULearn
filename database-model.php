@@ -13,19 +13,19 @@ function relegateUser() {
 
     switch (strtolower($_POST['method'])) {
         case 'insert':
-            UserDAO::insert(getOV());
+            echo json_encode(UserDAO::insert(getOV()));
             break;
         case 'update':
-            UserDAO::update(getOV());
+            echo json_encode(UserDAO::update(getOV()));
             break;
         case 'save':
-            UserDAO::save(getOV());
+            echo json_encode(UserDAO::save(getOV()));
             break;
         case 'getall':
-            UserDAO::getAll(getFilters());
+            echo json_encode(UserDAO::getAll(getFilters()));
             break;
         case 'get':
-            UserDAO::get(getId());
+            echo json_encode(UserDAO::get(getId()));
             break;
     }
 }

@@ -13,7 +13,7 @@ function relegateConnect() {
 
     switch (strtolower($_POST['method'])) {
         case 'connect':
-            ConnectController::connect(getOV());
+            echo json_encode(ConnectController::connect(getOV()));
             break;
     }
 }
