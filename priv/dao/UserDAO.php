@@ -7,6 +7,7 @@ class UserDAO implements DAO {
 
         $sql = $conn->prepare('SELECT 
             id, 
+            email,
             user, 
             passwordMD5 
             FROM User 
@@ -16,7 +17,7 @@ class UserDAO implements DAO {
 
         $sql->execute();
 
-        return $sql->fetchAll(PDO::FETCH_OBJ)[0];
+        return $sql->fetch(PDO::FETCH_OBJ);
     }
 
     public static function getAll($filters = NULL) {
@@ -47,10 +48,11 @@ class UserDAO implements DAO {
             //If we have a single object (stdClass), not an array
             $conn = pdo_connect();
 
-            $sql = $conn->prepare('INSERT INTO User (user, passwordMD5) 
-            VALUES (:user, :passwordMD5)');
+            $sql = $conn->prepare('INSERT INTO User (user, email, passwordMD5) 
+            VALUES (:user, :email, :passwordMD5)');
 
             $sql->bindValue(':user', $object->user);
+            $sql->bindValue(':email', $object->email);
             $sql->bindValue(':passwordMD5', $object->passwordMD5);
 
             $sql->execute();

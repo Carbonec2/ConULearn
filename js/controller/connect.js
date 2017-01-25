@@ -4,7 +4,6 @@ $(document).ready(function () {
 });
 
 function bind() {
-
     $("#btnConnect").click(function () {
         var identifiers = {user: $("#txtUser").val(), password: $("#txtPassword").val()};
         connect(identifiers, connectOk, connectFail);

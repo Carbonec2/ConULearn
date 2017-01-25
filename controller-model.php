@@ -1,6 +1,6 @@
 <?php
 
-include_once(dirname(__FILE__).'/backendIncludeScript.php');
+include_once(dirname(__FILE__) . '/backendIncludeScript.php');
 
 switch (strtolower($_POST['controller'])) {
 
