@@ -1,4 +1,4 @@
-# SOEN341Project
+# SOEN341Project (Group 5)
 
 **Team Members**
 
