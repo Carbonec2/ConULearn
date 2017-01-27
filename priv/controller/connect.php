@@ -5,8 +5,8 @@ class ConnectController {
     static function connect($ov) {
 
         $result = UserDAO::checkUsernameAndPassword($ov);
-
-        if ($result->errror->ok == true) {
+        
+        if ($result->error->ok == true) {
             $_SESSION['userId'] = $result->id;
             $_SESSION['user'] = $result->user;
 
