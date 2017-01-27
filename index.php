@@ -9,16 +9,16 @@ $wantedPage; //Variable that will contain the wanted page, if set.
 //For each file found in the folder, we look if we have a php file. If yes, we look to know if it is the file wanted
 foreach ($pages AS $page) {
     if (preg_match('/^.*\.(php)$/i', $page)) {
-        if ($_GET['page'] == explode('.', $page)[0]) {
+        if(!isset($_GET['page'])){
+            $wantedPage = 'welcome';
+            break;
+        }
+        else if ($_GET['page'] == explode('.', $page)[0]) {
             //If we have a matching file, we stop the loop here
             $wantedPage = explode('.', $page)[0];
             break;
         }
     }
-}
-
-if (!isset($wantedPage)) {
-    $wantedPage = 'welcome';
 }
 ?>
 
