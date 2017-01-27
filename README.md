@@ -9,4 +9,4 @@
 - Lunecy Appadoo
 - Orel Moisa (orelmoisa)
 - Robert Nguyen (rng350)
-- Jean-Michel Laliberté (Carbobec2)
+- Jean-Michel Laliberté (Carbonec2)
