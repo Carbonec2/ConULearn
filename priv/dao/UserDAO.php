@@ -115,20 +115,20 @@ class UserDAO implements DAO {
 
         $result = $sql->fetch(PDO::FETCH_OBJ);
         
-        $returnObject->id = $result->id;
-        $returnObject->user = $result->user;
-
-        $returnObject = new stdClass();
-
-        $returnObject->error = new stdClass();
-
-        if (count($result) < 1) {
+        if(!$result){
             //Return a non-existing user error
             $returnObject->error->ok = false;
             $returnObject->error->nonExistingUser = true;
 
             return $returnObject;
         }
+        
+        $returnObject->id = $result->id;
+        $returnObject->user = $result->user;
+
+        $returnObject = new stdClass();
+
+        $returnObject->error = new stdClass();
 
         if ($result->passwordMD5 == md5($ov->password)) {
             $returnObject->error->ok = true;
