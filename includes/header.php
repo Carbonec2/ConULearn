@@ -6,6 +6,7 @@
             echo 'Logged in as ' . $_SESSION['user'] . ' ';
         } else {
             echo '<a href="index.php?page=connect">Connection</a>';
+            echo ' <a href="index.php?page=registration">Sign up</a>';
         }
         ?>
 		<!--Image of the header-->
