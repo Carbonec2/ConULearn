@@ -8,6 +8,11 @@
             echo '<a href="index.php?page=connect">Connection</a>';
         }
         ?>
+		<!--Image of the header-->
+		<img src="img/header.png" alt="" width="100%" height="100%">
+		
+		
+		
     </p>
     <br/>
 </header>
