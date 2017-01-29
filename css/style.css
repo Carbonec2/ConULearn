@@ -8,3 +8,108 @@ and open the template in the editor.
     Author     : Acer
 */
 
+#nav_bar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #FF5722;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	width: 100%;
+}
+
+#nav_bar_logo {
+	display: block;
+	font-family: 'Century Gothic';
+	font-size: 20px;
+	color: white;
+	float: left;
+	text-align: center;
+	padding: 16px 16px;
+	text-decoration: none;
+}
+
+#nav_bar li a {
+	display: block;
+	font-family: 'Century Gothic';
+	font-size: 18px;
+	color: white;
+	float: right;
+	text-align: center;
+	padding: 18px 18px;
+	text-decoration: none;
+}
+
+#nav_bar li a:hover {
+	background-color: #C83200;
+}
+
+#features {
+	background-color: #34495E;
+	font-family: 'Century Gothic';
+	color: white;
+	position: relative;
+	z-index: 50;
+}
+
+#features h1 {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+#features h2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+#features h3 {
+	font-size: 20px;
+}
+
+#Aboutus {
+	background: #FF5722;
+	color: white;
+	font-family: 'Century Gothic';
+	position: relative;
+	z-index: 50;
+}
+
+#Aboutus h1 {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.img_holder {
+	position: relative;
+	z-index: 50;
+	text-align: left;
+}
+
+#sign_in_button, #sign_up_button {
+	display: block;
+	text-decoration: none;
+	border: none;
+	text-align: right;
+	background-color: #FF5722;
+	z-index: 75;
+	color: white;
+	font-family: 'Century Gothic';
+	font-size: 18px;
+	position: absolute;
+	left: 0;
+}
+
+#sign_in_button {
+	padding: 10px 21px;
+	top: 200px;
+}
+
+#sign_up_button {
+	padding: 10px 19px;
+	top: 250px;
+}
+
+#sign_up_button:hover, #sign_in_button:hover {
+	background-color: #C83200;
+}
