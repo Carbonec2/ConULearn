@@ -1,12 +1,15 @@
 $(document).ready(function () {
-
     bind();
 });
 
 function bind() {
     $("#btnSignup").click(function () {
-        var identifiers = {user: $("#txtUser").val(), passwordMD5: MD5($("#txtPassword").val())};
-        signup(identifiers, signupOk, signupFail);
+        if($("#txtPassword").val() === $("#txtConfirmPassword")){
+            var identifiers = {user: $("#txtUser").val(), passwordMD5: MD5($("#txtPassword").val())};
+            signup(identifiers, signupOk, signupFail);
+        }else{
+            $("#messageBox").html("Passwords don't match.");
+        }
     });
 }
 
