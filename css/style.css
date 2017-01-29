@@ -8,6 +8,9 @@ and open the template in the editor.
     Author     : Acer
 */
 
+
+/* Navigation bar */
+
 #nav_bar {
 	list-style-type: none;
 	margin: 0;
@@ -46,6 +49,9 @@ and open the template in the editor.
 	background-color: #C83200;
 }
 
+
+/* The "WHAT WE OFFER" section */
+
 #features {
 	background-color: #34495E;
 	font-family: 'Century Gothic';
@@ -67,6 +73,9 @@ and open the template in the editor.
 	font-size: 20px;
 }
 
+
+/* The "ABOUT US" section */
+
 #Aboutus {
 	background: #FF5722;
 	color: white;
@@ -80,11 +89,8 @@ and open the template in the editor.
 	font-weight: bold;
 }
 
-.img_holder {
-	position: relative;
-	z-index: 50;
-	text-align: left;
-}
+
+/* The sign-up & sign-in buttons on the left side of the front page */
 
 #sign_in_button, #sign_up_button {
 	display: block;
@@ -102,11 +108,13 @@ and open the template in the editor.
 
 #sign_in_button {
 	padding: 10px 21px;
+	padding-left: 75px;
 	top: 200px;
 }
 
 #sign_up_button {
-	padding: 10px 19px;
+	padding: 10px 17px;
+	padding-left: 75px;
 	top: 250px;
 }
 
