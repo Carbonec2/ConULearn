@@ -15,4 +15,10 @@ class ConnectController {
             return $result;
         }
     }
+    
+    static function signup($ov) {
+        $result = UserDAO::insert($ov);
+        
+        return $result;
+    }
 }

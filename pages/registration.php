@@ -4,7 +4,7 @@
     <br/>
     <input type="text" class="standardField" id="txtPassword" placeholder="Password" style="border-radius:4px;padding:5px; display:inline-block;"/>
     <br/>
-       <input type="text" class="standardField" id="txtPassword" placeholder="Password" style="border-radius:4px;padding:5px; display:inline-block;"/>
+       <input type="text" class="standardField" id="txtConfirmPassword" placeholder="Password" style="border-radius:4px;padding:5px; display:inline-block;"/>
     <br/>
-    <input type="button" value="Register" id="btnRegister" style="width:100px; height:50px; display:inline-block; margin:10px;"/>
+    <input type="button" value="Sign up" id="btnSignup" style="width:100px; height:50px; display:inline-block; margin:10px;"/>
 </div>
