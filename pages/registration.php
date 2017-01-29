@@ -1,4 +1,4 @@
-<div id="mainPanel">
+<div id="mainPanel" class="container-fluid text-center">
     <div id="messageBox"></div><br/>
     <input type="text" class="standardField" id="txtUser" placeholder="Username" style="border-radius:4px;padding:5px; display:inline-block;"/>
     <br/>
