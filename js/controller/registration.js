@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 function bind() {
     $("#btnSignup").click(function () {
-        if($("#txtPassword").val() === $("#txtConfirmPassword")){
+        if($("#txtPassword").val() === $("#txtConfirmPassword").val()){
             var identifiers = {user: $("#txtUser").val(), passwordMD5: MD5($("#txtPassword").val())};
             signup(identifiers, signupOk, signupFail);
         }else{
