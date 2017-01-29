@@ -5,7 +5,7 @@
 		<div class="col-sm-4 text-center">
 			<img src="img/quiz.png" alt="quiz icon"></img>
 			<h2>QUIZZES</h2>
-			<h3>To evaluate the students understanding of the course material, professors will be able to upload assessments in the form quizzes throughout the semester</h3>
+			<h3>To evaluate the students understanding of the course material, professors will be able to upload assesements in the form quizzes throughout the semester</h3>
 		</div>
 		
 		<div class="col-sm-4 text-center">
@@ -26,7 +26,7 @@
 		<div class="col-sm-4 text-center">
 			<img src="img/feedback.png" alt="feedback icon"></img>
 			<h2>FEEDBACK</h2>
-			<h3>After the students submit their quizzes, the professors will grade and assess their work and make it available for revision</h3>			
+			<h3>After the students submit their quizzes, the proffessors will grade and assess their work and make it available for revision</h3>			
 		</div>
 		
 		<div class="col-sm-4 text-center">
@@ -46,14 +46,14 @@
 	<h2>Welcome to ConULearn</h2>
 	<h3>We are here to help students of Concordia University get the best learning experience.
 Our team consists of eight highly qualified Concordia undergraduate students: Wei He, Lunecy Appadoo, Orel Moisa, Jean-Michel Laliberte, Sophia Quach, Alex Zhang, Helen Zhang and Robert Nam Quang Nguyen.
-Dividing our team into front-end and back-end developers, we are able to create easy to use features.
-Our main goal is to provide Concordia faculty members with a reliable resource to assess their students progression while enabling them to acquire knowledge through engagements in discussions.
+Dividing our team into front-end and back-end developpers, we are able to create easy to use features.
+Our main goal is to provide Concordia faculty members with a reliable resource to assess their students progression while enabling them to acquire knowledge through engangements in discussions.
 	</h3>
 	<h2>How does it work?</h2>
 	<h3>The quiz dates will be announced by the course instructors, after which students will be able to prepare by learning the appropriate material.
-If any questions come up, the discussion board will be available for use. 
+If any questions come up, the discussion board will be avalaible for use. 
 Professors will then post quizes that will contain multiple choice questions and short or long answer questions.
-Once all the students submit their quizzes, it's time for grading!
+Once all the students submit their quizes, it's time for grading!
 The students will then receive feedback where they will be able to revise their work and learn from their mistakes.</h3>
 	
 </div>
