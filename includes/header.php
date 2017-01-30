@@ -3,7 +3,7 @@
     <p><a href="index.php">Home</a> 
         <?php
         if (!empty($_SESSION['user'])) {
-            echo 'Logged in as ' . $_SESSION['user'] . ' ';
+            echo 'Logged in as <strong>' . $_SESSION['user'] . '</strong>. - <a href="index.php?page=logout">Logout </a>';
         } else {
             echo '<a href="index.php?page=connect">Connection</a>';
             echo ' <a href="index.php?page=registration">Sign up</a>';
