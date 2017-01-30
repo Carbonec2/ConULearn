@@ -49,6 +49,11 @@ and open the template in the editor.
 	background-color: #C83200;
 }
 
+#headerdiv {
+	background-color:#81D0E1;
+	color:white;
+	padding-top:75px;
+}
 
 /* The "WHAT WE OFFER" section */
 
@@ -58,6 +63,8 @@ and open the template in the editor.
 	color: white;
 	position: relative;
 	z-index: 50;
+	padding-top:50px;
+	padding-bottom:50px;	
 }
 
 #features h1 {
@@ -82,11 +89,17 @@ and open the template in the editor.
 	font-family: 'Century Gothic';
 	position: relative;
 	z-index: 50;
+	padding-top:50px;
+	padding-bottom:50px;	
 }
 
 #Aboutus h1 {
 	font-size: 40px;
 	font-weight: bold;
+}
+
+#Aboutus h2{
+	color:#81D0E1;
 }
 
 
@@ -113,7 +126,7 @@ and open the template in the editor.
 }
 
 #sign_up_button {
-	padding: 10px 17px;
+	padding: 10px 21px;
 	padding-left: 75px;
 	top: 250px;
 }
