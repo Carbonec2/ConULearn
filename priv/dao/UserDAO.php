@@ -58,6 +58,22 @@ class UserDAO implements DAO {
         
         $sql->execute();
         }
+        
+        $returnObject = new stdClass();
+
+        $returnObject->error = new stdClass();
+
+        if ($result) {
+            //Return a non-existing user error
+            $returnObject->error->ok = false;
+            $returnObject->error->existingUser = true;
+
+            return $returnObject;
+        }else{
+            $returnObject->error->ok = true;
+            //Return OK
+            return $returnObject;
+        }
             
     }
 
