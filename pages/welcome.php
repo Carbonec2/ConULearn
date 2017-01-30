@@ -52,8 +52,8 @@
 			<h2>Welcome to ConULearn</h2>
 			<h3>We are here to help students of Concordia University get the best learning experience.
 			Our team consists of eight highly qualified Concordia undergraduate students: Wei He, Lunecy Appadoo, Orel Moisa, Jean-Michel Laliberte, Sophia Quach, Alex Zhang, Helen Zhang and Robert Nam Quang Nguyen.
-			Dividing our team into front-end and back-end developpers, we are able to create easy to use features.
-			Our main goal is to provide Concordia faculty members with a reliable resource to assess their students progression while enabling them to acquire knowledge through engangements in discussions.
+			Dividing our team into front-end and back-end developers, we are able to create easy to use features.
+			Our main goal is to provide Concordia faculty members with a reliable resource to assess their students progression while enabling them to acquire knowledge through engagements in discussions.
 			</h3>
 		</br>
 		<h2>How does it work?</h2>
