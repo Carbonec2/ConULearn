@@ -47,7 +47,7 @@ function signupFail(callbackObject) {
     console.log(callbackObject);
 
     //Make more complete message here
-    $("#messageBox").html("Error");
+    $("#messageBox").html("Registration error: this username already exists.");
 }
 
 //Source: https://css-tricks.com/snippets/javascript/javascript-md5/
