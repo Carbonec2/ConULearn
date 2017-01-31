@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#txtUser").focus();
 
     bind();
 });
