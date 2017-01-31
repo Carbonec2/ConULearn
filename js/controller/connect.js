@@ -40,13 +40,15 @@ function connect(identifiers, successCallback, errorCallback) {
 }
 
 function connectOk() {
-
+    window.location = "index.php"; //redirects to home page
+    /*
     $("#messageBox").html("Connection successful! <a href=\"index.php\">Go to Home page</a>");
     $("#txtUser").hide();
     $("#txtPassword").hide();
     $("#btnConnect").hide();
     $("#sign_in_button").hide();
     $("#sign_up_button").hide();
+    */
 }
 
 function connectFail(callbackObject) {
