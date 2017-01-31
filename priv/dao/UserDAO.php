@@ -36,6 +36,46 @@ class UserDAO implements DAO {
 
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }
+    
+    public static function insertIfNotExist($ov){
+        $conn = pdo_connect();
+        
+        $sql = $conn->prepare('SELECT * FROM User 
+                               WHERE user = :user');
+
+        $sql->bindValue(':user', $ov->user);
+
+        $sql->execute();
+        
+        $result = $sql->fetchAll();
+        
+        if(!$result){
+            $sql = $conn->prepare('INSERT INTO User (user, passwordMD5) 
+                                    VALUES (:user, :passwordMD5) ');
+            
+        $sql->bindValue(':user', $ov->user);
+        $sql->bindValue(':passwordMD5', $ov->passwordMD5);
+        
+        $sql->execute();
+        }
+        
+        $returnObject = new stdClass();
+
+        $returnObject->error = new stdClass();
+
+        if ($result) {
+            //Return a non-existing user error
+            $returnObject->error->ok = false;
+            $returnObject->error->existingUser = true;
+
+            return $returnObject;
+        }else{
+            $returnObject->error->ok = true;
+            //Return OK
+            return $returnObject;
+        }
+            
+    }
 
     public static function insert($object) {
 
