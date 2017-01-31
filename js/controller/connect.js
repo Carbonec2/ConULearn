@@ -8,6 +8,11 @@ function bind() {
         var identifiers = {user: $("#txtUser").val(), password: $("#txtPassword").val()};
         connect(identifiers, connectOk, connectFail);
     });
+    
+    $("#txtPassword").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#btnConnect").click();
+    }});
 }
 
 function connect(identifiers, successCallback, errorCallback) {
@@ -39,6 +44,8 @@ function connectOk() {
     $("#txtUser").hide();
     $("#txtPassword").hide();
     $("#btnConnect").hide();
+    $("#sign_in_button").hide();
+    $("#sign_up_button").hide();
 }
 
 function connectFail(callbackObject) {

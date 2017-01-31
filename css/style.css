@@ -105,7 +105,7 @@ and open the template in the editor.
 
 /* The sign-up & sign-in buttons on the left side of the front page */
 
-#sign_in_button, #sign_up_button {
+#sign_in_button, #sign_up_button, #logout_button {
 	display: block;
 	text-decoration: none;
 	border: none;
@@ -129,6 +129,12 @@ and open the template in the editor.
 	padding: 10px 21px;
 	padding-left: 75px;
 	top: 250px;
+}
+
+#logout_button{
+        padding: 10px 21px;
+	padding-left: 75px;
+	top: 200px;
 }
 
 #sign_up_button:hover, #sign_in_button:hover {
