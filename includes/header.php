@@ -15,8 +15,8 @@
 
 		<!--Header div-->
 		<div id="headerdiv" class="container-fluid text-center">
-			<img src="img/logo.png" alt="ConULearn" width="30%" height="30%"/></br>
-			<img src="img/header.png" alt="" width="60%" height="60%"/>
+			<img src="img/logo.png" alt="ConULearn" width="25%" height="25%"/></br>
+			<img src="img/header.png" alt="" width="50%" height="50%"/>
 			
 			<a id="sign_in_button" href="index.php?page=connect">SIGN IN</a>
 			<a id="sign_up_button" href="index.php?page=registration">SIGN UP</a>
