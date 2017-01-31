@@ -2,7 +2,12 @@
 <header>
     <?php
     if (!empty($_SESSION['user'])) {
-        echo 'Logged in as <strong>' . $_SESSION['user'] . '</strong>.';
+        //echo 'Logged in as <strong>' . $_SESSION['user'] . '</strong>.';
+        echo '<ul id="nav_bar">
+                    <li id="nav_bar_logo"><strong>ConULearn</strong></li>
+                    <li><a href="index.php"><strong>LOGGED IN AS '. $_SESSION['user'] . '</strong></a></li>
+                    <li><a href="index.php">HOME</a></li>
+                </ul>';
     } else {
         echo '<ul id="nav_bar">
                     <li id="nav_bar_logo"><strong>ConULearn</strong></li>
