@@ -11,12 +11,15 @@
 }
 input.standardField{
      width: 25%;
-  background-color: #e6ffff;
+  background-color: #ffffff;
   padding: 12px 20px;
    margin: 8px 0;
    border: 1px solid #ccc;
    border-radius: 4px;
     box-sizing: border-box;
+}
+#mainPanel{
+    background-color: #d9d9d9;
 }
 </style>
 
