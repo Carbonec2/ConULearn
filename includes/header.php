@@ -17,7 +17,7 @@
         ?>
 		<!--Image of the header-->
 		<div id="headerdiv" class="container-fluid text-center">
-		<h1>LOGO GOES HERE</h1>
+			<img src="img/logo.png" alt="ConULearn" width="30%" height="30%"/></br>
 			<img src="img/header.png" alt="" width="60%" height="60%"/>
 			
 			<a id="sign_in_button" href="index.php?page=connect">SIGN IN</a>
