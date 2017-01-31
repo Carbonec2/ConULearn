@@ -35,8 +35,10 @@ function connect(identifiers, successCallback, errorCallback) {
 
 function connectOk() {
 
-    $("#messageBox").html("Connection successful!");
-
+    $("#messageBox").html("Connection successful! <a href=\"index.php\">Go to Home page</a>");
+    $("#txtUser").hide();
+    $("#txtPassword").hide();
+    $("#btnConnect").hide();
 }
 
 function connectFail(callbackObject) {
@@ -44,5 +46,5 @@ function connectFail(callbackObject) {
     console.log(callbackObject);
 
     //Make more complete message here
-    $("#messageBox").html("Error");
+    $("#messageBox").html("Error while connecting: wrong username or password");
 }

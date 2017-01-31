@@ -1,5 +1,10 @@
 <?php
 
+if(session_id() == '' || !isset($_SESSION)) {
+    // session isn't started
+    session_start();
+}
+
 include_once(dirname(__FILE__) . '/backendIncludeScript.php');
 
 switch (strtolower($_POST['controller'])) {

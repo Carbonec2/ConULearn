@@ -1,5 +1,10 @@
 <?php
 
+if(session_id() == '' || !isset($_SESSION)) {
+    // session isn't started
+    session_start();
+}
+
 include_once(dirname(__FILE__).'/priv/backendIncludeScript.php');
 
 switch (strtolower($_POST['DAO'])) {

@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if(isset($_GET['page']) && $_GET['page'] == 'logout'){
+    //If we are logging out, let's logout!
+    session_destroy();
+    session_start();
+}
+
 include_once('backendIncludeScript.php');
 
 $pages = scandir('pages');

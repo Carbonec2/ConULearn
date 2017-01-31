@@ -1,21 +1,19 @@
 <!--Here is the header, before the main-->
 <header>
-        <?php
-		
-        if (!empty($_SESSION['user'])) {
-            echo 'Logged in as ' . $_SESSION['user'] . ' ';
-        } else {
-            echo '
-					<ul id="nav_bar">
-					<li id="nav_bar_logo"><strong>ConULearn</strong></li>
-					<li><a href="index.php?page=connect">SIGN IN</a></li>
-					<li><a href="index.php?page=registration">SIGN UP</a></li>
-					<li><a href="index.php">HOME</a></li>
-					</ul>
-				';
-        }
-        ?>
-		<!--Image of the header-->
+    <?php
+    if (!empty($_SESSION['user'])) {
+        echo 'Logged in as <strong>' . $_SESSION['user'] . '</strong>. - <a href="index.php?page=logout">Logout </a>';
+    } else {
+        echo '<ul id="nav_bar">
+                    <li id="nav_bar_logo"><strong>ConULearn</strong></li>
+                    <li><a href="index.php?page=connect">SIGN IN</a></li>
+                    <li><a href="index.php?page=registration">SIGN UP</a></li>
+                    <li><a href="index.php">HOME</a></li>
+                </ul>';
+    }
+    ?>
+
+		<!--Header div-->
 		<div id="headerdiv" class="container-fluid text-center">
 			<img src="img/logo.png" alt="ConULearn" width="30%" height="30%"/></br>
 			<img src="img/header.png" alt="" width="60%" height="60%"/>
@@ -44,3 +42,4 @@
 			?>
 		</div>
 </header>
+
