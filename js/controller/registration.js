@@ -11,6 +11,11 @@ function bind() {
             $("#messageBox").html("Passwords don't match.");
         }
     });
+    
+    $("#txtConfirmPassword").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#btnSignup").click();
+    }});
 }
 
 function signup(identifiers, successCallback, errorCallback) {
