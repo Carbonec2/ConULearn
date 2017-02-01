@@ -5,7 +5,7 @@
 		<div class="col-sm-3 text-center">
 			<img src="img/quiz.png" alt="quiz icon"></img>
 			<h2>QUIZZES</h2>
-			<h3>To evaluate the students understanding of the course material, professors will be able to upload assessments in the form quizzes throughout the semester</h3>
+			<h3>To evaluate the students understanding of the course material, professors will be able to upload assessments in the form of quizzes throughout the semester</h3>
 		</div>
 		
 		<div class="col-sm-3 text-center">
