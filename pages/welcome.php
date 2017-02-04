@@ -5,26 +5,26 @@
 		<div class="col-sm-3 text-center">
 			<img src="img/quiz.png" alt="quiz icon"></img>
 			<h2>QUIZZES</h2>
-			<h3 class>To evaluate the students understanding of the course material, professors will be able to upload assessments in the form of quizzes throughout the semester</h3>
+			<h3 class="lighter">To evaluate the students understanding of the course material, professors will be able to upload assessments in the form of quizzes throughout the semester</h3>
 		</div>
 
 		<div class="col-sm-3 text-center">
 			<img src="img/discussion.png" alt="discussion icon"></img>
 			<h2>DISCUSSIONS</h2>
-			<h3>Users will be able to interact with one another, exchange views and discuss information to get a better understanding of the course material</h3>
+			<h3 class="lighter">Users will be able to interact with one another, exchange views and discuss information to get a better understanding of the course material</h3>
 		</div>
 
 		<div class="col-sm-3 text-center">
 			<img src="img/announcement.png" alt="discussion icon"></img>
 			<h2>ANNOUNCEMENTS</h2>
-			<h3>Professors will post necessary messages to alert the students on important information such as course material needed, future quiz dates and when the feedback is available</h3>
+			<h3 class="lighter">Professors will post necessary messages to alert the students on important information such as course material needed, future quiz dates and when the feedback is available</h3>
 
 		</div>
 
 		<div class="col-sm-3 text-center">
 			<img src="img/feedback.png" alt="feedback icon"></img></br>
 			<h2>FEEDBACK</h2>
-			<h3>After the students submit their quizzes, the professors will grade and assess their work and make it available for revision</h3>
+			<h3 class="lighter">After the students submit their quizzes, the professors will grade and assess their work and make it available for revision</h3>
 		</div>
 	</div>
 
