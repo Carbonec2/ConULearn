@@ -3,13 +3,25 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Jan 20, 2017, 2:18:49 PM
     Author     : Acer
 */
 
 
 /* Navigation bar */
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: lighter;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h3.lighter {
+	font-weight: 300;
+}
 
 #nav_bar {
 	list-style-type: none;
@@ -25,7 +37,6 @@ and open the template in the editor.
 
 #nav_bar_logo {
 	display: block;
-	font-family: 'Century Gothic';
 	font-size: 20px;
 	color: white;
 	float: left;
@@ -36,7 +47,6 @@ and open the template in the editor.
 
 #nav_bar li a {
 	display: block;
-	font-family: 'Century Gothic';
 	font-size: 18px;
 	color: white;
 	float: right;
@@ -59,22 +69,21 @@ and open the template in the editor.
 
 #features {
 	background-color: #34495E;
-	font-family: 'Century Gothic';
 	color: white;
 	position: relative;
 	z-index: 50;
 	padding-top:50px;
-	padding-bottom:50px;	
+	padding-bottom:50px;
 }
 
 #features h1 {
 	font-size: 40px;
-	font-weight: bold;
+	font-weight: normal;
 }
 
 #features h2 {
 	font-size: 30px;
-	font-weight: bold;
+	font-weight: normal;
 }
 #features h3 {
 	font-size: 20px;
@@ -86,11 +95,10 @@ and open the template in the editor.
 #Aboutus {
 	background: #FF5722;
 	color: white;
-	font-family: 'Century Gothic';
 	position: relative;
 	z-index: 50;
 	padding-top:50px;
-	padding-bottom:50px;	
+	padding-bottom:50px;
 }
 
 #Aboutus h1 {
@@ -113,7 +121,6 @@ and open the template in the editor.
 	background-color: #FF5722;
 	z-index: 75;
 	color: white;
-	font-family: 'Century Gothic';
 	font-size: 18px;
 	position: absolute;
 	left: 0;
