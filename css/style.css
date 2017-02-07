@@ -147,3 +147,32 @@ h3.lighter {
 #sign_up_button:hover, #sign_in_button:hover {
 	background-color: #C83200;
 }
+
+
+/* Buttons for dashboard */
+#dashboard_features_button {
+		background-color: #FF5722;
+		display: block;
+    text-decoration: none;
+    border: none;
+    text-align: right;
+    z-index: 75;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+}
+
+/* Button called "Dashboard" or "Features" */
+#dashboard_saying_dashboard_button {
+			background-color: ##81D0E1;
+			display: block;
+	    text-decoration: none;
+	    border: none;
+	    text-align: right;
+	    z-index: 75;
+	    color: white;
+	    font-size: 18px;
+	    position: absolute;
+	    left: 0;
+}
