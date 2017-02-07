@@ -17,7 +17,7 @@ class ConnectController {
     }
     
     static function signup($ov) {
-        $result = UserDAO::insertIfNotExist($ov);
+        $result = UserDAO::insert($ov);
         
         return $result;
     }
