@@ -163,8 +163,8 @@ h3.lighter {
     left: 0;
 }
 
-/* Button called "Dashboard" or "Features" */
-#dashboard_saying_dashboard_button {
+/* Same size as dashboard buttons, just says "Dashboard" */
+#dashboard_header {
 			background-color: #81D0E1;
 			display: block;
 	    text-decoration: none;
