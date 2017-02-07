@@ -151,28 +151,27 @@ h3.lighter {
 
 /* Buttons for dashboard */
 #dashboard_features_button {
-		background-color: #FF5722;
-		display: block;
-    text-decoration: none;
-    border: none;
-    text-align: right;
-    z-index: 75;
-    color: white;
-    font-size: 18px;
-    position: absolute;
-    left: 0;
+	justify-content: center;
+	background-color: #FF5722;
+	border: 1px solid #f43a07;
+	color: white;
+	font-size: 22px;
+	font-weight: lighter;
+	display: flex;
+	align-items: center;
+	width: 260px;
+	height: 64px;
 }
 
 /* Same size as dashboard buttons, just says "Dashboard" */
 #dashboard_header {
-			background-color: #81D0E1;
-			display: block;
-	    text-decoration: none;
-	    border: none;
-	    text-align: right;
-	    z-index: 75;
-	    color: white;
-	    font-size: 18px;
-	    position: absolute;
-	    left: 0;
+	justify-content: center;
+	background-color: #81D0E1;
+	color: white;
+	font-size: 22px;
+	font-weight: lighter;
+	display: flex;
+	align-items: center;
+	width: 262px;
+	height: 64px;
 }
