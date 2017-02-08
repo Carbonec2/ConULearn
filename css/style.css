@@ -211,3 +211,7 @@ h3.lighter {
 	width: 212px;
 	height: 60px;
 }
+
+.dashboard_wallpaper {
+	background-image: url("https://files.slack.com/files-pri/T3TP4C3L1-F42GGTCTW/fadedlaptop.png");
+}
