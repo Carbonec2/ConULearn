@@ -214,6 +214,8 @@ h3.lighter {
 
 .dashboard_wallpaper {
 	background-image: url("http://i.imgur.com/5vzEd8p.png");
+	background-repeat: no-repeat;
+	background-color: #70CCD9;
 }
 
 /*this is the CSS for connection page and registration page */
