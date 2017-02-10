@@ -90,7 +90,7 @@ function relegateCourseUser() {
             echo json_encode(CourseUserDAO::save(getOV()));
             break;
         case 'getall':
-            echo 			json_encode(CourseUserDAO::getAll(getFilters()));
+            echo json_encode(CourseUserDAO::getAll(getFilters()));
             break;
         case 'get':
             echo json_encode(CourseUserDAO::get(getId()));
