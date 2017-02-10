@@ -10,7 +10,9 @@
 $(function ($)
 {
     jQuery.fn.extend({
-        glassPane: function () {
+        glassPane: function (options) {
+            console.log(this);
+            console.log(this[0]);
             return $.data(this[0], "glassPane", new GlassPane(this, options));
         },
         showDialog: function () {
