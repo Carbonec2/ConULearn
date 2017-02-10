@@ -35,6 +35,48 @@ function relegateUser() {
     }
 }
 
+function relegateCourse() {
+
+    switch (strtolower($_POST['method'])) {
+        case 'insert':
+            echo json_encode(CourseDAO::insert(getOV()));
+            break;
+        case 'update':
+            echo json_encode(CourseDAO::update(getOV()));
+            break;
+        case 'save':
+            echo json_encode(CourseDAO::save(getOV()));
+            break;
+        case 'getall':
+            echo json_encode(CourseDAO::getAll(getFilters()));
+            break;
+        case 'get':
+            echo json_encode(CourseDAO::get(getId()));
+            break;
+    }
+}
+
+function relegateRights() {
+
+    switch (strtolower($_POST['method'])) {
+        case 'insert':
+            echo json_encode(RightsDAO::insert(getOV()));
+            break;
+        case 'update':
+            echo json_encode(RightsDAO::update(getOV()));
+            break;
+        case 'save':
+            echo json_encode(RightsDAO::save(getOV()));
+            break;
+        case 'getall':
+            echo json_encode(RightsDAO::getAll(getFilters()));
+            break;
+        case 'get':
+            echo json_encode(RightsDAO::get(getId()));
+            break;
+    }
+}
+
 function getOV() {
     return json_decode($_POST['OV']);
 }

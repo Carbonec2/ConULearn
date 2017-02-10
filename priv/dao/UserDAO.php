@@ -119,7 +119,7 @@ class UserDAO implements DAO {
         //If we have an array
         if (is_array($object)) {
             foreach ($object AS $entry) {
-                update($entry);
+                UserDAO::update($entry);
             }
         } else {
             //If we have a single object (stdClass), not an array
