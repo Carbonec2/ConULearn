@@ -162,7 +162,7 @@ h3.lighter {
 }
 
 /* Buttons for dashboard */
-#dashboard_features_button {
+.dashboard_features_button {
     justify-content: center;
     background-color: #FF5722;
     border: 1px solid #f43a07;
@@ -266,10 +266,10 @@ input.standardField{
     margin: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    
+
     width: 100%;
     height: 100%;
-    
+
     z-index: 100;
     position: fixed;
 }
