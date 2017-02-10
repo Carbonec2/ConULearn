@@ -12,6 +12,12 @@ switch (strtolower($_POST['DAO'])) {
     case 'user':
         relegateUser();
         break;
+    case 'course':
+        relegateCourse();
+        break;
+    case 'rights':
+        relegateRights();
+        break;
 }
 
 function relegateUser() {

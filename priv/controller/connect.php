@@ -9,6 +9,7 @@ class ConnectController {
         if ($result->error->ok == true) {
             $_SESSION['userId'] = $result->id;
             $_SESSION['user'] = $result->user;
+            $_SESSION['Rights_id'] = $result->Rights_id;
 
             return $result;
         } else {

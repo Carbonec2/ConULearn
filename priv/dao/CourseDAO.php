@@ -27,7 +27,7 @@ class CourseDAO implements DAO {
 
         $sql->execute();
 
-        $result = $sql->fetchAll();
+        $result = $sql->fetchAll(PDO::FETCH_OBJ);
 
         return $result;
     }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -24,3 +24,12 @@
 
     </body>
 </html>
+-->
+<!--
+<div id="dashboard_features_button">Home</div>
+<div id="dashboard_features_button">Courses</div>
+<div id="dashboard_features_button">Students</div>
+<div id="dashboard_features_button">Discussion</div>
+<div id="dashboard_features_button">Feedback</div>-->
+
+<!--I have commented everything here, since I did re-arrance the organisation o pages, using the header directly. J-M-->

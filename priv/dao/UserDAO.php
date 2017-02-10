@@ -145,7 +145,8 @@ class UserDAO implements DAO {
         $sql = $conn->prepare('SELECT 
             id,
             user, 
-            passwordMD5 
+            passwordMD5,
+            Rights_id
             FROM User 
             WHERE user = :user');
 

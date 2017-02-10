@@ -35,7 +35,7 @@ foreach ($pages AS $page) {
         <title>ConULearn</title>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
         <link rel="stylesheet" href="css/style.css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="js/lib/jQuery/jquery-1.11.3.min.js"></script>
         <script src="js/glassPane.js"></script>
         <?php
         include_once('includes/head.php');
