@@ -11,236 +11,265 @@ and open the template in the editor.
 
 /* Navigation bar */
 body {
-	font-family: 'Roboto', sans-serif;
-	font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
 }
 
 h1, h2, h3 {
-	font-weight: normal;
+    font-weight: normal;
 }
 
 h3.lighter {
-	font-weight: 300;
+    font-weight: 300;
 }
 
 #nav_bar {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #FF5722;
-	position: fixed;
-	z-index: 100;
-	top: 0;
-	width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FF5722;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
 }
 
 #nav_bar_logo {
-	display: block;
-	font-size: 20px;
-	color: white;
-	float: left;
-	text-align: center;
-	padding: 16px 16px;
-	text-decoration: none;
+    display: block;
+    font-size: 20px;
+    color: white;
+    float: left;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
 }
 
 #nav_bar li a {
-	display: block;
-	font-size: 18px;
-	color: white;
-	float: right;
-	text-align: center;
-	padding: 18px 18px;
-	text-decoration: none;
+    display: block;
+    font-size: 18px;
+    color: white;
+    float: right;
+    text-align: center;
+    padding: 18px 18px;
+    text-decoration: none;
 }
 
 #nav_bar li a:hover {
-	background-color: #C83200;
+    background-color: #C83200;
 }
 
 #headerdiv {
-	background-color:#81D0E1;
-	color:white;
-	padding-top:75px;
+    background-color:#81D0E1;
+    color:white;
+    padding-top:75px;
 }
 
 /* The "WHAT WE OFFER" section */
 
 #features {
-	background-color: #34495E;
-	color: white;
-	position: relative;
-	z-index: 50;
-	padding-top:50px;
-	padding-bottom:50px;
+    background-color: #34495E;
+    color: white;
+    position: relative;
+    z-index: 50;
+    padding-top:50px;
+    padding-bottom:50px;
 }
 
 #features h1 {
-	font-size: 40px;
-	font-weight: normal;
+    font-size: 40px;
+    font-weight: normal;
 }
 
 #features h2 {
-	font-size: 30px;
-	font-weight: normal;
+    font-size: 30px;
+    font-weight: normal;
 }
 #features h3 {
-	font-size: 20px;
+    font-size: 20px;
 }
 
 
 /* The "ABOUT US" section */
 
 #Aboutus {
-	background: #FF5722;
-	color: white;
-	position: relative;
-	z-index: 50;
-	padding-top:50px;
-	padding-bottom:50px;
+    background: #FF5722;
+    color: white;
+    position: relative;
+    z-index: 50;
+    padding-top:50px;
+    padding-bottom:50px;
 }
 
 #Aboutus h1 {
-	font-size: 40px;
-	font-weight: bold;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 #Aboutus h2{
-	color:#81D0E1;
+    color:#81D0E1;
 }
 
 
 /* The sign-up & sign-in buttons on the left side of the front page */
 
 #sign_in_button, #sign_up_button, #logout_button {
-	display: block;
-	text-decoration: none;
-	border: none;
-	text-align: right;
-	background-color: #FF5722;
-	z-index: 75;
-	color: white;
-	font-size: 18px;
-	position: absolute;
-	left: 0;
+    display: block;
+    text-decoration: none;
+    border: none;
+    text-align: right;
+    background-color: #FF5722;
+    z-index: 75;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
 }
 
 #sign_in_button {
-	padding: 10px 21px;
-	padding-left: 80px;
-	top: 200px;
+    padding: 10px 21px;
+    padding-left: 80px;
+    top: 200px;
 }
 
 #sign_up_button {
-	padding: 10px 21px;
-	padding-left: 75px;
-	top: 250px;
+    padding: 10px 21px;
+    padding-left: 75px;
+    top: 250px;
 }
 
 #logout_button{
-        padding: 10px 21px;
-	padding-left: 75px;
-	top: 200px;
+    padding: 10px 21px;
+    padding-left: 75px;
+    top: 200px;
 }
 
 #sign_up_button:hover, #sign_in_button:hover {
-	background-color: #C83200;
+    background-color: #C83200;
 }
 
 /* Dashboard Logo */
 #dashboard_logo {
-	justify-content: center;
-	background-color: #FF5722;
-	color: white;
-	font-size: 22px;
-	font-weight: lighter;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	height: 8%;
+    justify-content: center;
+    background-color: #FF5722;
+    color: white;
+    font-size: 22px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8%;
 }
 
 /* Buttons for dashboard */
 #dashboard_features_button {
-	justify-content: center;
-	background-color: #FF5722;
-	border: 1px solid #f43a07;
-	color: white;
-	font-size: 22px;
-	font-weight: lighter;
-	display: flex;
-	align-items: center;
-	width: 210px;
-	height: 60px;
+    justify-content: center;
+    background-color: #FF5722;
+    border: 1px solid #f43a07;
+    color: white;
+    font-size: 22px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    width: 210px;
+    height: 60px;
 }
 
 /* Same size as dashboard buttons, just says "Dashboard" */
 #dashboard_header {
-	justify-content: center;
-	background-color: #81D0E1;
-	color: white;
-	font-size: 18px;
-	font-weight: lighter;
-	display: flex;
-	align-items: center;
-	width: 212px;
-	height: 60px;
+    justify-content: center;
+    background-color: #81D0E1;
+    color: white;
+    font-size: 18px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    width: 212px;
+    height: 60px;
 }
 
 #dashboard_logo {
-	justify-content: center;
-	background-color: #FF5722;
-	color: white;
-	font-size: 22px;
-	font-weight: lighter;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	height: 8%;
+    justify-content: center;
+    background-color: #FF5722;
+    color: white;
+    font-size: 22px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8%;
 }
 
 #dashboard_logout_button {
-	justify-content: center;
-	background-color: #e53232;
-	color: white;
-	font-size: 18px;
-	font-weight: lighter;
-	display: flex;
-	align-items: center;
-	width: 212px;
-	height: 60px;
+    justify-content: center;
+    background-color: #e53232;
+    color: white;
+    font-size: 18px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    width: 212px;
+    height: 60px;
 }
 
 .dashboard_wallpaper {
-	background-image: url("http://i.imgur.com/5vzEd8p.png");
-	background-repeat: no-repeat;
-	background-color: #70CCD9;
+    background-image: url("http://i.imgur.com/5vzEd8p.png");
+    background-repeat: no-repeat;
+    background-color: #70CCD9;
 }
 
 /*this is the CSS for connection page and registration page */
 
-	input.standardField{
-	     width: 25%;
-	  background-color: #ffffff;
-	  padding: 12px 20px;
-	   margin: 8px 0;
-	   border: 1px solid #ccc;
-	   border-radius: 4px;
-	    box-sizing: border-box;
-	}
+input.standardField{
+    width: 25%;
+    background-color: #ffffff;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
-	.formsButton{
-	    width: 100%;
-	    background-color: #66d9ff;
-	    color: white;
-	    padding: 14px 20px;
-	    margin: 8px 0;
-	    border: none;
-	    border-radius: 4px;
-	    cursor: pointer;
-	}
+.formsButton{
+    width: 100%;
+    background-color: #66d9ff;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-	#mainPanel{
-	    background-color: #d9d9d9;
-	}
+#mainPanel{
+    background-color: #d9d9d9;
+}
+
+.dialogBox
+{
+    z-index : 101;
+    background-color: #ffffff;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    display: block;
+    position: absolute;
+    overflow: hidden;
+}
+
+.glassPane
+{
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    width: 100%;
+    height: 100%;
+    
+    z-index: 100;
+    position: fixed;
+}

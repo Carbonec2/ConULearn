@@ -18,12 +18,9 @@
         <div id="dashboard_logout_button">Log Out</div>
 
         <script></script>
-        <?php
-        ?>
+
     </head>
     <body="dashboard_wallpaper">
-        <?php
 
-        ?>
     </body>
 </html>
