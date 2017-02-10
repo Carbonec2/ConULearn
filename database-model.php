@@ -83,6 +83,27 @@ function relegateRights() {
     }
 }
 
+function relegateCourseUser() {
+
+    switch (strtolower($_POST['method'])) {
+        case 'insert':
+            echo json_encode(CourseUserDAO::insert(getOV()));
+            break;
+        case 'update':
+            echo json_encode(CourseUserDAO::update(getOV()));
+            break;
+        case 'save':
+            echo json_encode(CourseUserDAO::save(getOV()));
+            break;
+        case 'getall':
+            echo json_encode(CourseUserDAO::getAll(getFilters()));
+            break;
+        case 'get':
+            echo json_encode(CourseUserDAO::get(getId()));
+            break;
+    }
+}
+
 function getOV() {
     return json_decode($_POST['OV']);
 }
