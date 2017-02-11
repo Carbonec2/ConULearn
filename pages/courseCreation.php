@@ -8,7 +8,7 @@
 		
 		<input type="text" class="formText" id="courseName" style="width:150px">
 	
-		<h4>Please give a brief description of the course inlcuding: number of credits, prequisites needed, content of the course and any other meaningful information. </h4>
+		<h4>Please give a brief description of the course including: number of credits, prerequisites needed, content of the course and any other meaningful information. </h4>
 		
 		<h3>Course Description</h3>
 		
