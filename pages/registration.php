@@ -6,8 +6,8 @@
     <br/>
        <input type="password" class="standardField" id="txtConfirmPassword" placeholder="Confirm Your Password" style="border-radius:4px;padding:5px; display:inline-block;"/>
     <br/>
-	<label><input type="radio" name="account_type" value="teacher"> Teacher</input></label>
-	<label><input type="radio" name="account_type" value="student"> Student</input></label>
+	<label><input type="radio" name="rightsid" value="1"> Teacher</input></label>
+	<label><input type="radio" name="rightsid" value="2" checked="checked"> Student</input></label>
 	<br/>
     <input type="button" value="Sign up" id="btnSignup" class="formsButton" style="width:100px; height:50px; display:inline-block; margin:10px;"/>
 </div>

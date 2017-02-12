@@ -50,11 +50,12 @@ class UserDAO implements DAO {
         $result = $sql->fetchAll();
         
         if(!$result){
-            $sql = $conn->prepare('INSERT INTO User (user, passwordMD5) 
-                                    VALUES (:user, :passwordMD5) ');
+            $sql = $conn->prepare('INSERT INTO User (user, passwordMD5, Rights_id) 
+                                    VALUES (:user, :passwordMD5, :rightsid) ');
             
         $sql->bindValue(':user', $ov->user);
         $sql->bindValue(':passwordMD5', md5($ov->password));
+        $sql->bindValue(':rightsid', $ov->rightsid);
         
         $sql->execute();
         }
