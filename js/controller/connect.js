@@ -44,8 +44,15 @@ function connect(identifiers, successCallback, errorCallback) {
     });
 }
 
-function connectOk() {
-    window.location = "index.php"; //redirects to home page
+function connectOk(o) {
+    if(o.Rights_id == 1){
+        window.location = "index.php?page=dashboard_teacher"; //redirects to teacher dashboard
+    }else{
+        if(o.Rights_id == 2){
+            window.location = "index.php?page=dashboard_student"; //redirects to student dashboard
+        }
+    }
+    
     /*
      $("#messageBox").html("Connection successful! <a href=\"index.php\">Go to Home page</a>");
      $("#txtUser").hide();
