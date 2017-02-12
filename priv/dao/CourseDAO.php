@@ -35,9 +35,10 @@ class CourseDAO implements DAO {
     public static function insert($object) {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('INSERT INTO Course (name, description, User_id) 
-            VALUES (:name, :description, :User_id)');
+        $sql = $conn->prepare('INSERT INTO Course (id, name, description, User_id) 
+            VALUES (:id, :name, :description, :User_id)');
         
+        $sql->bindValue(':id',$object->id);
         $sql->bindValue(':name',$object->name);
         $sql->bindValue(':description', $object->description);
         $sql->bindValue(':User_id', $object->User_id);

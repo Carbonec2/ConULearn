@@ -171,6 +171,7 @@ class UserDAO implements DAO {
 
         $returnObject->id = $result->id;
         $returnObject->user = $result->user;
+        $returnObject->Rights_id = $result->Rights_id;
 
         if ($result->passwordMD5 == md5($ov->password)) {
             $returnObject->error->ok = true;
