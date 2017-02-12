@@ -10,5 +10,4 @@
 	<label><input type="radio" name="account_type" value="student"> Student</input></label>
 	<br/>
     <input type="button" value="Sign up" id="btnSignup" class="formsButton" style="width:100px; height:50px; display:inline-block; margin:10px;"/>
-	<label>
 </div>
