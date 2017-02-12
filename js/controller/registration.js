@@ -7,7 +7,7 @@ $(document).ready(function () {
 function bind() {
     $("#btnSignup").click(function () {
         if($("#txtPassword").val() === $("#txtConfirmPassword").val()){
-            var identifiers = {user: $("#txtUser").val(), password: $("#txtPassword").val()};
+            var identifiers = {user: $("#txtUser").val(), password: $("#txtPassword").val(), rightsid: $("input[name='rightsid']:checked").val()};
             signup(identifiers, signupOk, signupFail);
         }else{
             $("#messageBox").html("Passwords don't match.");
