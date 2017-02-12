@@ -3,7 +3,7 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
-<body>
+<body class="dashboard">
   <div class="dashboard_features_button">Create a Course</div>
   <div class="dashboard_features_button">Courses</div>
   <div class="dashboard_course">SOEN 341</div>
