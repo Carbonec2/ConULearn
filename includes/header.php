@@ -8,24 +8,26 @@
                     <li><a href="index.php"><strong>LOGGED IN AS ' . $_SESSION['user'] . '</strong></a></li>
                     <li><a href="index.php">HOME</a></li>';
         
-        /*
-        //This will be the menu for a student
-        echo '<li><a href="index.php?page=courseRegistration">Course registration</a></li>
-                    <li><a href="index.php?page=studentCourses">Courses</a></li>
-                    <li><a href="index.php?page=studentDiscussion">Discussions</a></li>
-                    <li><a href="index.php?page=feedback">Feedback</a></li>';
-        */
+        
         
         
         //Menu for a teacher
         //This if condition shows the good menu according to the rights of the logged user
-        //if($_SESSION['Rights_id'] == 1){ //Let's say teacher == 1, student == 2
+        if($_SESSION['Rights_id'] == 1){ //Let's say teacher == 1, student == 2
         echo '<li><a href="index.php?page=courseCreation">Course creation</a></li>
-                    <li><a href="index.php?page=courseManagement">Course management</a></li>
-                    <li><a href="index.php?page=teacherDiscussion">Discussions</a></li>
-                    <li><a href="index.php?page=feedback">Feedback</a></li>';
+              <li><a href="index.php?page=courseManagement">Course management</a></li>
+              <li><a href="index.php?page=teacherDiscussion">Discussions</a></li>
+              <li><a href="index.php?page=feedback">Feedback</a></li>';
         
-        //}
+        }else{
+            if($_SESSION['Rights_id'] == 2){
+        //This will be the menu for a student
+        echo '<li><a href="index.php?page=courseRegistration">Course registration</a></li>
+              <li><a href="index.php?page=studentCourses">Courses</a></li>
+              <li><a href="index.php?page=studentDiscussion">Discussions</a></li>
+              <li><a href="index.php?page=feedback">Feedback</a></li>';
+            }
+        }
         echo '</ul>';
     } else {
         echo '<ul id="nav_bar">
