@@ -175,6 +175,32 @@ h3.lighter {
     height: 60px;
 }
 
+.dashboard_course {
+    justify-content: center;
+    background-color: #0073e6;
+    border: 1px solid #0059b3;
+    color: white;
+    font-size: 22px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    width: 210px;
+    height: 48px;
+}
+
+.dashboard_course_features {
+    justify-content: center;
+    background-color: #0099ff;
+    border: 1px solid #008ae6;
+    color: white;
+    font-size: 22px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    width: 210px;
+    height: 30px;
+}
+
 /* Same size as dashboard buttons, just says "Dashboard" */
 #dashboard_header {
     justify-content: center;
