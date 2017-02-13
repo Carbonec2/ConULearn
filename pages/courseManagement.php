@@ -1,8 +1,10 @@
 <?php
+include_once('includes/dashboardSideNavBar.php');
+?>
+<body class="dashboard">
+    <div class="dashboardcontainer  text-center">
+        <h1> Courses</h1>
+        <!--Courses buttons should go here -->
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+    </div>
+</body>
