@@ -23,7 +23,8 @@
         } else {
             if ($_SESSION['Rights_id'] == 2) {
                 //This will be the menu for a student
-                echo '<li><a href="index.php?page=dashboard_student">DASHBOARD</a></li>
+                echo '<li><a href=""><strong> ' . $_SESSION['user'] . ' (student)</strong></a></li>
+                    <li><a href="index.php?page=dashboard_student">DASHBOARD</a></li>
                 <li><a href="index.php">HOME</a></li>';
             }
         }
