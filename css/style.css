@@ -305,11 +305,11 @@ h3.lighter {
 }
 
 .dashboard_course_box {
-	font-size: 40px;
+	font-size: 30px;
 }
 
 .dashboard_add_course_box {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .dashboard_course_box:link, .dashboard_course_box:visited, .dashboard_add_course_box:link, .dashboard_add_course_box:visited {
@@ -336,7 +336,7 @@ h3.lighter {
 }
 
 .box_plus_sign {
-	font-size: 100px;
+	font-size: 80px;
 }
 
 
