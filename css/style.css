@@ -55,8 +55,12 @@ h3.lighter {
     text-decoration: none;
 }
 
-#nav_bar li a:hover {
+#nav_bar li a:hover{
     background-color: #C83200;
+}
+
+#logoutbutton {
+   background-color:red;
 }
 
 #headerdiv {
@@ -185,7 +189,7 @@ h3.lighter {
     display: flex;
     align-items: center;
     width: 210px;
-    height: 48px;
+    height: 60px;
 }
 
 .dashboard_course_features {
@@ -198,7 +202,7 @@ h3.lighter {
     display: flex;
     align-items: center;
     width: 210px;
-    height: 30px;
+    height: 28px;
 }
 
 /* Same size as dashboard buttons, just says "Dashboard" */
@@ -243,6 +247,20 @@ h3.lighter {
     background-repeat: no-repeat;
     background-color: #70CCD9;
 }
+
+
+.dashboardcontainer{
+    position:absolute;
+    top:100px;
+    left:300px;
+    margin-right: 100px;
+}
+
+.dashboardDiv{
+    background-color:white;
+  
+}
+
 
 /*this is the CSS for connection page and registration page */
 
