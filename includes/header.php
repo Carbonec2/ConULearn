@@ -18,14 +18,14 @@
         if ($_SESSION['Rights_id'] == 1) { //Let's say teacher == 1, student == 2
             echo '<li><a href=""><strong> ' . $_SESSION['user'] . ' (Teacher)</strong></a></li> 
                 <li><a href="index.php?page=dashboard_teacher">DASHBOARD</a></li>
-                <li><a href="index.php">HOME</a></li>
+                
                 ';
         } else {
             if ($_SESSION['Rights_id'] == 2) {
                 //This will be the menu for a student
                 echo '<li><a href=""><strong> ' . $_SESSION['user'] . ' (student)</strong></a></li>
                     <li><a href="index.php?page=dashboard_student">DASHBOARD</a></li>
-                <li><a href="index.php">HOME</a></li>';
+                ';
             }
         }
  
@@ -49,7 +49,7 @@
     if (empty($_SESSION['user'])) {
         echo '<div id="headerdiv" class="container-fluid text-center">';
         echo '<img src="img/logo.png" alt="ConULearn" width="25%" height="25%"/></br>
-        <img src="img/header.png" alt="" width="50%" height="50%"/></br></br>';
+        <img src="img/header.png" alt="" width="50%" height="50%"/></br></br></br>';
         echo '<a id="sign_in_button" href="index.php?page=connect">SIGN IN</a>';
         echo '<a id="sign_up_button" href="index.php?page=registration">SIGN UP</a>';
 
@@ -59,7 +59,7 @@
         if (empty($query_array)) {
             echo '<div id="headerdiv" class="container-fluid text-center">';
             echo '<img src="img/logo.png" alt="ConULearn" width="25%" height="25%"/></br>
-        <img src="img/header.png" alt="" width="50%" height="50%"/></br></br>';
+        <img src="img/header.png" alt="" width="50%" height="50%"/></br></br></br>';
             echo '</div>';
         }
     }
