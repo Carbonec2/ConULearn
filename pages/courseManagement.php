@@ -1,8 +1,8 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+include_once('includes/dashboardSideNavBar.php');
+?>
+<body class="dashboard">
+    <div class="dashboardcontainer container-fluid text-center">
+        <!--Insert what you want inside the dashboard here-->
+    </div>
+</body>
