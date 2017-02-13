@@ -190,6 +190,19 @@ h3.lighter {
     align-items: center;
     width: 210px;
     height: 60px;
+   
+}
+
+.dashboard_course:hover {
+    text-decoration:none;
+    background-color:skyblue;
+    color:#0073e6;
+}
+
+.dashboard_features_button:hover{
+    text-decoration:none;
+    background-color: #C83200;
+    color:white;
 }
 
 .dashboard_course_features {
