@@ -55,7 +55,7 @@ class UserDAO implements DAO {
             
         $sql->bindValue(':user', $ov->user);
         $sql->bindValue(':passwordMD5', md5($ov->password));
-        $sql->bindValue(':Rights_id', $ov->rightsid);
+        $sql->bindValue(':Rights_id', $ov->Rights_id);
         
         $sql->execute();
         }
