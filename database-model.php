@@ -44,6 +44,9 @@ function relegateUser() {
 function relegateCourse() {
 
     switch (strtolower($_POST['method'])) {
+        case 'getall2':
+            echo json_encode(CourseDAO::getAllFromUserId(getOV()));
+            break;
         case 'insert':
             echo json_encode(CourseDAO::insert(getOV()));
             break;

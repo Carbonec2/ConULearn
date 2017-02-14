@@ -1,6 +1,27 @@
 <?php
 
 class CourseDAO implements DAO {
+    
+    //Added this function to get all the courses of a teacher
+    public static function getAllFromUserId($ov) {
+        $conn = pdo_connect();
+
+        $sql = $conn->prepare('SELECT 
+            id, 
+            name,
+            description, 
+            User_id 
+            FROM Course 
+            WHERE User_id = :User_id');
+
+        $sql->bindValue(':User_id', $ov->User_id);
+
+        $sql->execute();
+        
+        $result = $sql->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    }
 
     public static function get($id) {
         $conn = pdo_connect();
