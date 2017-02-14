@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 function bind() {
     $("#btnSubmit").click(function () {
-            var identifiers = {id: $("#courseID").val(), name: $("#courseName").val(), description: $("#courseDescription").val(), User_id: $("#userId").val()};
+            var identifiers = {id: $("#courseID").val(), name: $("#courseName").val(), description: $("#courseDescription").val()};
             addCourse(identifiers, addCourseOk, addCourseFail);
     });
 }

@@ -51,11 +51,11 @@ class UserDAO implements DAO {
         
         if(!$result){
             $sql = $conn->prepare('INSERT INTO User (user, passwordMD5, Rights_id) 
-                                    VALUES (:user, :passwordMD5, :rightsid) ');
+                                    VALUES (:user, :passwordMD5, :Rights_id) ');
             
         $sql->bindValue(':user', $ov->user);
         $sql->bindValue(':passwordMD5', md5($ov->password));
-        $sql->bindValue(':rightsid', $ov->rightsid);
+        $sql->bindValue(':Rights_id', $ov->rightsid);
         
         $sql->execute();
         }

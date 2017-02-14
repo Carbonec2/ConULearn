@@ -5,7 +5,7 @@ if(session_id() == '' || !isset($_SESSION)) {
     session_start();
 }
 
-include_once(dirname(__FILE__).'/priv/backendIncludeScript.php');
+include_once(dirname(__FILE__).'/backendIncludeScript.php');
 
 switch (strtolower($_POST['DAO'])) {
 

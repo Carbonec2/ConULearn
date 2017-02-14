@@ -41,7 +41,7 @@ class CourseDAO implements DAO {
         $sql->bindValue(':id',$object->id);
         $sql->bindValue(':name',$object->name);
         $sql->bindValue(':description', $object->description);
-        $sql->bindValue(':User_id', $object->User_id);
+        $sql->bindValue(':User_id', $_SESSION['userId']);
         
         $sql->execute();
         
