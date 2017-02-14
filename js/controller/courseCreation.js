@@ -12,8 +12,6 @@ function bind() {
 }
 
 function addCourse(identifiers, successCallback, errorCallback) {
-    alert($("#userId").val());
-
     $.ajax({
         type: "POST",
         url: "database-model.php",
