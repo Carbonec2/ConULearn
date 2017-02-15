@@ -21,6 +21,8 @@ function addCourse(identifiers, successCallback, errorCallback) {
             //error 500
         },
         success: function (object) {
+            window.location = "index.php?page=dashboard_teacher";
+            
             var objects = jQuery.parseJSON(object);
             
             console.log(objects);
