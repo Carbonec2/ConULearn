@@ -5,7 +5,7 @@
         //echo 'Logged in as <strong>' . $_SESSION['user'] . '</strong>.';
         echo '<ul id="nav_bar">
                     <li id="nav_bar_logo"><strong>ConULearn</strong></li>
-                    <li><a href="index.php?page=logout" id="logoutbutton">LOGOUT</a></li>   
+                    <li><a href="index.php?page=logout" id="logoutbutton">LOG OUT</a></li>   
                                
 
                     ';
