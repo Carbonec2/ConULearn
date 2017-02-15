@@ -48,8 +48,8 @@
 
     if (empty($_SESSION['user'])) {
         echo '<div id="headerdiv" class="container-fluid text-center">';
-        echo '<img src="img/logo.png" alt="ConULearn" width="25%" height="25%"/></br>
-        <img src="img/header.png" alt="" width="50%" height="50%"/></br></br></br>';
+        echo '<img src="img/logo.png" alt="ConULearn" width="25%" height="25%"/><br/>
+        <img src="img/header.png" alt="" width="50%" height="50%"/><br/><br/><br/>';
         echo '<a id="sign_in_button" href="index.php?page=connect">SIGN IN</a>';
         echo '<a id="sign_up_button" href="index.php?page=registration">SIGN UP</a>';
 
@@ -58,8 +58,8 @@
     } else {
         if (empty($query_array)) {
             echo '<div id="headerdiv" class="container-fluid text-center">';
-            echo '<img src="img/logo.png" alt="ConULearn" width="25%" height="25%"/></br>
-        <img src="img/header.png" alt="" width="50%" height="50%"/></br></br></br>';
+            echo '<img src="img/logo.png" alt="ConULearn" width="25%" height="25%"/><br/>
+        <img src="img/header.png" alt="" width="50%" height="50%"/><br/><br/><br/>';
             echo '</div>';
         }
     }
@@ -68,7 +68,7 @@
     /*
       parse_str($_SERVER["QUERY_STRING"], $query_array);
       if (empty($query_array)) {
-      echo '</br></br></br></br></br>';
+      echo '<br/><br/><br/><br/><br/>';
       } else {
       if ($_GET['page'] == "registration") {
       echo '
