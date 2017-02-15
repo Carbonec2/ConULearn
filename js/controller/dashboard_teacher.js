@@ -23,7 +23,7 @@ function getCourses(identifiers, successCallback, errorCallback) {
 
             console.log(objects);
             for(var i=0;i<objects.length;i++){
-                $('#courses_container').html($('#courses_container').html()+'<a href="" class="dashboard_box_link"><div class="dashboard_course_box">'+objects[i].name+'</br><span class="box_course_semester">Winter 2017</span></div></a>');
+                $('#courses_container').html($('#courses_container').html()+'<a href="" class="dashboard_box_link"><div class="dashboard_course_box">'+objects[i].name+'<br/><span class="box_course_semester">Winter 2017</span></div></a>');
             }
   
             /*

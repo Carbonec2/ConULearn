@@ -1,7 +1,7 @@
 
 			<!--WHAT WE OFFER DIV-->
 <div id="features" class="container-fluid text-center">
-		<h1> WHAT WE OFFER </h1></br>
+		<h1> WHAT WE OFFER </h1><br/>
 	<div class="row">
 		<div class="col-sm-3 text-center">
 			<img src="img/quiz.png" alt="quiz icon"></img>
@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="col-sm-3 text-center">
-			<img src="img/feedback.png" alt="feedback icon"></img></br>
+			<img src="img/feedback.png" alt="feedback icon"></img><br/>
 			<h2>FEEDBACK</h2>
 			<h3 class="lighter">After the students submit their quizzes, the professors will grade and assess their work and make it available for revision</h3>
 		</div>
@@ -56,14 +56,14 @@
 			Dividing our team into front-end and back-end developers, we are able to create easy to use features.
 			Our main goal is to provide Concordia faculty members with a reliable resource to assess their students progression while enabling them to acquire knowledge through engagements in discussions.
 			</h3>
-		</br>
+		<br/>
 		<h2>How does it work?</h2>
 			<h3 class="lighter">The quiz dates will be announced by the course instructors, after which students will be able to prepare by learning the appropriate material.
 			If any questions come up, the discussion board will be available for use.
 			Professors will then post quizzes that will contain multiple choice questions and short or long answer questions.
 			Once all the students submit their quizzes, it's time for grading!
 			The students will then receive feedback where they will be able to revise their work and learn from their mistakes.</h3>
-		</br>
+		<br/>
 	</div>
 	<div class="col-sm-1 text-center">
 	</div>

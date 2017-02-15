@@ -1,5 +1,5 @@
 <div >
-    </br></br></br>
+    <br/><br/><br/>
     <?php
     if ($_SESSION['Rights_id'] == 1) {
         echo '<a href="index.php" class="dashboard_features_button">HOME</a>
