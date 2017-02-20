@@ -11,7 +11,7 @@ include_once('includes/dashboardSideNavBar.php');
 
      
 
-<h1 class="dashboardcoursetitle">Annoucements</h1>
+<h1 class="dashboardcoursetitle">Announcements</h1>
 <!--Example using multiple annoucement
 
 <h2 class="dashboardcoursesub">There will be a quiz March 10</h2>
