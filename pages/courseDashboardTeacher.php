@@ -1,7 +1,6 @@
 <?php
 include_once('includes/dashboardSideNavBar.php');
 ?>
-<link rel="stylesheet" href="css/style2.css" />
 
 <body class="dashboard">
     <div class="dashboardcontainer">
