@@ -398,3 +398,9 @@ input.standardField{
 #mainPanel{
     background-color: #d9d9d9;
 }
+
+/* Teacher Announcement Form */
+.announcement{
+  height: 236px;
+  width: 630px;
+}
