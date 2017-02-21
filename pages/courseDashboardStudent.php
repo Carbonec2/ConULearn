@@ -26,7 +26,7 @@ include_once('includes/dashboardSideNavBar.php');
 
         
 
-        <div class="dashboardcontainer2 containier-fluid text-center">
+        <div class="dashboardcontainer2">
  
             <div class="leftSmallDiv">
            
