@@ -277,28 +277,73 @@ h3.lighter {
 }
 
 .leftSmallDiv{
+
     background-color:white;
-    color:black;
-    padding:100px;
+    color:#004A7F;
+    height:200px;
     width:65%;
+    overflow:auto;
+
 }
 
+
+
 .rightSmallDiv{
+
     position:absolute;
     top:0px;
     left:68.5%;
     width:65%;
     background-color:white;
-    color:black;
-    padding:100px;
+   color:#004A7F;
+    height:200px;
+    overflow:auto;
 
 }
+
 
 .dashboardcontainer2{
     position:relative;
     width:75%;
 
 }
+.dashboardcourseDiv{
+
+    background-color:white;
+    height:200px;
+    color:#004A7F;
+    width:100%;
+    margin-bottom:25px;
+    overflow: auto;
+
+}
+/* for the course dashboard:name of course, annoucements,quizzes,discussion board */
+.dashboardcourse
+ {
+ color: white;
+ font-size: 35px;
+ padding:10px;
+ text-align:center;
+ }
+ .dashboardcoursetitle
+ {    
+ 
+ 
+ font-size: 30px;
+ text-align:center;
+ font-weight:bold;
+
+
+ }
+ .dashboardcoursesub 
+ {
+ font-size: 20px;
+ text-align:left;
+ padding-left:10px;
+ 
+ }
+
+
 
 .dashboardDiv{
     background-color:white;
