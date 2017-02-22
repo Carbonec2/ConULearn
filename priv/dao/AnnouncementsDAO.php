@@ -44,7 +44,7 @@ class AnnouncementsDAO implements DAO {
     public static function getAll($filters) {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT id, Course_id, User_id,      	description FROM Announcements ORDER BY id');
+        $sql = $conn->prepare('SELECT id, Course_id, User_id,      description FROM Announcements ORDER BY id');
 
         $sql->execute();
 
@@ -56,7 +56,7 @@ class AnnouncementsDAO implements DAO {
     public static function insert($object) {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('INSERT INTO Announcements (id,  	Course_id, User_id, description) 
+        $sql = $conn->prepare('INSERT INTO Announcements (id,  Course_id, User_id, description) 
             VALUES (:id, :Course_id, :User_id, :description)');
         
         $sql->bindValue(':id',$object->id);
