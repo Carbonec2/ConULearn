@@ -107,6 +107,30 @@ function relegateCourseUser() {
     }
 }
 
+function relegateAnnouncements() {
+
+    switch (strtolower($_POST['method'])) {
+        case 'getall2':
+            echo json_encode(AnnouncementsDAO::getAllFromUserId(getOV()));
+            break;
+        case 'insert':
+            echo json_encode(AnnouncementsDAO::insert(getOV()));
+            break;
+        case 'update':
+            echo json_encode(AnnouncementsDAO::update(getOV()));
+            break;
+        case 'save':
+            echo json_encode(AnnouncementsDAO::save(getOV()));
+            break;
+        case 'getall':
+            echo json_encode(AnnouncementsDAO::getAll(getFilters()));
+            break;
+        case 'get':
+            echo json_encode(AnnouncementsDAO::get(getId()));
+            break;
+    }
+}
+
 function getOV() {
     return json_decode($_POST['OV']);
 }
