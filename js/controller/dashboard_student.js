@@ -3,7 +3,7 @@ $(document).ready(function () {
 });
 
 function bind() {
-    var identifiers = {User_id: $("#userId").val()};
+    var identifiers = {};
     getCourses(identifiers, getCoursesOk, getCoursesFail);
 }
 
@@ -12,7 +12,7 @@ function getCourses(identifiers, successCallback, errorCallback) {
     $.ajax({
         type: "POST",
         url: "database-model.php",
-        data: {DAO: 'course', method: 'getall2', OV: JSON.stringify(identifiers)},
+        data: {DAO: 'courseuser', method: 'getall2', OV: JSON.stringify(identifiers)},
         async: true,
         error: function () {
             //error 500

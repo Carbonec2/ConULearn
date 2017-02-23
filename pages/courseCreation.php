@@ -21,7 +21,7 @@ include_once('includes/dashboardSideNavBar.php');
             <br/>
             <textarea class="formText" id="courseDescription" style="width:450px;height:250px; resize: none;" ></textarea>
             <br/>
-            <input type="button" value="Submit" id="btnSubmit" class="formsButton" class="creationformButton" >
+            <input type="button" value="Submit" id="btnSubmit" class="formsButton" >
 
 
 
