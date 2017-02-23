@@ -3,6 +3,8 @@ $(document).ready(function () {
 });
 
 function bind() {
+    
+    
     var identifiers = {User_id: $("#userId").val()};
     getCourses(identifiers, getCoursesOk, getCoursesFail);
 }
@@ -23,7 +25,7 @@ function getCourses(identifiers, successCallback, errorCallback) {
 
             console.log(objects);
             for(var i=0;i<objects.length;i++){
-                $('#courses_container').html($('#courses_container').html()+'<a href="index.php?page=courseDashboardTeacher&id='+objects[i].id+'&coursename='+objects[i].name+'" class="dashboard_box_link"><div class="dashboard_course_box">'+objects[i].name+'<br/><span class="box_course_semester">Winter 2017</span></div></a>');
+                $('#courses_container').html($('#courses_container').html()+'<a href="index.php?page=courseDashboardTeacher" class="dashboard_box_link"><div class="dashboard_course_box">'+objects[i].name+'<br/><span class="box_course_semester">Winter 2017</span></div></a>');
             }
   
             /*
