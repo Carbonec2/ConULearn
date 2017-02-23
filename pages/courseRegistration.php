@@ -12,6 +12,8 @@ include_once('includes/dashboardSideNavBar.php');
             </select>
             <br/>
             <input type="button" value="Submit" id="btnSubmit" class="formsButton" >
+            <div id="messageBox">
+            </div>
         </div>
     </div>
 </body>

@@ -52,26 +52,25 @@ function addCourse(identifiers, successCallback, errorCallback) {
             //error 500
         },
         success: function (object) {
-            window.location = "index.php?page=dashboard_student";
+            //window.location = "index.php?page=dashboard_student";
             
-            /*
+            
             var objects = jQuery.parseJSON(object);
             
             console.log(objects);
-            */
-            /*
+            
             if (typeof objects.error.ok === "undefined" || objects.error.ok !== true) {
                 errorCallback();
             } else {
                 successCallback(objects);
             }
-            */
+            
         }
     });
 }
 
 function getCoursesOk(o) {
-
+    
 }
 
 function getCoursesFail(callbackObject) {
@@ -84,7 +83,7 @@ function getCoursesFail(callbackObject) {
 
 function addCourseOk() {
 
-    alert(" Successfully added course!");
+    window.location = "index.php?page=dashboard_student";
 
 }
 
@@ -93,5 +92,5 @@ function addCourseFail(callbackObject) {
     console.log(callbackObject);
 
     //Make more complete message here
-    alert("Error while attempting to add the course.");
+    $("#messageBox").html("You are already registered to this course.");
 }
