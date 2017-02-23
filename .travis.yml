@@ -13,3 +13,6 @@ before_script:
   - mysql -u root soen < soen.sql
   
 script: phpunit --configuration phpunit.xml --coverage-text
+
+after_script:
+  - mysql -u root -e "USE soen; show tables; SHOW COLUMNS FROM user; SELECT * FROM rights;"
