@@ -1,7 +1,18 @@
 # Required to run your project under the correct environment.
 language: php
+
 php:
 - '5.4'
 
-before_script: composer require phpunit/phpunit
+services:
+  - mysql
+
+before_script:
+  - composer require phpunit/phpunit
+  - mysql -u root -e 'CREATE DATABASE soen;'
+  - mysql -u root soen < soen.sql
+  
 script: phpunit --configuration phpunit.xml --coverage-text
+
+after_script:
+  - mysql -u root -e "USE soen; show tables; SHOW COLUMNS FROM user; SELECT * FROM rights;"
