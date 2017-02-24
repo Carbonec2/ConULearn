@@ -11,9 +11,11 @@ include_once('includes/dashboardSideNavBar.php');
                 <!-- <option value="volvo">Volvo</option> -->
             </select>
             <br/>
+            <h3><span id="courseName"></span></h3>
+            <div id="courseDescription"></div>
+            <br/>
             <input type="button" value="Submit" id="btnSubmit" class="formsButton" >
-            <div id="messageBox">
-            </div>
+            <div id="messageBox"></div>
         </div>
     </div>
 </body>
