@@ -1,6 +1,10 @@
-# SOEN341Project (Group 5)
+# SOEN 341 Project
 
-**Team Members**
+## ConULearn
+
+[![Build Status](https://travis-ci.org/z-alex/ConULearn.svg?branch=master)](https://travis-ci.org/z-alex/ConULearn)
+
+### Members (Group 5)
 
 - Sophia
 - Wei
