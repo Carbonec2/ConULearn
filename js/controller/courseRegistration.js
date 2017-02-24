@@ -7,12 +7,22 @@ function bind() {
     getCourses(filters, getCoursesOk, getCoursesFail);
 
     $("#btnSubmit").click(function () {
-        var identifiers = {Course_id: $("#course_selection").val()};
-        addCourse(identifiers, addCourseOk, addCourseFail);
+        if ($("#course_selection").val()) {
+            var identifiers = {Course_id: $("#course_selection").val()};
+            addCourse(identifiers, addCourseOk, addCourseFail);
+        } else {
+            $("#messageBox").html("No course is selected.");
+        }
     });
 
     $("#course_selection").change(function () {
-        getCourseDescription();
+            $("#messageBox").html("");
+        if ($("#course_selection").val()) {
+            getCourseDescription();
+        } else {
+            $('#courseName').html("");
+            $('#courseDescription').html("");
+        }
     });
 }
 

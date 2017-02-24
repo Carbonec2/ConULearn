@@ -9,6 +9,7 @@ include_once('includes/dashboardSideNavBar.php');
             Select a course to register:
             <select id="course_selection">
                 <!-- <option value="volvo">Volvo</option> -->
+                <option value=""> - Select - </option>
             </select>
             <br/>
             <h3><span id="courseName"></span></h3>
