@@ -2,7 +2,7 @@
 
 ## ConULearn
 
-[![Build Status](https://travis-ci.org/z-alex/ConULearn.svg?branch=master)](https://travis-ci.org/z-alex/ConULearn)
+[![Build Status](https://travis-ci.com/z-alex/ConULearn.svg?token=epYMsfdC5GNowz3V2jMd&branch=master)](https://travis-ci.com/z-alex/ConULearn)
 
 ### Members (Group 5)
 
