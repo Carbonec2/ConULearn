@@ -3,7 +3,7 @@ include_once('includes/dashboardSideNavBar.php');
 ?>
 <body class="dashboard">
     <div class="dashboardcontainer  text-center">
-        <div class="containerCourseRegistration">
+        <div class="container-fluid dashboardDiv  text-center" id="CourseRegistration">
             <!-- Insert what you want inside dashboard here-->
             <h1>Course Registration</h1>
             </br>
