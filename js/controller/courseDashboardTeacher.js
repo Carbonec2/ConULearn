@@ -16,7 +16,7 @@ function fillAnnouncements(content) {
     $.ajax({
         type: "POST",
         url: "database-model.php",
-        data: {DAO: 'announcements', method: 'getallfromuserid', OV: content},
+        data: {DAO: 'announcements', method: 'getallfromuserid', OV: JSON.stringify(content)},
         async: true,
         error: function () {
             //error 500
@@ -43,21 +43,7 @@ function fillAnnouncements(content) {
                 }
             });
 
-            /*
-             for(var i=0;i<objects.length;i++){
-             $('#courses_container').html($('#courses_container').html()+'<a href="index.php?page=courseDashboardTeacher" class="dashboard_box_link"><div class="dashboard_course_box">'+objects[i].name+'<br/><span class="box_course_semester">Winter 2017</span></div></a>');
-             }*/
-
-            /*
-             if (typeof objects.error.ok === "undefined" || objects.error.ok !== true) {
-             errorCallback();
-             } else {
-             successCallback(objects);
-             }
-             */
         }
     });
-
-
 
 }
