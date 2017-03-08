@@ -137,6 +137,9 @@ function relegateAnnouncements() {
         case 'get':
             echo json_encode(AnnouncementsDAO::get(getId()));
             break;
+        case 'getallfromuserid':
+            echo json_encode(AnnouncementsDAO::getAllFromUserId(getOV()));
+            break;
     }
 }
 

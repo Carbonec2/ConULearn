@@ -1,7 +1,6 @@
 <?php
 include_once('includes/dashboardSideNavBar.php');
 ?>
-
 <body class="dashboard">
     <div class="dashboardcontainer">
         <div class="dashboardcourse" id="coursename">
@@ -13,8 +12,9 @@ include_once('includes/dashboardSideNavBar.php');
             <div class="dashboard_title_container">
                 <h1 class="dashboardcoursetitle">Announcements</h1>
             </div>
-            <div class="dashboard_announcements_container">
-                <!-- Example using multiple announcements
+            <div class="dashboard_announcements_container" id="announcementsContainer">
+                <!--
+                Example using multiple announcements
                 <h2 class="dashboardcoursesub">There will be a quiz March 10</h2>
                 <h2 class="dashboardcoursesub">There will be a quiz March 12</h2>
                 <h2 class="dashboardcoursesub" >Quiz 1 grades are up</h2>

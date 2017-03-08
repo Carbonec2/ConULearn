@@ -9,7 +9,7 @@ $(document).ready(function () {
 function bind() {
 
     $("#send").click(function () {
-        var content = {description: $("#description").html(), Course_id: $_GET('Course_id')};
+        var content = {description: $("#announcement").val(), Course_id: $_GET('Course_id')};
 
         sendAnnouncement(content, function () {
             consoleLogger.goodNotice("The announcement was correctly recorded.");

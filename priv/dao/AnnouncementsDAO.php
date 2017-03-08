@@ -5,12 +5,21 @@ class AnnouncementsDAO implements DAO {
     //Added this function to get all the announcements of a teacher
     public static function getAllFromUserId($ov) {
         $conn = pdo_connect();
+        
+        if(empty($ov)){
+            $ov = new stdClass();
+            
+            $ov->User_id = $_SESSION['userId'];
+        }
+        if(empty($ov->User_id)){
+            $ov->User_id = $_SESSION['userId'];
+        }
 
         $sql = $conn->prepare('SELECT 
             id, 
             Course_id,
-		 User_id,
-		 description,  
+		User_id,
+		description
             FROM Announcements 
             WHERE User_id = :User_id');
 
@@ -44,7 +53,12 @@ class AnnouncementsDAO implements DAO {
     public static function getAll($filters) {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT id, Course_id, User_id,      description FROM Announcements ORDER BY id');
+        $sql = $conn->prepare('SELECT id, 
+            Course_id, 
+            User_id,      
+            description 
+            FROM Announcements 
+            ORDER BY id');
 
         $sql->execute();
 

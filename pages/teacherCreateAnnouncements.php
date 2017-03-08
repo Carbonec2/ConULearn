@@ -7,7 +7,7 @@ include_once('includes/dashboardSideNavBar.php');
         <div class="dashboardDiv container-fluid text-center">
             <h2>Announcement Form</h2>
             <form>
-                <textarea class="announcement" type="text" name="teacher_Announcement" id="announcement"></textarea>
+                <textarea class="announcement" id="announcement"></textarea>
                 <br/>
                 <input type="button" value="Submit" id="send" style="width:100px; 
                        height:50px; display:inline-block; margin:10px;"/>
