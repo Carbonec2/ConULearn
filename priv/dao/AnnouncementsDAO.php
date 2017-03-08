@@ -31,6 +31,26 @@ class AnnouncementsDAO implements DAO {
 
         return $result;
     }
+    
+    public static function getAllFromCourseId($ov) {
+        $conn = pdo_connect();
+
+        $sql = $conn->prepare('SELECT 
+            id, 
+            Course_id,
+		User_id,
+		description
+            FROM Announcements 
+            WHERE Course_id = :Course_id');
+
+        $sql->bindValue(':Course_id', $ov->Course_id);
+
+        $sql->execute();
+        
+        $result = $sql->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    }
 
     public static function get($id) {
         $conn = pdo_connect();
