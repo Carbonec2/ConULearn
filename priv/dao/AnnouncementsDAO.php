@@ -61,7 +61,8 @@ class AnnouncementsDAO implements DAO {
         
         $sql->bindValue(':id',$object->id);
         $sql->bindValue(':Course_id',$object->Course_id);
-        $sql->bindValue(':User_id', $_SESSION['userId']);			   $sql->bindValue(':description', $object->description);
+        $sql->bindValue(':User_id', $_SESSION['userId']);			   
+        $sql->bindValue(':description', $object->description);
         
         $sql->execute();
         
