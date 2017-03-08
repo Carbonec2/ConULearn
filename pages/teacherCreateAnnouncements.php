@@ -9,10 +9,8 @@ include_once('includes/dashboardSideNavBar.php');
             <form>
                 <textarea class="announcement" id="announcement"></textarea>
                 <br/>
-                <input type="button" value="Submit" id="send" style="width:100px; 
-                       height:50px; display:inline-block; margin:10px;"/>
-                <br/>
-                <button>Clear</button>
+                <input type="button" value="Submit" id="send" class="formsButton" />
+                <input type="reset" value="Clear" class="formsButton" />
             </form>
         </div>
     </div>
