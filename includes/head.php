@@ -13,3 +13,6 @@
 <!-- Font -->
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <!-- END FOR BOOTSTRAP-->
+
+<script type="text/javascript" src="js/lib/get.js" ></script>
+<script type="text/javascript" src="js/lib/consoleLogger.js" ></script>

@@ -21,6 +21,9 @@ switch (strtolower($_POST['DAO'])) {
     case 'courseuser':
         relegateCourseUser();
         break;
+    case 'announcements':
+        relegateAnnouncements();
+        break;
 }
 
 function relegateUser() {
@@ -133,6 +136,9 @@ function relegateAnnouncements() {
             break;
         case 'get':
             echo json_encode(AnnouncementsDAO::get(getId()));
+            break;
+        case 'getallfromuserid':
+            echo json_encode(AnnouncementsDAO::getAllFromUserId(getOV()));
             break;
     }
 }
