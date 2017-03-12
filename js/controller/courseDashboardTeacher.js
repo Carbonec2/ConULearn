@@ -2,13 +2,18 @@ $(document).ready(function () {
 
     $("#createAnnouncementLink").attr('href', 'index.php?page=teacherCreateAnnouncements&Course_id=' + $_GET('Course_id'));
 
-    fillAnnouncements({});
+    var identifiers = {Course_id: $_GET('Course_id')};
+    fillAnnouncements(identifiers);
 
     bind();
 });
 
 function bind() {
-
+    $('#editButton').click( function() {
+        
+        
+    
+    } );
 }
 
 function fillAnnouncements(content) {
@@ -16,7 +21,7 @@ function fillAnnouncements(content) {
     $.ajax({
         type: "POST",
         url: "database-model.php",
-        data: {DAO: 'announcements', method: 'getallfromuserid', OV: JSON.stringify(content)},
+        data: {DAO: 'announcements', method: 'getallfromcourseid', OV: JSON.stringify(content)},
         async: true,
         error: function () {
             //error 500
@@ -36,7 +41,7 @@ function fillAnnouncements(content) {
                 $announcement.css('padding', '10px');
                 $announcement.css('margin', '5px');
 
-                $announcement.html(entry.description);
+                $announcement.html('<a id="editButton" href="#">Edit</a> ' + entry.description);
 
                 if (entry.description != null && entry.description.length > 0) {
                     $("#announcementsContainer").append($announcement);
