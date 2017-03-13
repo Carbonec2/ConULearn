@@ -143,6 +143,9 @@ function relegateAnnouncements() {
         case 'getallfromcourseid':
             echo json_encode(AnnouncementsDAO::getAllFromCourseId(getOV()));
             break;
+        case 'remove':
+            echo json_encode(AnnouncementsDAO::remove(getOV()));
+            break;
     }
 }
 

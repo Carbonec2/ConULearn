@@ -31,11 +31,15 @@ function sendAnnouncement(content, successCallback, errorCallback) {
             //error 500
         },
         success: function (object) {
-            var objects = jQuery.parseJSON(object);
+            //var objects = jQuery.parseJSON(object);
+            
+            window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename='+$_GET('coursename')+'&Course_id='+$_GET('Course_id');
 
+/*
             if (typeof (successCallback) !== "undefined") {
                 successCallback(objects);
             }
+            */
         }
     });
 }

@@ -123,7 +123,7 @@ class AnnouncementsDAO implements DAO {
         $sql = $conn->prepare('UPDATE Announcements
             SET Course_id = :Course_id,
         	  User_id = :User_id,
-		  description = :description,
+		  description = :description
            
             WHERE id = :id');
         
@@ -131,6 +131,18 @@ class AnnouncementsDAO implements DAO {
         $sql->bindValue(':Course_id',$object->Course_id);
         $sql->bindValue(':User_id', $object->User_id);
         $sql->bindValue(':description', $object->description);
+
+        $sql->execute();
+        
+        return true;
+    }
+    
+    public static function remove($object) {
+        $conn = pdo_connect();
+        
+        $sql = $conn->prepare('DELETE FROM Announcements WHERE id = :id');
+        
+        $sql->bindValue(':id',$object->id);
 
         $sql->execute();
         
