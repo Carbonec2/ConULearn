@@ -6,6 +6,8 @@ include_once('includes/dashboardSideNavBar.php');
         <div class="dashboardcourse" id="coursename">
             <?php
             echo htmlspecialchars($_GET["coursename"]);
+
+            echo '<input type="hidden" name="userId" id="userId" value="' . $_SESSION['userId'] . '">';
             ?>
         </div>
         <div class="dashboardcourseDiv"> 
