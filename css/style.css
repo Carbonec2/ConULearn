@@ -352,7 +352,8 @@ h3.lighter {
 	font-size: 30px;
 	font-weight: bold;
 	padding-left:10px;
-    z-index: 90;
+
+	z-index: 90;
     overflow: hidden;
 }
 
@@ -489,3 +490,10 @@ input.standardField{
     font-size: 20px;
     font-family: "Times New Roman", Times, serif;
   }
+
+textarea.questiontext
+{
+width:700px;
+height:100px;
+resize:none
+}
