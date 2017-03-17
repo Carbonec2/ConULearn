@@ -23,10 +23,23 @@ function CreateQuiz(container, content) {
     var thisObject = this; //Keeping reference
 
     this.container = container;
+
+    this.$dueDate = $('<input type="date" placeholder="Due date" />');
+
+    this.$dueDate.on('change', function () {
+        thisObject.dueDate = thisObject.$dueDate.val();
+    });
+
+    this.container.append('Due date: ');
+    this.container.append(this.$dueDate);
+
     this.content = content;
     if (typeof (content) !== "undefined") {
         if (typeof (content.Quiz_id) !== "undefined") {
             this.Quiz_id = content.Quiz_id;
+        }
+        if (typeof (content.dueDate) !== "undefined") {
+            this.dueDate = content.dueDate;
         }
     }
 
@@ -49,6 +62,8 @@ function CreateQuiz(container, content) {
             thisObject.container.append(question.getJqueryDom());
         }
     }
+
+    return this;
 }
 
 CreateQuiz.prototype.getContent = function () {
@@ -94,7 +109,7 @@ function Question(content) {
     } else {
         this.content = content;
     }
-    
+
     this.setJqueryDom();
     this.fillContent();
 
