@@ -1,13 +1,13 @@
 <div id="mainPanel" class="container-fluid text-center">
     <div id="messageBox"></div><br/>
-    <input type="text" class="standardField" id="txtUser" placeholder="Username" style="border-radius:4px;padding:5px; display:inline-block;"/>
+    <input type="text" class="standardField" id="txtUser" placeholder="Username" />
     <br/>
-    <input type="password" class="standardField" id="txtPassword" placeholder="Password" style="border-radius:4px;padding:5px; display:inline-block;"/>
+    <input type="password" class="standardField" id="txtPassword" placeholder="Password" />
     <br/>
-       <input type="password" class="standardField" id="txtConfirmPassword" placeholder="Confirm Your Password" style="border-radius:4px;padding:5px; display:inline-block;"/>
+       <input type="password" class="standardField" id="txtConfirmPassword" placeholder="Confirm Your Password" />
     <br/>
 	<label><input type="radio" name="Rights_id" value="1"> Teacher</input></label>
 	<label><input type="radio" name="Rights_id" value="2" checked="checked"> Student</input></label>
 	<br/>
-    <input type="button" value="Sign up" id="btnSignup" class="formsButton" style="width:100px; height:50px; display:inline-block; margin:10px;"/>
+    <input type="button" value="Sign up" id="btnSignup" class="formsButton" />
 </div>
