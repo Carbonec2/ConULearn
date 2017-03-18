@@ -387,11 +387,11 @@ h3.lighter {
     color:darkslategrey;
 }
 
-.form-coursename{
+.formCourseName{
     width: 150px;
 }
 
-.form-description{
+.formDescription{
     width: 450px;
     height: 250px;
 }
