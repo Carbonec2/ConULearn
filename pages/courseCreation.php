@@ -11,7 +11,7 @@ include_once('includes/dashboardSideNavBar.php');
             <br/>
             <h4 class="subtitle">Please fill out this form to complete the creation of a course</h4>
             Course Number:
-            <input type="text" class="form-coursename" id="courseName"  placeholder="Ex: JUR2541">
+            <input type="text" class="formCourseName" id="courseName"  placeholder="Ex: JUR2541">
             <br/><br/>
             <h4 class="subtitle">Please give a brief description of the course including: <br/>
                 number of credits, prerequisites needed, content of the course and any <br/>
@@ -19,7 +19,7 @@ include_once('includes/dashboardSideNavBar.php');
             </h4>
             Course Description:
             <br/>
-            <textarea class="form-description" id="courseDescription" ></textarea>
+            <textarea class="formDescription" id="courseDescription" ></textarea>
             <br/>
             <input type="button" value="Submit" id="btnSubmit" class="formsButton" >
 
