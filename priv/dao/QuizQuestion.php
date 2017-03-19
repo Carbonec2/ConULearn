@@ -66,7 +66,7 @@ class QuizQuestionDAO implements DAO {
     public static function insert($object) {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('INSERT INTO QuizQuestion (id, 	question, prop1, prop2, prop3, prop4, prop5, ans, Quiz_id)       	VALUES 	(:id, :question, :prop1, :prop2, :prop3, :prop4, :prop5, :	ans, Quiz_id)');
+        $sql = $conn->prepare('INSERT INTO QuizQuestion (id, 	question, prop1, prop2, prop3, prop4, prop5, ans, Quiz_id)       	VALUES 	(:id, :question, :prop1, :prop2, :prop3, :prop4, :prop5, :	ans, :Quiz_id)');
         
         $sql->bindValue(':id',$object->id);
         $sql->bindValue(':question',$object->question);
