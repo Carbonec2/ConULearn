@@ -489,7 +489,21 @@ input.standardField {
 
 }
 
-#courseName{
+#courseName {
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
+}
+
+/** Styles for Quiz Questions **/
+
+#quizQuestionsFont {
+
+}
+
+#quizAnswersMultipleChoiceFont {
+
+}
+
+#courseInfoOnTopOfPageFont {
+
 }
