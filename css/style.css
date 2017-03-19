@@ -502,13 +502,13 @@ input.standardField {
   color: #0099ff;
 }
 
-#quizAnswersMultipleChoiceFont {
-  font-size: 12px;#ff6600;
+.quizMultipleChoices {
+  font-size: 12px;
   font-weight: normal;
   color: #ff6600;
 }
 
-#courseInfoOnTopOfPageFont {
+.quizCourseInfo {
   /* Including course name, professor name, the name of the student,
   could be on top right corner of the page */
   font-size: 15px;
