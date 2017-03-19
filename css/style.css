@@ -509,6 +509,8 @@ input.standardField {
 }
 
 #courseInfoOnTopOfPageFont {
+  /* Including course name, professor name, the name of the student,
+  could be on top right corner of the page */
   font-size: 15px;
   font-weight: bold;
   color: black;
