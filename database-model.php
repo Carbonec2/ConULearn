@@ -119,9 +119,6 @@ function relegateCourseUser() {
 function relegateAnnouncements() {
 
     switch (strtolower($_POST['method'])) {
-        case 'getall2':
-            echo json_encode(AnnouncementsDAO::getAllFromUserId(getOV()));
-            break;
         case 'insert':
             echo json_encode(AnnouncementsDAO::insert(getOV()));
             break;
@@ -145,6 +142,54 @@ function relegateAnnouncements() {
             break;
         case 'remove':
             echo json_encode(AnnouncementsDAO::remove(getOV()));
+            break;
+    }
+}
+
+function relegateQuiz() {
+
+    switch (strtolower($_POST['method'])) {
+        case 'getallfromCourseid':
+            echo json_encode(QuizDAO::getAllFromCourseId(getOV()));
+            break;
+        case 'insert':
+            echo json_encode(QuizDAO::insert(getOV()));
+            break;
+        case 'update':
+            echo json_encode(QuizDAO::update(getOV()));
+            break;
+        case 'save':
+            echo json_encode(QuizDAO::save(getOV()));
+            break;
+        case 'getall':
+            echo json_encode(QuizDAO::getAll(getFilters()));
+            break;
+        case 'get':
+            echo json_encode(QuizDAO::get(getId()));
+            break;
+    }
+}
+
+function relegateQuizQuestion() {
+
+    switch (strtolower($_POST['method'])) {
+        case 'getallfromquizid':
+            echo json_encode(QuizQuestionDAO::getAllFromQuizId(getOV()));
+            break;
+        case 'insert':
+            echo json_encode(QuizQuestionDAO::insert(getOV()));
+            break;
+        case 'update':
+            echo json_encode(QuizQuestionDAO::update(getOV()));
+            break;
+        case 'save':
+            echo json_encode(QuizQuestionDAO::save(getOV()));
+            break;
+        case 'getall':
+            echo json_encode(QuizQuestionDAO::getAll(getFilters()));
+            break;
+        case 'get':
+            echo json_encode(QuizQuestionDAO::get(getId()));
             break;
     }
 }
