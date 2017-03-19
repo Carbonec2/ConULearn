@@ -55,7 +55,7 @@ h3.lighter {
     text-decoration: none;
 }
 
-#nav_bar li a:hover{
+#nav_bar li a:hover {
     background-color: #C83200;
 }
 
@@ -110,7 +110,7 @@ h3.lighter {
     font-weight: bold;
 }
 
-#Aboutus h2{
+#Aboutus h2 {
     color:#81D0E1;
 }
 
@@ -142,7 +142,7 @@ h3.lighter {
     top: 250px;
 }
 
-#logout_button{
+#logout_button {
     padding: 10px 21px;
     padding-left: 75px;
     top: 200px;
@@ -199,7 +199,7 @@ h3.lighter {
     color:#0073e6;
 }
 
-.dashboard_features_button:hover{
+.dashboard_features_button:hover {
     text-decoration:none;
     background-color: #C83200;
     color:white;
@@ -261,12 +261,10 @@ h3.lighter {
     background-position:center;
     background-color: #70CCD9;
     background-attachment: fixed;
-
-
 }
 
 
-.dashboardcontainer{
+.dashboardcontainer {
     position:absolute;
     top:100px;
     left:300px;
@@ -276,14 +274,14 @@ h3.lighter {
     color:white;
 }
 
-.leftSmallDiv{
+.leftSmallDiv {
     background-color: white;
     color:#004A7F;
     height:300px;
     width:65%;
 }
 
-.rightSmallDiv{
+.rightSmallDiv {
     position:absolute;
     top:0px;
     left:68.5%;
@@ -294,12 +292,12 @@ h3.lighter {
 }
 
 
-.dashboardcontainer2{
+.dashboardcontainer2 {
     position:relative;
     width:75%;
 }
 
-.dashboardcourseDiv{
+.dashboardcourseDiv {
     background-color: white;
     height:300px;
     color:#004A7F;
@@ -324,13 +322,13 @@ h3.lighter {
 	height: 4em;
 }
 
- .dashboardcoursetitle  {    
+ .dashboardcoursetitle {
 	font-size: 30px;
 	text-align:center;
 	font-weight:bold;
  }
 
- .dashboardcoursesub  {
+ .dashboardcoursesub {
 	font-size: 20px;
 	text-align:left;
 	padding-left:10px;
@@ -348,7 +346,7 @@ h3.lighter {
     display: block;
 	background-color: white;
 	height: 2em;
-	
+
 	font-size: 30px;
 	font-weight: bold;
 	padding-left:10px;
@@ -357,7 +355,7 @@ h3.lighter {
     overflow: hidden;
 }
 
-.dashboard_add_new_button {   
+.dashboard_add_new_button {
 	font-size: 30px;
 	font-weight: bold;
 }
@@ -370,7 +368,7 @@ h3.lighter {
 }
 
 
-.dashboardDiv{
+.dashboardDiv {
     background-color:white;
     color:#004A7F;
     padding:100px;
@@ -383,15 +381,15 @@ h3.lighter {
     color:#004A7F;
 }
 
-.dashboardDiv .subtitle{
+.dashboardDiv .subtitle {
     color:darkslategrey;
 }
 
-.formCourseName{
+.formCourseName {
     width: 150px;
 }
 
-.formDescription{
+.formDescription {
     width: 450px;
     height: 250px;
 }
@@ -451,7 +449,7 @@ h3.lighter {
 
 /*this is the CSS for connection page and registration page */
 
-input.standardField{
+input.standardField {
     width: 25%;
     background-color: #ffffff;
     padding: 8px 20px;
@@ -462,7 +460,7 @@ input.standardField{
     display: inline-block;
 }
 
-.formsButton{
+.formsButton {
     height: 50px;
     width: 100px;
     background-color: #66d9ff;
@@ -473,22 +471,20 @@ input.standardField{
     border-radius: 4px;
     cursor: pointer;
     display: inline-block;
-	 
-
 }
 
-#mainPanel{
+#mainPanel {
     background-color: #d9d9d9;
 }
 
 /* Teacher Announcement Form */
-.announcement{
+.announcement {
   height: 236px;
   width: 630px;
 }
 
 /* Course Registration div*/
-#CourseRegistration{
+#CourseRegistration {
   margin-top: 4em;
   background: rgba(255, 255, 255, 0.75);
   color: #5B5B5B;
@@ -499,8 +495,7 @@ input.standardField{
 
 }
 
-  #courseName{
+  #courseName{ 
     font-size: 20px;
     font-family: "Times New Roman", Times, serif;
   }
-
