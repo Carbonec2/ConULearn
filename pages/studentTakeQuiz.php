@@ -12,7 +12,7 @@ include_once('includes/dashboardSideNavBar.php');
             Student: Potato Head (12345678) <br/>
           </p>
 
-          <span class=quizQuestionsFont>1. What colour am I?</span>
+          <span class="quizQuestionsFont">1. What colour am I?</span>
           <p class="quizMultipleChoices">
             <input type="radio">Green</input> <br/>
             <input type="radio">Orange</input> <br/>
@@ -20,7 +20,7 @@ include_once('includes/dashboardSideNavBar.php');
             <input type="radio">Red</input> <br/>
           </p>
 
-          <span class=quizQuestionsFont>2. Whice course is this?</span>
+          <span class="quizQuestionsFont">2. Which course is this?</span>
           <p class="quizMultipleChoices">
             <input type="radio">ENCS 282</input> <br/>
             <input type="radio">SOEN 341</input> <br/>
