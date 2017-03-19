@@ -497,13 +497,19 @@ input.standardField {
 /** Styles for Quiz Questions **/
 
 #quizQuestionsFont {
-
+  font-size: 15px;
+  font-weight: bold;
+  color: #0099ff;
 }
 
 #quizAnswersMultipleChoiceFont {
-
+  font-size: 12px;#ff6600;
+  font-weight: normal;
+  color: #ff6600;
 }
 
 #courseInfoOnTopOfPageFont {
-
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
 }
