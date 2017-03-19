@@ -59,6 +59,7 @@ h3.lighter {
     background-color: #C83200;
 }
 
+/* Logout button on nav bar */
 #logoutbutton {
     background-color:red;
 }
@@ -263,7 +264,6 @@ h3.lighter {
     background-attachment: fixed;
 }
 
-
 .dashboardcontainer {
     position:absolute;
     top:100px;
@@ -290,7 +290,6 @@ h3.lighter {
    color:#004A7F;
     height:300px;
 }
-
 
 .dashboardcontainer2 {
     position:relative;
@@ -367,7 +366,6 @@ h3.lighter {
     text-decoration: none;
 }
 
-
 .dashboardDiv {
     background-color:white;
     color:#004A7F;
@@ -375,7 +373,6 @@ h3.lighter {
     width:100%;
     margin-bottom: 25px;
 }
-
 
 .dashboardDiv h1 {
     color:#004A7F;
@@ -446,7 +443,6 @@ h3.lighter {
     font-size: 80px;
 }
 
-
 /*this is the CSS for connection page and registration page */
 
 input.standardField {
@@ -495,7 +491,7 @@ input.standardField {
 
 }
 
-  #courseName{ 
-    font-size: 20px;
-    font-family: "Times New Roman", Times, serif;
-  }
+#courseName{
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+}
