@@ -16,6 +16,8 @@ include_once('includes/dashboardSideNavBar.php');
             <h3><span id="courseName"></span></h3>
             <div id="courseDescription"></div>
             <br/>
+            <div id="courseTeacher"></div>
+            <br/>
             <input type="button" value="Submit" id="btnSubmit" class="formsButton" >
             <div id="messageBox"></div>
         </div>

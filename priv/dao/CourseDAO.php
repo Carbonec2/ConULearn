@@ -26,13 +26,7 @@ class CourseDAO implements DAO {
     public static function get($id) {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
-            id, 
-            name,
-            description, 
-            User_id 
-            FROM Course 
-            WHERE id = :id');
+        $sql = $conn->prepare('SELECT * FROM Course c JOIN User u ON c.User_id = u.id WHERE c.id = :id');
 
         $sql->bindValue(':id', $id);
 
