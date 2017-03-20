@@ -43,6 +43,7 @@ function getCourseDescription() {
 
             $('#courseName').html(objects.name + " Course Description");
             $('#courseDescription').html(objects.description);
+            $('#courseTeacher').html('<h4>Teacher: '+objects.user+'</h4>');
         }
     });
 }
