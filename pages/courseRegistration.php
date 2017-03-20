@@ -2,8 +2,8 @@
 include_once('includes/dashboardSideNavBar.php');
 ?>
 <body class="dashboard">
-    <div class="dashboardcontainer  text-center">
-        <div id="CourseRegistration">
+    <div class="dashboardContainer  text-center">
+        <div id="courseRegistration">
             <!-- Insert what you want inside dashboard here-->
             <h1>Course Registration</h1>
             <br/>
