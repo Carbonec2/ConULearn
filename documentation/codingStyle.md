@@ -5,7 +5,7 @@
 - Starts with a lower case
 - Separated by a upper case or an underscore if it contains more than two words
 - Should not contain a '-'
-- Must not be longer than 3 words.
+- Must not be longer than 4 words.
 - In the style.css file, always add a space after the id/class name and the opening curly brace
 - When an identifier name is the most meaningful one but is already taken, add a digit after the variable name
 
