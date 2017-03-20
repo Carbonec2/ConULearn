@@ -14,7 +14,7 @@ $(document).ready(function () {
     var content = {questions: [question1]};
 
     Question.counter = 0;
-//content
+    //content
     $("#quizContainer").quizContainer();
 });
 
