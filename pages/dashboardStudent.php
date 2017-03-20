@@ -3,7 +3,7 @@ include_once('includes/dashboardSideNavBar.php');
 ?>
 <body class="dashboard">
 
-    <div class="dashboardcontainer  text-center">
+    <div class="dashboardContainer  text-center">
         <h1>Courses</h1>
 
         <div id="courses_container">

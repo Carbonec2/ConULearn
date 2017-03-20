@@ -46,10 +46,10 @@ function connect(identifiers, successCallback, errorCallback) {
 
 function connectOk(o) {
     if(o.Rights_id == 1){
-        window.location = "index.php?page=dashboard_teacher"; //redirects to teacher dashboard
+        window.location = "index.php?page=dashboardTeacher"; //redirects to teacher dashboard
     }else{
         if(o.Rights_id == 2){
-            window.location = "index.php?page=dashboard_student"; //redirects to student dashboard
+            window.location = "index.php?page=dashboardStudent"; //redirects to student dashboard
         }
     }
     

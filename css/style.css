@@ -60,11 +60,11 @@ h3.lighter {
 }
 
 /* Logout button on nav bar */
-#logoutbutton {
+#logoutButton {
     background-color:red;
 }
 
-#headerdiv {
+#headerDiv {
     background-color:#81D0E1;
     color:white;
     padding-top:75px;
@@ -96,7 +96,7 @@ h3.lighter {
 
 /* The "ABOUT US" section */
 
-#Aboutus {
+#aboutUs {
     background: #FF5722;
     color: white;
     position: relative;
@@ -105,12 +105,12 @@ h3.lighter {
     padding-bottom:50px;
 }
 
-#Aboutus h1 {
+#aboutUs h1 {
     font-size: 40px;
     font-weight: bold;
 }
 
-#Aboutus h2 {
+#aboutUs h2 {
     color:#81D0E1;
 }
 
@@ -262,7 +262,7 @@ h3.lighter {
     background-attachment: fixed;
 }
 
-.dashboardcontainer {
+.dashboardContainer {
     position:absolute;
     top:100px;
     left:300px;
@@ -289,12 +289,12 @@ h3.lighter {
     height:300px;
 }
 
-.dashboardcontainer2 {
+.dashboardContainer2 {
     position:relative;
     width:75%;
 }
 
-.dashboardcourseDiv {
+.dashboardCourseDiv {
     background-color: white;
     height:300px;
     color:#004A7F;
@@ -303,7 +303,7 @@ h3.lighter {
 }
 
 /* for the course dashboard: name of course, announcements, quizzes, discussion board */
-.dashboardcourse {
+.dashboardCourse {
 	color: white;
 	font-size: 30px;
 	padding: 10px;
@@ -319,13 +319,13 @@ h3.lighter {
 	height: 4em;
 }
 
- .dashboardcoursetitle {
+ .dashboardCourseTitle {
 	font-size: 30px;
 	text-align:center;
 	font-weight:bold;
  }
 
- .dashboardcoursesub {
+ .dashboardCourseSub {
 	font-size: 20px;
 	text-align:left;
 	padding-left:10px;
@@ -339,7 +339,7 @@ h3.lighter {
     overflow: auto;
 }
 
-.dashboard_add_new_button_container {
+.dashboard_new_button_container {
     display: block;
 	background-color: white;
 	height: 2em;
@@ -352,15 +352,15 @@ h3.lighter {
     overflow: hidden;
 }
 
-.dashboard_add_new_button {
+.dashboard_new_button {
 	font-size: 30px;
 	font-weight: bold;
 }
 
-.dashboard_add_new_button_container a {
+.dashboard_new_button_container a {
     text-decoration: none;
 }
-.dashboard_add_new_button_container a:hover {
+.dashboard_new_button_container a:hover {
     text-decoration: none;
 }
 
@@ -478,7 +478,7 @@ input.standardField {
 }
 
 /* Course Registration div*/
-#CourseRegistration {
+#courseRegistration {
   margin-top: 4em;
   background: rgba(255, 255, 255, 0.75);
   color: #5B5B5B;
