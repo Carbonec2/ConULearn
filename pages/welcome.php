@@ -65,11 +65,11 @@
 					Once all the students submit their quizzes, it's time for grading!
 					The students will then receive feedback where they will be able to revise their work and learn from their mistakes.</h3>
 					<br/>
-				</div>
-
-				<div class="col-sm-1 text-center">
-				</div>
-
 			</div>
+
+			<div class="col-sm-1 text-center">
+			</div>
+
+		</div>
 </div>
 			<!--END OF ABOUT US-->
