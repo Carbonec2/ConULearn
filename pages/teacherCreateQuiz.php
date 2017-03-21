@@ -7,12 +7,14 @@ include_once('includes/dashboardSideNavBar.php');
   <div class="dashboardContainer">
 
         <div class="dashboardDiv container-fluid text-center">
-            <h1>Quiz Creation Form</h1> <br/>
-            <h2>Please fill out this form to create a quiz. Provide the following: name of the quiz, the date of the quiz, 10 multiple choice questions, 5 possible answers and make sure to indicate the correct answer.</h2>
+            <h1><strong>Quiz Creation Form</strong></h1> <br/>
+            <h3>Please fill out the form below to create a quiz. Provide the following: the title of the quiz, the due date, the 10 multiple choice questions, the 5 possible answers for each question, and mark the correct answer.</h2>
             <br/>
-            <div id="quizContainer" ></div>
-            <input type="button" value="Submit" id="saveQuiz" class="formsButton" />
-            <input type="reset" value="Clear" class="formsButton" />
+            <form>
+		      		<div id="quizContainer" ></div>
+		      		<input type="button" value="Submit" id="saveQuiz" class="formsButton" />
+			      	<input type="reset" value="Clear" class="formsButton" />
+            </form>
         </div>
 
     </div>
