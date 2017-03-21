@@ -206,6 +206,34 @@ function relegateQuizQuestion() {
     }
 }
 
+function relegateQuizAnswerStudent() {
+
+    switch (strtolower($_POST['method'])) {
+        case 'getallfromUserId':
+            echo json_encode(QuizAnswerStudentDAO::getAllFromUserId(getOV()));
+            break;
+        case 'getallfromQuizQuestionId':
+            echo json_encode(QuizAnswerStudentDAO::getAllFromQuizQuestionId(getOV()));
+            break;
+        case 'get':
+            echo json_encode(QuizAnswerStudentDAO::get(getId()));
+            break;
+        case 'getall':
+            echo json_encode(QuizAnswerStudentDAO::getAll(getFilters()));
+            break;
+        case 'insert':
+            echo json_encode(QuizAnswerStudentDAO::insert(getOV()));
+            break;
+        case 'save':
+            echo json_encode(QuizAnswerStudentDAO::save(getOV()));
+            break;
+        case 'update':
+            echo json_encode(QuizAnswerStudentDAO::update(getOV()));
+            break;
+        
+	}
+}
+
 function getOV() {
     return json_decode($_POST['OV']);
 }
