@@ -24,6 +24,12 @@ switch (strtolower($_POST['DAO'])) {
     case 'announcements':
         relegateAnnouncements();
         break;
+    case 'quiz':
+        relegateQuiz();
+        break;
+    case 'quizquestion':
+        relegateQuizQuestion();
+        break;
 }
 
 function relegateUser() {
@@ -149,8 +155,14 @@ function relegateAnnouncements() {
 function relegateQuiz() {
 
     switch (strtolower($_POST['method'])) {
-        case 'getallfromCourseid':
+        case 'getallfromid':
+            echo json_encode(QuizDAO::getAllFromId(getOV()));
+            break;
+        case 'getallfromcourseid':
             echo json_encode(QuizDAO::getAllFromCourseId(getOV()));
+            break;
+        case 'remove':
+            echo json_encode(QuizDAO::remove(getOV()));
             break;
         case 'insert':
             echo json_encode(QuizDAO::insert(getOV()));

@@ -54,7 +54,7 @@ class QuizQuestionDAO implements DAO {
     public static function getAll($filters) {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT id, question, prop1, 	prop2, prop3, prop4, prop5, ans, Quiz_id FROM QuizQuestion 	ORDER BY id');
+        $sql = $conn->prepare('SELECT id, question, prop1, prop2, prop3, prop4, prop5, ans, Quiz_id FROM QuizQuestion 	ORDER BY id');
 
         $sql->execute();
 
@@ -66,9 +66,9 @@ class QuizQuestionDAO implements DAO {
     public static function insert($object) {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('INSERT INTO QuizQuestion (id, 	question, prop1, prop2, prop3, prop4, prop5, ans, Quiz_id)       	VALUES 	(:id, :question, :prop1, :prop2, :prop3, :prop4, :prop5, :	ans, :Quiz_id)');
+        $sql = $conn->prepare('INSERT INTO QuizQuestion (Quiz_id, question, prop1, prop2, prop3, prop4, prop5, ans) VALUES (:Quiz_id, :question, :prop1, :prop2, :prop3, :prop4, :prop5, :ans)');
         
-        $sql->bindValue(':id',$object->id);
+        $sql->bindValue(':Quiz_id', $object->Quiz_id);
         $sql->bindValue(':question',$object->question);
         $sql->bindValue(':prop1', $object->prop1);
         $sql->bindValue(':prop2', $object->prop2);
@@ -76,7 +76,6 @@ class QuizQuestionDAO implements DAO {
         $sql->bindValue(':prop4', $object->prop4);
         $sql->bindValue(':prop5', $object->prop5);
         $sql->bindValue(':ans', $object->ans);
-        $sql->bindValue(':Quiz_id', $object->Quiz_id);
         
         $sql->execute();
         

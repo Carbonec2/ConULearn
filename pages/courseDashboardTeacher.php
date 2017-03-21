@@ -43,8 +43,7 @@ include_once('includes/dashboardSideNavBar.php');
                 <div class="dashboard_title_container">
                     <h1 class="dashboardCourseTitle">Quizzes</h1>
                 </div>
-
-                <div class="dashboard_quizzes_container">
+                <div class="dashboard_quizzes_container" id="quizContainer">
                     <!-- Example using multiple quizzes
                     <a href=""><h2 class="dashboardCourseSub">Quiz 1</h2></a>
                     <a href=""><h2 class="dashboardCourseSub">Quiz 2</h2></a>
@@ -56,7 +55,9 @@ include_once('includes/dashboardSideNavBar.php');
                 </div>
 
                 <div class="dashboard_new_button_container">
-                    <a href="index.php?page=teacherCreateQuiz"><h2 class="dashboard_new_button">+ new quiz</h2></a>
+                    <?php
+                    echo '<a href="index.php?page=teacherCreateQuiz&coursename=' . $_GET["coursename"] . '&Course_id=' . $_GET["Course_id"] . '"><h2 class="dashboard_new_button">+ new quiz</h2></a>';
+                    ?>
                 </div>
 
             </div>
