@@ -1,19 +1,24 @@
 <?php
 include_once('includes/dashboardSideNavBar.php');
 ?>
+
 <body class="dashboard">
     <div class="dashboardContainer">
         <div class="dashboardCourse" id="coursename">
+
             <?php
             echo htmlspecialchars($_GET["coursename"]);
 
             echo '<input type="hidden" name="userId" id="userId" value="' . $_SESSION['userId'] . '">';
             ?>
+
         </div>
-        <div class="dashboardCourseDiv"> 
+
+        <div class="dashboardCourseDiv">
             <div class="dashboard_title_container">
                 <h1 class="dashboardCourseTitle">Announcements</h1>
             </div>
+
             <div class="dashboard_announcements_container" id="announcementsContainer">
                 <!--
                 Example using multiple announcements
@@ -25,16 +30,20 @@ include_once('includes/dashboardSideNavBar.php');
                 <h2 class="dashboardCourseSub">There will be a quiz March 8</h2>
                 -->
             </div>
+
             <div class="dashboard_new_button_container">
                 <a href="index.php?page=teacherCreateAnnouncements" id="createAnnouncementLink"><h2 class="dashboard_new_button">+ new announcement</h2></a>
             </div>
+
         </div>
 
         <div class="dashboardContainer2">
             <div class="leftSmallDiv">
+
                 <div class="dashboard_title_container">
                     <h1 class="dashboardCourseTitle">Quizzes</h1>
                 </div>
+
                 <div class="dashboard_quizzes_container">
                     <!-- Example using multiple quizzes
                     <a href=""><h2 class="dashboardCourseSub">Quiz 1</h2></a>
@@ -45,15 +54,19 @@ include_once('includes/dashboardSideNavBar.php');
                     <a href=""><h2 class="dashboardCourseSub">Quiz 6</h2></a>
                     -->
                 </div>
+
                 <div class="dashboard_new_button_container">
                     <a href="index.php?page=teacherCreateQuiz"><h2 class="dashboard_new_button">+ new quiz</h2></a>
                 </div>
+
             </div>
 
             <div class="rightSmallDiv">
+
                 <div class="dashboard_title_container">
                     <h1 class="dashboardCourseTitle">Discussion Board</h1>
-                </div>          
+                </div>
+
                 <div class="dashboard_discussions_container">
                     <!-- Example using multiple topics
                     <a href=""><h2 class="dashboardCourseSub">Regarding question #2</h2></a>
@@ -64,6 +77,7 @@ include_once('includes/dashboardSideNavBar.php');
                     <a href=""><h2 class="dashboardCourseSub">test</h2></a>
                     -->
                 </div>
+
                 <div class="dashboard_new_button_container">
                     <a href=""><h2 class="dashboard_new_button">+ new topic</h2></a>
                 </div>
@@ -72,4 +86,4 @@ include_once('includes/dashboardSideNavBar.php');
         </div>
     </div>
 
-</body>    
+</body>

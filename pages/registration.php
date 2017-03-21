@@ -4,10 +4,10 @@
     <br/>
     <input type="password" class="standardField" id="txtPassword" placeholder="Password" />
     <br/>
-       <input type="password" class="standardField" id="txtConfirmPassword" placeholder="Confirm Your Password" />
+    <input type="password" class="standardField" id="txtConfirmPassword" placeholder="Confirm Your Password" />
     <br/>
-	<label><input type="radio" name="Rights_id" value="1"> Teacher</input></label>
-	<label><input type="radio" name="Rights_id" value="2" checked="checked"> Student</input></label>
-	<br/>
+	  <label><input type="radio" name="Rights_id" value="1"> Teacher</input></label>
+	  <label><input type="radio" name="Rights_id" value="2" checked="checked"> Student</input></label>
+	  <br/>
     <input type="button" value="Sign up" id="btnSignup" class="formsButton" />
 </div>
