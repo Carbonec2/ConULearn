@@ -30,7 +30,7 @@ function fillQuizInfo(identifiers) {
 
             console.log(objects);
 
-            $(quizInfo).html('<h1>'+objects.name + "</h1> <h3>Due date: " + objects.date)+'</h3>';
+            $('#quizInfo').html('<h1>'+objects.name + "</h1> <h3>Due date: " + objects.date)+'</h3>';
 
             //console.log(objects);
         }
@@ -55,12 +55,12 @@ function fillQuizQuestions(identifiers) {
 
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
-                $(questionsContainer).append('<h3 class="quizQuestionsFont">Question: '+entry.question+'</h3><br/>');
-                $(questionsContainer).append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop1+'"> '+entry.prop1+'<br/>');
-                $(questionsContainer).append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop2+'"> '+entry.prop2+'<br/>');
-                $(questionsContainer).append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop3+'"> '+entry.prop3+'<br/>');
-                $(questionsContainer).append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop4+'"> '+entry.prop4+'<br/>');
-                $(questionsContainer).append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop5+'"> '+entry.prop5+'<br/>');
+                $('#questionsContainer').append('<h3 class="quizQuestionsFont">Question: '+entry.question+'</h3><br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop1+'"> '+entry.prop1+'<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop2+'"> '+entry.prop2+'<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop3+'"> '+entry.prop3+'<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop4+'"> '+entry.prop4+'<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop5+'"> '+entry.prop5+'<br/>');
             });
 
             //console.log(objects);

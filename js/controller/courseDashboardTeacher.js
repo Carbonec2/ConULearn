@@ -35,7 +35,7 @@ function fillQuizzes(identifiers) {
                 $quiz.css('padding', '10px');
                 $quiz.css('margin', '5px');
 
-                $quiz.html('<a href="#">' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a> <button id="deleteText' + entry.id + '">Delete</button>');
+                $quiz.html('<a href="index.php?page=teacherDisplayQuiz&Quiz_id='+entry.id+'">' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a> <button id="deleteText' + entry.id + '">Delete</button>');
 
                 $("#quizContainer").append($quiz);
                 
