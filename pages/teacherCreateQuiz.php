@@ -17,8 +17,4 @@ include_once('includes/dashboardSideNavBar.php');
 
     </div>
 
-<!--</div>
-Not sure about this one
--->
-
 </body>
