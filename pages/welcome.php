@@ -43,7 +43,7 @@
 <!-- END OF WHAT WE OFFER DIV-->
 
 			<!--ABOUT US DIV-->
-<div id="Aboutus" class="container-fluid text-center">
+<div id="aboutUs" class="container-fluid text-center">
 	<div class="row">
 		<div class="col-sm-1 text-center">
 		</div>

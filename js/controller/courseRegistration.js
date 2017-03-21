@@ -88,7 +88,7 @@ function addCourse(identifiers, successCallback, errorCallback) {
             //error 500
         },
         success: function (object) {
-            //window.location = "index.php?page=dashboard_student";
+            //window.location = "index.php?page=dashboardStudent";
 
 
             var objects = jQuery.parseJSON(object);
@@ -119,7 +119,7 @@ function getCoursesFail(callbackObject) {
 
 function addCourseOk() {
 
-    window.location = "index.php?page=dashboard_student";
+    window.location = "index.php?page=dashboardStudent";
 
 }
 
