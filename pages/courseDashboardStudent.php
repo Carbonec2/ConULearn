@@ -34,7 +34,7 @@ include_once('includes/dashboardSideNavBar.php');
 				<div class="dashboard_title_container">
 					<h1 class="dashboardCourseTitle">Quizzes</h1>
 				</div>
-				<div class="dashboard_quizzes_container">
+				<div class="dashboard_quizzes_container" id="quizContainer">
 					<!-- Example using multiple quizzes
 					<a href=""><h2 class="dashboardCourseSub">Quiz 1</h2></a>
 					<a href=""><h2 class="dashboardCourseSub">Quiz 2</h2></a>

@@ -4,6 +4,8 @@ $(document).ready(function () {
 
     var identifiers = {Course_id: $_GET('Course_id')};
     fillAnnouncements(identifiers);
+    
+    fillQuizzes(identifiers);
 
     bind();
 });
@@ -11,6 +13,69 @@ $(document).ready(function () {
 function bind() {
 
 }
+
+function fillQuizzes(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quiz', method: 'getallfromcourseid', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            var objects = jQuery.parseJSON(object);
+            
+            objects.forEach(function (entry) {
+                var $quiz = $('<div id="div' + entry.id + '"></div>');
+
+                $quiz.css('background-color', '#dddddd');
+                $quiz.css('padding', '10px');
+                $quiz.css('margin', '5px');
+
+                $quiz.html('<a href="#">' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a> <button id="deleteText' + entry.id + '">Delete</button>');
+
+                $("#quizContainer").append($quiz);
+                
+                $("#quizContainer").on("click", '#deleteText' + entry.id, function (e) {
+                    e.preventDefault();
+
+                    var content = {id: entry.id};
+
+                    deleteQuiz(content);
+                });
+            });
+
+            //console.log(objects);
+        }
+    });
+}
+
+function deleteQuiz(content, successCallback, errorCallback) {
+
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quiz', method: 'remove', OV: JSON.stringify(content)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            var objects = jQuery.parseJSON(object);
+
+            location.reload();
+
+            if (typeof (successCallback) !== "undefined") {
+                successCallback(objects);
+            }
+        }
+    });
+}
+
+
 
 function fillAnnouncements(content) {
 

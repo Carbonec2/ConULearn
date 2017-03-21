@@ -2,6 +2,7 @@ $(document).ready(function () {
     bind();
     
     fillAnnouncements({Course_id: $_GET('courseid')});
+    fillQuizzes({Course_id: $_GET('courseid')});
     
 });
 
@@ -12,11 +13,40 @@ $(document).ready(function () {
 
 function bind() {
     
-    
-    var identifiers = {User_id: $("#userId").val()};
-    getCourses(identifiers, getCoursesOk, getCoursesFail);
 }
 
+function fillQuizzes(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quiz', method: 'getallfromcourseid', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            var objects = jQuery.parseJSON(object);
+            
+            console.log(objects);
+            
+            objects.forEach(function (entry) {
+                var $quiz = $('<div id="div' + entry.id + '"></div>');
+
+                $quiz.css('background-color', '#dddddd');
+                $quiz.css('padding', '10px');
+                $quiz.css('margin', '5px');
+
+                $quiz.html('<a href="index.php?page=studentTakeQuiz&Quiz_id='+entry.id+'">' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a>');
+
+                $("#quizContainer").append($quiz);
+            });
+
+            //console.log(objects);
+        }
+    });
+}
 
 function fillAnnouncements(content) {
 
@@ -53,46 +83,4 @@ function fillAnnouncements(content) {
         }
     });
 
-}
-
-function getCourses(identifiers, successCallback, errorCallback) {
-    
-    $.ajax({
-        type: "POST",
-        url: "database-model.php",
-        data: {DAO: 'course', method: 'getall2', OV: JSON.stringify(identifiers)},
-        async: true,
-        error: function () {
-            //error 500
-        },
-        success: function (object) {
-            var objects = jQuery.parseJSON(object);
-
-
-            console.log(objects);
-            for(var i=0;i<objects.length;i++){
-                $('#courses_container').html($('#courses_container').html()+'<a href="index.php?page=courseDashboardTeacher" class="dashboard_box_link"><div class="dashboard_course_box">'+objects[i].name+'<br/><span class="box_course_semester">Winter 2017</span></div></a>');
-            }
-  
-            /*
-            if (typeof objects.error.ok === "undefined" || objects.error.ok !== true) {
-                errorCallback();
-            } else {
-                successCallback(objects);
-            }
-            */
-        }
-    });
-}
-
-function getCoursesOk(o) {
-    
-}
-
-function getCoursesFail(callbackObject) {
-
-    console.log(callbackObject);
-
-    //Make more complete message here
-    //$("#messageBox").html("Error while finding courses.");
 }

@@ -15,22 +15,99 @@ $(document).ready(function () {
 
     Question.counter = 0;
 //content
-    $("#quizContainer").quizContainer();
+    var quiz = $("#quizContainer").quizContainer();
+
+    $("#saveQuiz").click(function () {
+        var identifiersQuiz = {Course_id: $_GET('Course_id'), date: quiz.$dueDate.val(), name: quiz.$quizName.val()};
+        addQuiz(identifiersQuiz, quiz);
+
+        //console.log(quiz.getContent().questions.length);
+
+        //var identifiersQuizQuestion = {Course_id: $_GET('Course_id')};
+        //addQuestion(identifiers);
+    });
 });
+
+function addQuestion(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizquestion', method: 'insert', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            //var objects = jQuery.parseJSON(object);
+
+            //console.log(objects);
+        }
+    });
+}
+
+function addQuiz(identifiers, quiz) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quiz', method: 'insert', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            var objects = jQuery.parseJSON(object);
+
+            //console.log(objects.id);
+            
+            for (i = 0; i < quiz.questions.length; i++) {
+                //console.log(quiz.questions[i].content.prop1);
+
+                var identifiersQuizQuestion = {
+                    Quiz_id: objects.id,
+                    question: quiz.questions[i].content.name,
+                    prop1: quiz.questions[i].content.prop1,
+                    prop2: quiz.questions[i].content.prop2,
+                    prop3: quiz.questions[i].content.prop3,
+                    prop4: quiz.questions[i].content.prop4,
+                    prop5: quiz.questions[i].content.prop5,
+                    ans: quiz.questions[i].content.ans
+                };
+                addQuestion(identifiersQuizQuestion);
+            
+            }
+            
+            window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename='+$_GET('coursename')+'&Course_id='+$_GET('Course_id');
+
+        }
+    });
+}
 
 function CreateQuiz(container, content) {
 
     var thisObject = this; //Keeping reference
 
     this.container = container;
+    
+    this.$quizName = $('<input type="text" placeholder="Example: Quiz 1" />');
+    
+    this.$quizName.on('change', function () {
+        thisObject.quizName = thisObject.$quizName.val();
+    });
 
     this.$dueDate = $('<input type="date" placeholder="Due date" />');
 
     this.$dueDate.on('change', function () {
         thisObject.dueDate = thisObject.$dueDate.val();
     });
+    
+    this.container.append('Quiz name: ');
+    this.container.append(this.$quizName);
 
-    this.container.append('Due date: ');
+    this.container.append('<br/><br/>Due date: ');
     this.container.append(this.$dueDate);
 
     this.content = content;
@@ -40,6 +117,9 @@ function CreateQuiz(container, content) {
         }
         if (typeof (content.dueDate) !== "undefined") {
             this.dueDate = content.dueDate;
+        }
+        if (typeof (content.dueDate) !== "undefined") {
+            this.quizName = content.quizName;
         }
     }
 
