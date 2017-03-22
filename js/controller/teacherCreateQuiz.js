@@ -98,7 +98,7 @@ function CreateQuiz(container, content) {
         thisObject.quizName = thisObject.$quizName.val();
     });
 
-    this.$dueDate = $('<input type="date" placeholder="dd/mm/yyyy" />');
+    this.$dueDate = $('<input type="date" placeholder="yyyy-mm-dd" />');
 
     this.$dueDate.on('change', function () {
         thisObject.dueDate = thisObject.$dueDate.val();
