@@ -49,17 +49,18 @@ function fillQuizQuestions(identifiers) {
             //window.location = "index.php?page=dashboardTeacher";
 
             var objects = jQuery.parseJSON(object);
+            var questionNumber = 1;
 
             console.log(objects);
 
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
-                $('#questionsContainer').append('<h3 class="quizQuestionsFont">Question: ' + entry.question + '</h3><br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '" disabled=disabled> ' + entry.prop1 + '<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 2 + '" disabled=disabled> ' + entry.prop2 + '<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 3 + '" disabled=disabled> ' + entry.prop3 + '<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 4 + '" disabled=disabled> ' + entry.prop4 + '<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 5 + '" disabled=disabled> ' + entry.prop5 + '<br/>');
+                $('#questionsContainer').append('<h3 class="quizQuestionsFont">Question #' + (questionNumber++) + ': ' + entry.question + '</h3>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '" disabled=disabled> <strong>A.</strong> ' + entry.prop1 + '<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 2 + '" disabled=disabled> <strong>B.</strong> ' + entry.prop2 + '<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 3 + '" disabled=disabled> <strong>C.</strong> ' + entry.prop3 + '<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 4 + '" disabled=disabled> <strong>D.</strong> ' + entry.prop4 + '<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 5 + '" disabled=disabled> <strong>E.</strong> ' + entry.prop5 + '<br/><br/>');
                 
                 checkStudentAnswers({QuizQuestion_id: entry.id});
             });
