@@ -39,6 +39,12 @@ class QuizDAO implements DAO {
     public static function remove($object) {
         $conn = pdo_connect();
         
+        $sql = $conn->prepare('DELETE FROM QuizAnswerStudent WHERE Quiz_id = :id');
+        
+        $sql->bindValue(':id',$object->id);
+
+        $sql->execute();
+        
         $sql = $conn->prepare('DELETE FROM QuizQuestion WHERE Quiz_id = :id');
         
         $sql->bindValue(':id',$object->id);
@@ -135,6 +141,20 @@ class QuizDAO implements DAO {
         $sql->execute();
         
         return true;
+    }
+    
+    public static function getMerge($o) {
+        $conn = pdo_connect();
+
+        $sql = $conn->prepare('SELECT * FROM Quiz q JOIN QuizAnswerStudent a ON q.id = a.Quiz_id WHERE q.id = :Quiz_id');
+
+        $sql->bindValue(':Quiz_id',$o->Quiz_id);
+
+        $sql->execute();
+
+        $result = $sql->fetchAll(PDO::FETCH_OBJ);
+        
+        return $result;
     }
 
 }

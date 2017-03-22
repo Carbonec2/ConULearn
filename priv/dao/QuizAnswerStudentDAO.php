@@ -28,10 +28,7 @@ class QuizAnswerStudentDAO implements DAO {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT 
-            id, 
-            QuizQuestion_id, 
-            User_id,
-            answer,
+            *
             FROM QuizAnswerStudent
             WHERE QuizQuestion_id = :QuizQuestion_id');
 
@@ -79,10 +76,9 @@ class QuizAnswerStudentDAO implements DAO {
     public static function insert($object) {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('INSERT INTO QuizAnswerStudent (id, QuizQuestion_id, User_id, answer) 
-            VALUES (:id, :QuizQuestion_id, :User_id, :answer)');
+        $sql = $conn->prepare('INSERT INTO QuizAnswerStudent (Quiz_id, QuizQuestion_id, User_id, answer) VALUES (:Quiz_id, :QuizQuestion_id, :User_id, :answer)');
         
-        $sql->bindValue(':id',$object->id);
+        $sql->bindValue(':Quiz_id',$object->Quiz_id);
         $sql->bindValue(':QuizQuestion_id',$object->QuizQuestion_id);
         $sql->bindValue(':User_id', $_SESSION['userId']);
         $sql->bindValue(':answer',$object->answer);

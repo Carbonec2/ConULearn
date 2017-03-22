@@ -30,7 +30,7 @@ function fillQuizInfo(identifiers) {
 
             console.log(objects);
 
-            $('#quizInfo').html('<h1>'+objects.name + "</h1> <h3>Due date: " + objects.date)+'</h3>';
+            $('#quizInfo').html('<h1>' + objects.name + "</h1> <h3>Due date: " + objects.date) + '</h3>';
 
             //console.log(objects);
         }
@@ -52,18 +52,78 @@ function fillQuizQuestions(identifiers) {
             var objects = jQuery.parseJSON(object);
 
             console.log(objects);
+            
+            var i = 0;
+            var identifiers = new Array();
 
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
-                $('#questionsContainer').append('<h3 class="quizQuestionsFont">Question: '+entry.question+'</h3><br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop1+'"> '+entry.prop1+'<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop2+'"> '+entry.prop2+'<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop3+'"> '+entry.prop3+'<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop4+'"> '+entry.prop4+'<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz'+entry.Quiz_id+'question'+entry.id+'" value="'+entry.prop5+'"> '+entry.prop5+'<br/>');
+                $('#questionsContainer').append('<h3 class="quizQuestionsFont">Question: ' + entry.question + '</h3><br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '"> ' + entry.prop1 + '<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 2 + '"> ' + entry.prop2 + '<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 3 + '"> ' + entry.prop3 + '<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 4 + '"> ' + entry.prop4 + '<br/>');
+                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 5 + '"> ' + entry.prop5 + '<br/>');
+
+                var index = i;
+                $('input[type=radio][name="quiz' + entry.Quiz_id + 'question' + entry.id + '"]').change(function () {
+                    identifiers[index] = {Quiz_id: entry.Quiz_id, QuizQuestion_id: entry.id, answer: $('input[name="quiz' + entry.Quiz_id + 'question' + entry.id + '"]:checked').val()};
+                    console.log(identifiers[index]);
+                    //console.log(index);
+                });
+
+                i++;
             });
 
+            $("#buttonSubmit").click(function () {
+                
+                var i;
+                for (i = 0; i < identifiers.length - 1; i++) {
+                    submitQuestion(identifiers[i]);
+                    console.log(identifiers[i]);
+                }
+                
+                submitLastQuestion(identifiers[identifiers.length - 1]);
+                console.log(identifiers[identifiers.length - 1]);
+
+                //alert(entry.id + "===" + $('input[name="quiz' + entry.Quiz_id + 'question' + entry.id + '"]:checked').val());
+                //console.log(quiz.getContent().questions.length);
+            });
+
+
             //console.log(objects);
+        }
+    });
+}
+
+function submitQuestion(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizanswerstudent', method: 'insert', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //var objects = jQuery.parseJSON(object);
+
+            //console.log(objects);
+        }
+    });
+}
+
+function submitLastQuestion(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizanswerstudent', method: 'insert', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            window.location = "index.php?page=studentQuizSolution&Quiz_id="+$_GET('Quiz_id');
         }
     });
 }

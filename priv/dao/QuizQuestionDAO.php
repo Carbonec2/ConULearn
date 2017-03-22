@@ -2,6 +2,20 @@
 
 class QuizQuestionDAO implements DAO {
     
+    public static function getMerge($ov) {
+        $conn = pdo_connect();
+
+        $sql = $conn->prepare('SELECT * FROM QuizQuestion q JOIN QuizAnswerStudent a ON q.id = a.QuizQuestion_id WHERE q.Quiz_id = :Quiz_id');							
+
+        $sql->bindValue(':Quiz_id', $ov->Quiz_id);
+
+        $sql->execute();
+        
+        $result = $sql->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+    
     //Added this function to get all the quiz questions of a quiz
     public static function getAllFromQuizId($ov) {
         $conn = pdo_connect();
