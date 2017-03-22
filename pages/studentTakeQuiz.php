@@ -35,7 +35,7 @@ include_once('includes/dashboardSideNavBar.php');
            </div>
             <br/>
             <br/>
-            <input type="button" value="Submit" class="formsButton" />
+            <input type="button" value="Submit" class="formsButton" id="buttonSubmit" />
         </div>
     </div>
 </body>

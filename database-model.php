@@ -30,6 +30,9 @@ switch (strtolower($_POST['DAO'])) {
     case 'quizquestion':
         relegateQuizQuestion();
         break;
+    case 'quizanswerstudent':
+        relegateQuizAnswerStudent();
+        break;
 }
 
 function relegateUser() {
@@ -179,6 +182,9 @@ function relegateQuiz() {
         case 'get':
             echo json_encode(QuizDAO::get(getId()));
             break;
+        case 'getmerge':
+            echo json_encode(QuizDAO::getMerge(getOV()));
+            break;
     }
 }
 
@@ -203,6 +209,9 @@ function relegateQuizQuestion() {
         case 'get':
             echo json_encode(QuizQuestionDAO::get(getId()));
             break;
+        case 'getmerge':
+            echo json_encode(QuizQuestionDAO::getMerge(getOV()));
+            break;
     }
 }
 
@@ -212,7 +221,7 @@ function relegateQuizAnswerStudent() {
         case 'getallfromUserId':
             echo json_encode(QuizAnswerStudentDAO::getAllFromUserId(getOV()));
             break;
-        case 'getallfromQuizQuestionId':
+        case 'getallfromquizquestionid':
             echo json_encode(QuizAnswerStudentDAO::getAllFromQuizQuestionId(getOV()));
             break;
         case 'get':
