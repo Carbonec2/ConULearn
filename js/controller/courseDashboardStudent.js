@@ -41,7 +41,7 @@ function fillQuizzes(identifiers) {
                 if (entry.submitted == 0) {
                     $quiz.html('<a href="index.php?page=studentTakeQuiz&Quiz_id=' + entry.id + '">' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a>');
                 }else{
-                    $quiz.html('<a href="index.php?page=studentQuizSolution&Quiz_id=' + entry.id + '">DONE ' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a>');
+                    $quiz.html('<a href="index.php?page=studentQuizSolution&Quiz_id=' + entry.id +'"> ' + entry.name + ' <b>Due date:</b> ' + entry.date + ' <b>[View Results]</b></a>');
                 }
 
                 $("#quizContainer").append($quiz);
