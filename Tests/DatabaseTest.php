@@ -30,7 +30,7 @@ class PHPTest extends PHPUnit_Framework_TestCase {
         
         $result = UserDAO::insert($o);
         
-        $this->assertTrue($result->error->ok);
+        $this->assertFalse($result->error->ok);
     }
     
     public function testCourseCreation() {
