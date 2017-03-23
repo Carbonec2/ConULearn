@@ -33,6 +33,9 @@ switch (strtolower($_POST['DAO'])) {
     case 'quizanswerstudent':
         relegateQuizAnswerStudent();
         break;
+    case 'quizstudent':
+        relegateQuizStudent();
+        break;
 }
 
 function relegateUser() {
@@ -53,12 +56,18 @@ function relegateUser() {
         case 'get':
             echo json_encode(UserDAO::get(getId()));
             break;
+        case 'getmerge':
+            echo json_encode(UserDAO::getMerge(getOV()));
+            break;
     }
 }
 
 function relegateCourse() {
 
     switch (strtolower($_POST['method'])) {
+        case 'getmerge':
+            echo json_encode(CourseDAO::getMerge(getOV()));
+            break;
         case 'getall2':
             echo json_encode(CourseDAO::getAllFromUserId(getOV()));
             break;
@@ -161,6 +170,9 @@ function relegateQuiz() {
         case 'getallfromid':
             echo json_encode(QuizDAO::getAllFromId(getOV()));
             break;
+        case 'getallfromcourseidstudent':
+            echo json_encode(QuizDAO::getAllFromCourseIdStudent(getOV()));
+            break;
         case 'getallfromcourseid':
             echo json_encode(QuizDAO::getAllFromCourseId(getOV()));
             break;
@@ -241,6 +253,36 @@ function relegateQuizAnswerStudent() {
             break;
         
 	}
+}
+
+function relegateQuizStudent() {
+
+    switch (strtolower($_POST['method'])) {
+        case 'insertcurrentuserid':
+            echo json_encode(QuizStudentDAO::insertCurrentUserId(getOV()));
+            break;
+        case 'remove':
+            echo json_encode(QuizStudentDAO::remove(getOV()));
+            break;
+        case 'updatecurrentuser':
+            echo json_encode(QuizStudentDAO::updateCurrentUser(getOV()));
+            break;
+        case 'insert':
+            echo json_encode(QuizStudentDAO::insert(getOV()));
+            break;
+        case 'update':
+            echo json_encode(QuizStudentDAO::update(getOV()));
+            break;
+        case 'save':
+            echo json_encode(QuizStudentDAO::save(getOV()));
+            break;
+        case 'getall':
+            echo json_encode(QuizStudentDAO::getAll(getFilters()));
+            break;
+        case 'get':
+            echo json_encode(QuizStudentDAO::get(getId()));
+            break;
+    }
 }
 
 function getOV() {
