@@ -34,7 +34,6 @@ class PHPTest extends PHPUnit_Framework_TestCase {
     }
     
     public function testCourseCreation() {
-        session_start();
         $_SESSION["userId"] = 1;
         
         $ov = new stdClass();
