@@ -47,5 +47,19 @@ class PHPTest extends PHPUnit_Framework_TestCase {
                 
         $this->assertTrue($result);
     }
+    
+    public function testAnnouncementCreation() {
+        $_SESSION["userId"] = 1;
+        
+        $ov = new stdClass();
+        
+        $ov->id = '1';
+        $ov->Course_id = '1';
+        $ov->description = 'This is an announcement.';
+        
+        $result = AnnouncementsDAO::insert($ov);
+        
+        $this->assertTrue($result);
+    }
 
 }
