@@ -5,9 +5,10 @@ class QuizQuestionDAO implements DAO {
     public static function getMerge($ov) {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT * FROM QuizQuestion q JOIN QuizAnswerStudent a ON q.id = a.QuizQuestion_id WHERE q.Quiz_id = :Quiz_id');							
+        $sql = $conn->prepare('SELECT * FROM QuizQuestion q JOIN QuizAnswerStudent a ON q.id = a.QuizQuestion_id WHERE q.Quiz_id = :Quiz_id and a.User_id = :User_id');							
 
         $sql->bindValue(':Quiz_id', $ov->Quiz_id);
+        $sql->bindValue(':User_id', $_SESSION['userId']);
 
         $sql->execute();
         

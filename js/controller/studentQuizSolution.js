@@ -83,7 +83,7 @@ function gradeQuizQuestions(identifiers) {
 
             var point = 0;
 
-/*
+            /*
             objects.forEach(function (entry) {
                 if (entry.ans == entry.answer) {
                     point++;

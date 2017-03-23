@@ -66,14 +66,6 @@ function getCourses(filters, successCallback, errorCallback) {
             for (var i = 0; i < objects.length; i++) {
                 $('#course_selection').html($('#course_selection').html() + '<option value="' + objects[i].id + '">' + objects[i].name + '</option>');
             }
-
-            /*
-             if (typeof objects.error.ok === "undefined" || objects.error.ok !== true) {
-             errorCallback();
-             } else {
-             successCallback(objects);
-             }
-             */
         }
     });
 }
@@ -141,7 +133,7 @@ function addCourse(identifiers, successCallback, errorCallback) {
                 var identifiers = {Course_id: objects.obj.Course_id};
                 addQuizStudentForAllQuizzes(identifiers);
 
-                //successCallback(objects);
+                successCallback(objects);
             }
 
         }

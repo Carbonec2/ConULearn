@@ -30,9 +30,10 @@ class QuizAnswerStudentDAO implements DAO {
         $sql = $conn->prepare('SELECT 
             *
             FROM QuizAnswerStudent
-            WHERE QuizQuestion_id = :QuizQuestion_id');
+            WHERE QuizQuestion_id = :QuizQuestion_id AND User_id = :User_id');
 
         $sql->bindValue(':QuizQuestion_id', $ov->QuizQuestion_id);
+        $sql->bindValue(':User_id', $_SESSION['userId']);
 
         $sql->execute();
         
