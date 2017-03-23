@@ -57,15 +57,25 @@ function fillQuizQuestions(identifiers) {
             var identifiers = new Array();
             var Quiz_id;
 
+            var questionNumber = 1;
+
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
-                $('#questionsContainer').append('<h3 class="quizQuestionsFont">Question: ' + entry.question + '</h3><br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '"> ' + entry.prop1 + '<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 2 + '"> ' + entry.prop2 + '<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 3 + '"> ' + entry.prop3 + '<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 4 + '"> ' + entry.prop4 + '<br/>');
-                $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 5 + '"> ' + entry.prop5 + '<br/>');
+                this.$singleQuestionContainer = $('<div></div>')
+                this.$singleQuestionContainer.css("display","block");
+                this.$singleQuestionContainer.css("background-color","#FFFFFF");
+                this.$singleQuestionContainer.css("margin-left","50px");
+                this.$singleQuestionContainer.css("text-align","left");
+                
+                this.$singleQuestionContainer.append('<h3 class="quizQuestionsFont">Question #' + (questionNumber++) + ': ' + entry.question + '</h3>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '"> <strong>A.</strong> ' + entry.prop1 + '<br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 2 + '"> <strong>B.</strong> ' + entry.prop2 + '<br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 3 + '"> <strong>C.</strong> ' + entry.prop3 + '<br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 4 + '"> <strong>D.</strong> ' + entry.prop4 + '<br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 5 + '"> <strong>E.</strong> ' + entry.prop5 + '<br/><br/>');
 
+                $('#questionsContainer').append(this.$singleQuestionContainer);
+                
                 var index = i;
                 $('input[type=radio][name="quiz' + entry.Quiz_id + 'question' + entry.id + '"]').change(function () {
                     identifiers[index] = {Quiz_id: entry.Quiz_id, QuizQuestion_id: entry.id, answer: $('input[name="quiz' + entry.Quiz_id + 'question' + entry.id + '"]:checked').val()};
