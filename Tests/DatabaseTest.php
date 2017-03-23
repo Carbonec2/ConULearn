@@ -34,10 +34,15 @@ class PHPTest extends PHPUnit_Framework_TestCase {
     }
     
     public function testCourseCreation() {
+        session_start();
+        $_SESSION["userId"] = 1;
+        
         $ov = new stdClass();
         
+        $ov->id = '1';
         $ov->name = 'SOEN 341';
         $ov->description = 'This is a description of the course.';
+        
         
         $result = CourseDAO::insert($ov);
                 
