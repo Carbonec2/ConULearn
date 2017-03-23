@@ -30,7 +30,22 @@ class PHPTest extends PHPUnit_Framework_TestCase {
         
         $result = UserDAO::insert($o);
         
-        $this->assertTrue($result->error->ok);
+        $this->assertFalse($result->error->ok);
+    }
+    
+    public function testCourseCreation() {
+        $_SESSION["userId"] = 1;
+        
+        $ov = new stdClass();
+        
+        $ov->id = '1';
+        $ov->name = 'SOEN 341';
+        $ov->description = 'This is a description of the course.';
+        
+        
+        $result = CourseDAO::insert($ov);
+                
+        $this->assertTrue($result);
     }
 
 }
