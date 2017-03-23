@@ -32,5 +32,16 @@ class PHPTest extends PHPUnit_Framework_TestCase {
         
         $this->assertTrue($result->error->ok);
     }
+    
+    public function testCourseCreation() {
+        $ov = new stdClass();
+        
+        $ov->name = 'SOEN 341';
+        $ov->description = 'This is a description of the course.';
+        
+        $result = CourseDAO::insert($ov);
+                
+        $this->assertTrue($result);
+    }
 
 }
