@@ -33,7 +33,7 @@ function addQuestion(identifiers) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'quizquestion', method: 'insert', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -52,7 +52,7 @@ function addQuiz(identifiers, quiz) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'quiz', method: 'insert', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -80,8 +80,56 @@ function addQuiz(identifiers, quiz) {
             
             }
             
-            window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename='+$_GET('coursename')+'&Course_id='+$_GET('Course_id');
+            var identifiersQuizStudent = {Quiz_id: objects.id};
+            addQuizStudentForStudents(identifiersQuizStudent, objects.id);
+            
+            //window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename='+$_GET('coursename')+'&Course_id='+$_GET('Course_id');
 
+        }
+    });
+}
+
+function addQuizStudentForStudents(identifiers, Quiz_id) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'user', method: 'getmerge', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            var objects = jQuery.parseJSON(object);
+
+            console.log(objects.id);
+            
+            objects.forEach(function (entry) {
+                var identifiers = {Quiz_id: Quiz_id, User_id: entry.id};
+                console.log(identifiers);
+                addQuizStudent(identifiers, Quiz_id);
+            });
+            window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename='+$_GET('coursename')+'&Course_id='+$_GET('Course_id');
+        }
+    });
+}
+
+function addQuizStudent(identifiers, Quiz_id) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizstudent', method: 'insert', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            //var objects = jQuery.parseJSON(object);
+
+            //console.log(objects.id);
         }
     });
 }

@@ -45,10 +45,10 @@ class CourseUserDAO implements DAO {
 
         $sql->execute();
         $result = $sql->fetchAll();
-        
+
         $returnObject = new stdClass();
         $returnObject->error = new stdClass();
-        
+
         if (!$result) {
             $sql = $conn->prepare('INSERT INTO CourseUser (Course_id, User_id) 
             VALUES (:Course_id, :User_id)');
@@ -58,10 +58,19 @@ class CourseUserDAO implements DAO {
 
             $sql->execute();
             $returnObject->error->ok = true;
-        }else{
+
+            $sql = $conn->prepare('SELECT * FROM CourseUser WHERE id=LAST_INSERT_ID();');
+
+            $sql->bindValue(':Course_id', $object->Course_id);
+            $sql->bindValue(':User_id', $_SESSION['userId']);
+            
+            $sql->execute();
+            
+            $returnObject->obj = $sql->fetch(PDO::FETCH_OBJ);
+        } else {
             $returnObject->error->ok = false;
         }
-        
+
         return $returnObject;
     }
 

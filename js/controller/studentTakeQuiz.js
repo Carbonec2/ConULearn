@@ -42,7 +42,7 @@ function fillQuizQuestions(identifiers) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'quizquestion', method: 'getallfromquizid', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -55,6 +55,7 @@ function fillQuizQuestions(identifiers) {
             
             var i = 0;
             var identifiers = new Array();
+            var Quiz_id;
 
             var questionNumber = 1;
 
@@ -75,7 +76,11 @@ function fillQuizQuestions(identifiers) {
                 });
 
                 i++;
+                Quiz_id = entry.Quiz_id;
             });
+            
+            identifiersQuizSubmitted = {Quiz_id: Quiz_id};
+            quizSubmitted(identifiersQuizSubmitted);
 
             $("#buttonSubmit").click(function () {
                 
@@ -98,12 +103,29 @@ function fillQuizQuestions(identifiers) {
     });
 }
 
+function quizSubmitted(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizstudent', method: 'updatecurrentuser', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //var objects = jQuery.parseJSON(object);
+
+            //console.log(objects);
+        }
+    });
+}
+
 function submitQuestion(identifiers) {
     $.ajax({
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'quizanswerstudent', method: 'insert', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -120,7 +142,7 @@ function submitLastQuestion(identifiers) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'quizanswerstudent', method: 'insert', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
