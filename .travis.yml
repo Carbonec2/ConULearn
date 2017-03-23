@@ -15,4 +15,4 @@ before_script:
 script: phpunit --configuration phpunit.xml --coverage-text
 
 after_script:
-  - mysql -u root -e "USE soen; show tables; SHOW COLUMNS FROM User; SELECT * FROM Rights;"
+  - mysql -u root -e "USE soen; show tables; SHOW COLUMNS FROM User; SELECT * FROM Rights; SELECT * FROM User; SELECT * FROM Course; SELECT * FROM Announcements;"
