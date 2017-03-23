@@ -31,8 +31,8 @@ ENGINE = InnoDB;
 -- Dumping data for table `rights`
 --
 
-LOCK TABLES `rights` WRITE;
-INSERT INTO `rights` VALUES (1,'teacher'),(2,'student');
+LOCK TABLES `Rights` WRITE;
+INSERT INTO `Rights` VALUES (1,'teacher'),(2,'student');
 UNLOCK TABLES;
 
 
