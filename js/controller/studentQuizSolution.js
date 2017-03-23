@@ -60,7 +60,7 @@ function fillQuizQuestions(identifiers) {
                 $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 3 + '" disabled=disabled> ' + entry.prop3 + '<br/>');
                 $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 4 + '" disabled=disabled> ' + entry.prop4 + '<br/>');
                 $('#questionsContainer').append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 5 + '" disabled=disabled> ' + entry.prop5 + '<br/>');
-                
+
                 checkStudentAnswers({QuizQuestion_id: entry.id});
             });
         }
@@ -80,17 +80,25 @@ function gradeQuizQuestions(identifiers) {
             //window.location = "index.php?page=dashboardTeacher";
 
             var objects = jQuery.parseJSON(object);
-            
+
             var point = 0;
-            
+
+/*
             objects.forEach(function (entry) {
-                if(entry.ans == entry.answer){
+                if (entry.ans == entry.answer) {
                     point++;
                 }
             });
-            
+            */
+
+            for (var i = 0; i < objects.length; i++) {
+                if (objects[i].ans == objects[i].answer) {
+                    point++;
+                }
+            }
+
             $('#quizInfo').append("<b>GRADE: " + point + "/10</b>");
-            
+
             console.log(point);
         }
     });
@@ -114,7 +122,7 @@ function checkStudentAnswers(identifiers) {
 
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
-                $('input[name="quiz' + entry.Quiz_id + 'question' + entry.QuizQuestion_id + '"][value="'+entry.answer+'"]').prop("checked",true);
+                $('input[name="quiz' + entry.Quiz_id + 'question' + entry.QuizQuestion_id + '"][value="' + entry.answer + '"]').prop("checked", true);
             });
 
             //console.log(objects);

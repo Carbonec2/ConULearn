@@ -2,6 +2,18 @@
 
 class UserDAO implements DAO {
 
+    static function getMerge($ov) {
+        $conn = pdo_connect();
+
+        $sql = $conn->prepare('SELECT u.id FROM user u JOIN courseuser cu ON u.id = cu.User_id JOIN course c ON cu.Course_id = c.id JOIN quiz qz ON c.id = qz.Course_id WHERE qz.id = :Quiz_id');
+
+        $sql->bindValue(':Quiz_id', $ov->Quiz_id);
+
+        $sql->execute();
+
+        return $sql->fetchAll(PDO::FETCH_OBJ);
+    }
+    
     static function get($id) {
         $conn = pdo_connect();
 

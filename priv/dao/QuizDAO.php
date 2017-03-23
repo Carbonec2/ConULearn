@@ -15,6 +15,22 @@ class QuizDAO implements DAO {
     }
     
     //Added this function to get all the quizzes of a course
+    public static function getAllFromCourseIdStudent($ov) {
+        $conn = pdo_connect();
+
+        $sql = $conn->prepare('SELECT q.id, q.name, q.date, qs.submitted FROM Quiz q JOIN QuizStudent qs ON q.id = qs.Quiz_id WHERE q.Course_id = :Course_id AND qs.User_id = :User_id');
+        
+        $sql->bindValue(':Course_id', $ov->Course_id);
+        $sql->bindValue(':User_id', $_SESSION['userId']);
+
+        $sql->execute();
+        
+        $result = $sql->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    }
+    
+    //Added this function to get all the quizzes of a course
     public static function getAllFromCourseId($ov) {
         $conn = pdo_connect();
 
@@ -38,6 +54,12 @@ class QuizDAO implements DAO {
     //Added this to remove by id
     public static function remove($object) {
         $conn = pdo_connect();
+        
+        $sql = $conn->prepare('DELETE FROM QuizStudent WHERE Quiz_id = :id');
+        
+        $sql->bindValue(':id',$object->id);
+
+        $sql->execute();
         
         $sql = $conn->prepare('DELETE FROM QuizAnswerStudent WHERE Quiz_id = :id');
         
