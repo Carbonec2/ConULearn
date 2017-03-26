@@ -20,11 +20,6 @@ $(document).ready(function () {
     $("#saveQuiz").click(function () {
         var identifiersQuiz = {Course_id: $_GET('Course_id'), date: quiz.$dueDate.val(), name: quiz.$quizName.val()};
         addQuiz(identifiersQuiz, quiz);
-
-        //console.log(quiz.getContent().questions.length);
-
-        //var identifiersQuizQuestion = {Course_id: $_GET('Course_id')};
-        //addQuestion(identifiers);
     });
 });
 
@@ -38,11 +33,6 @@ function addQuestion(identifiers) {
             //error 500
         },
         success: function (object) {
-            //window.location = "index.php?page=dashboardTeacher";
-
-            //var objects = jQuery.parseJSON(object);
-
-            //console.log(objects);
         }
     });
 }
@@ -62,7 +52,7 @@ function addQuiz(identifiers, quiz) {
             var objects = jQuery.parseJSON(object);
 
             //console.log(objects.id);
-            
+
             for (i = 0; i < quiz.questions.length; i++) {
                 //console.log(quiz.questions[i].content.prop1);
 
@@ -77,14 +67,11 @@ function addQuiz(identifiers, quiz) {
                     ans: quiz.questions[i].content.ans
                 };
                 addQuestion(identifiersQuizQuestion);
-            
-            }
-            
+  
+          }
+
             var identifiersQuizStudent = {Quiz_id: objects.id};
             addQuizStudentForStudents(identifiersQuizStudent, objects.id);
-            
-            //window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename='+$_GET('coursename')+'&Course_id='+$_GET('Course_id');
-
         }
     });
 }
@@ -104,13 +91,13 @@ function addQuizStudentForStudents(identifiers, Quiz_id) {
             var objects = jQuery.parseJSON(object);
 
             console.log(objects.id);
-            
+
             objects.forEach(function (entry) {
                 var identifiers = {Quiz_id: Quiz_id, User_id: entry.id};
                 console.log(identifiers);
                 addQuizStudent(identifiers, Quiz_id);
             });
-            window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename='+$_GET('coursename')+'&Course_id='+$_GET('Course_id');
+            //window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename=' + $_GET('coursename') + '&Course_id=' + $_GET('Course_id');
         }
     });
 }
@@ -139,17 +126,25 @@ function CreateQuiz(container, content) {
     var thisObject = this; //Keeping reference
 
     this.container = container;
+
+    this.$quizName = $('<input type="text" id="quizName" placeholder="Example: Quiz 1" />');
     
-    this.$quizName = $('<input type="text" placeholder="Example: Quiz 1" />');
-    
-    this.$quizName.on('change', function () {
+    $('body').on('change', '#quizName', function () {
         thisObject.quizName = thisObject.$quizName.val();
     });
 
-    this.$dueDate = $('<input type="date" placeholder="yyyy-mm-dd" />');
+    this.$dueDate = $('<input type="date" id="dueDate" placeholder="yyyy-mm-dd" />');
 
-    this.$dueDate.on('change', function () {
+    $('body').on('change', '#dueDate', function () {
         thisObject.dueDate = thisObject.$dueDate.val();
+    });
+
+    this.$numberOfQuestions = $('<input type="number" id="numberOfQuestions" value="10" min="1" max="100"/>');
+    
+    this.$numberOfQuestionsButton = $('<button type="button" id="numberOfQuestionsButton">Apply</button>');
+    
+    $('body').on('click', '#numberOfQuestionsButton', function () {
+        updateQuiz(thisObject);
     });
     
     this.container.append('<strong>Quiz Title</strong>: ');
@@ -157,6 +152,11 @@ function CreateQuiz(container, content) {
 
     this.container.append('<br/><br/><strong>Due Date</strong>: ');
     this.container.append(this.$dueDate);
+
+    this.container.append('<br/><br/><strong>Number of Questions</strong>: ');
+    this.container.append(this.$numberOfQuestions);
+    this.container.append(" ");
+    this.container.append(this.$numberOfQuestionsButton);
 
     this.content = content;
     if (typeof (content) !== "undefined") {
@@ -166,7 +166,7 @@ function CreateQuiz(container, content) {
         if (typeof (content.dueDate) !== "undefined") {
             this.dueDate = content.dueDate;
         }
-        if (typeof (content.dueDate) !== "undefined") {
+        if (typeof (content.quizName) !== "undefined") {
             this.quizName = content.quizName;
         }
     }
@@ -192,6 +192,43 @@ function CreateQuiz(container, content) {
     }
 
     return this;
+}
+
+function updateQuiz(thisObject) {
+    thisObject.numberOfQuestions = thisObject.$numberOfQuestions.val();
+
+    thisObject.container.html('');
+
+    thisObject.container.append('<strong>Quiz Title</strong>: ');
+    thisObject.container.append(thisObject.$quizName);
+
+    thisObject.container.append('<br/><br/><strong>Due Date</strong>: ');
+    thisObject.container.append(thisObject.$dueDate);
+
+    thisObject.container.append('<br/><br/><strong>Number of Questions</strong>: ');
+    thisObject.container.append(thisObject.$numberOfQuestions);
+    thisObject.container.append(" ");
+    thisObject.container.append(thisObject.$numberOfQuestionsButton);
+
+    if (thisObject.questions.length > thisObject.numberOfQuestions) {
+        var len = thisObject.questions.length;
+        for (var i = 0; i < len - thisObject.numberOfQuestions; i++) {
+            thisObject.questions.pop();
+            Question.counter--;
+        }
+    } else {
+        var len = thisObject.questions.length;
+        for (var i = 0; i < thisObject.numberOfQuestions - len; i++) {
+            var question = new Question();
+            thisObject.questions.push(question);
+        }
+    }
+
+    for (var i = 0; i < thisObject.questions.length; i++) {
+        thisObject.container.append(thisObject.questions[i].getJqueryDom());
+    }
+
+    console.log(thisObject);
 }
 
 CreateQuiz.prototype.getContent = function () {
@@ -292,7 +329,7 @@ Question.prototype.setJqueryDom = function () {
     this.$questionNumberLine = $('<tr></tr>');
     this.$questionNumberCell = $('<th colspan="3"></th>');
     this.$questionNumberCell.addClass("questionNumberCell"); //adding class for external CSS
-    this.$questionNumberCell.append('Question #' + (this.counter+1));
+    this.$questionNumberCell.append('Question #' + (this.counter + 1));
     this.$questionNumberLine.append(this.$questionNumberCell);
     this.$placeholder.append(this.$questionNumberLine);
 
@@ -302,7 +339,7 @@ Question.prototype.setJqueryDom = function () {
     this.$questionTextFieldCell = $('<td colspan="10"></td>');
     this.$questionTextFieldCell.addClass("questionTextFieldCell"); //adding class for external CSS
 
-    this.$name = $('<input type="text" placeholder="Question #' + (this.counter+1) + '"/>');
+    this.$name = $('<input type="text" placeholder="Question #' + (this.counter + 1) + '"/>');
     this.$name.addClass("questionTextField"); //adding class for external CSS
 
     this.$questionTextFieldCell.append(this.$name);
