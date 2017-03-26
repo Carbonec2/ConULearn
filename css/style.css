@@ -550,3 +550,7 @@ input.standardField {
 .answerTextField {
 	width: 100%;
 }
+.dashboard_teacher_textarea{
+  width:  900px;
+  height:  50px;
+}

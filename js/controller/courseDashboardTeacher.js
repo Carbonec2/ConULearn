@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     var identifiers = {Course_id: $_GET('Course_id')};
     fillAnnouncements(identifiers);
-    
+
     fillQuizzes(identifiers);
 
     bind();
@@ -27,7 +27,7 @@ function fillQuizzes(identifiers) {
             //window.location = "index.php?page=dashboardTeacher";
 
             var objects = jQuery.parseJSON(object);
-            
+
             objects.forEach(function (entry) {
                 var $quiz = $('<div id="div' + entry.id + '"></div>');
 
@@ -38,7 +38,7 @@ function fillQuizzes(identifiers) {
                 $quiz.html('<a href="index.php?page=teacherDisplayQuiz&Quiz_id='+entry.id+'">' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a> <button id="deleteText' + entry.id + '">Delete</button>');
 
                 $("#quizContainer").append($quiz);
-                
+
                 $("#quizContainer").on("click", '#deleteText' + entry.id, function (e) {
                     e.preventDefault();
 
@@ -107,11 +107,11 @@ function fillAnnouncements(content) {
                 if (entry.description != null && entry.description.length > 0) {
                     $("#announcementsContainer").append($announcement);
                 }
-                
+
                 $("#announcementsContainer").on("click", '#editText' + entry.id, function (e) {
                     e.preventDefault();
 
-                    $('#div' + entry.id).html('<textarea id="text' + entry.id + '" name="text' + entry.id + '">' + entry.description + '</textarea> <br/><button id="submitText' + entry.id + '">Submit</button> <button id="cancelText' + entry.id + '">Cancel</button>');
+                    $('#div' + entry.id).html('<textarea class="dashboard_teacher_textarea" id="text' + entry.id + '" name="text' + entry.id + '">' + entry.description + '</textarea> <br/><button id="submitText' + entry.id + '">Submit</button> <button id="cancelText' + entry.id + '">Cancel</button>');
 
                     $('#cancelText' + entry.id).click(function (e) {
 
