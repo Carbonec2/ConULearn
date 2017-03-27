@@ -58,12 +58,12 @@
 				<h3 class="lighter">We are here to help students of Concordia University get the best learning experience.
 				Our team consists of eight highly qualified Concordia undergraduate students: Wei He, Lunecy Appadoo, Orel Moisa, Jean-Michel Laliberte, Sophia Quach, Alex Zhang, Helen Zhang and Robert Nam Quang Nguyen.
 				Dividing our team into front-end and back-end developers, we are able to create easy to use features.
-				Our main goal is to provide Concordia faculty members with a reliable resource to assess their students progression while enabling them to ask questions direcly to the professor through Q&A.
+				Our main goal is to provide Concordia faculty members with a reliable resource to assess their students progression while enabling them to ask questions direcly to the professor through Q&amp;A.
 				</h3>
 				<br/>
 				<h2>How does it work?</h2>
 				<h3 class="lighter">The quiz dates will be announced by the course instructors, after which students will be able to prepare by learning the appropriate material.
-				If any questions come up, the question&answer will be available for use.
+				If any questions come up, the question &amp; answer will be available for use.
 				Professors will then post quizzes that will contain multiple choice questions.
 				Once all the students submit their quizzes, their grades will be given automatically.
 				The students will then receive the quiz solutions where they will be able to revise their work and learn from their mistakes.</h3>
