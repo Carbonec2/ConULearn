@@ -11,21 +11,21 @@
 				</div>
 
 				<div class="col-sm-3 text-center">
-						<img src="img/discussion.png" alt="discussion icon"></img>
+						<img src="img/discussion.png" alt="grades and quiz solution icon"></img>
 						<h2>GRADES AND QUIZ SOLUTIONS</h2>
-						<h3 class="lighter">Students will receive their grade right after completion and submission of the quiz. Once the due date has passed, the students will receive the solutions and be able to review.</h3>
+						<h3 class="lighter">Students will receive their grade right after completion and submission of the quiz. Once the due date has passed, the students will receive the solutions and be able to review</h3>
 				</div>
 
 				<div class="col-sm-3 text-center">
-						<img src="img/announcement.png" alt="discussion icon"></img>
+						<img src="img/announcement.png" alt="announcement icon"></img>
 						<h2>ANNOUNCEMENTS</h2>
-						<h3 class="lighter">Professors will post necessary messages to alert the students on important information such as course material needed, future quiz dates and quiz solutions.</h3>
+						<h3 class="lighter">Professors will post necessary messages to alert the students on important information such as course material needed, future quiz dates and quiz solutions</h3>
 				</div>
 
 				<div class="col-sm-3 text-center">
-						<img src="img/feedback.png" alt="feedback icon"></img><br/>
+						<img src="img/feedback.png" alt="question and answer icon"></img><br/>
 						<h2>QUESTION AND ANSWER</h2>
-						<h3 class="lighter">One on one between student and professor-the students will be able to ask the professor questions for better clarification. </h3>
+						<h3 class="lighter">One on one between student and professor-the students will be able to ask the professor questions for better clarification </h3>
 				</div>
 
 			</div>
