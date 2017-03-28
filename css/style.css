@@ -285,7 +285,7 @@ h3.lighter {
     left:68.5%;
     width:65%;
     background-color: white;
-   color:#004A7F;
+    color:#004A7F;
     height:300px;
 }
 
@@ -304,55 +304,55 @@ h3.lighter {
 
 /* for the course dashboard: name of course, announcements, quizzes, discussion board */
 .dashboardCourse {
-  	color: white;
-  	font-size: 30px;
-  	padding: 10px;
-  	text-align: center;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
  }
 
 .dashboard_title_container {
-  	display: block;
-  	background-color: white;
+    display: block;
+    background-color: white;
     height: 50px;
     z-index: 90;
     overflow: hidden;
-  	height: 4em;
+    height: 4em;
 }
 
  .dashboardCourseTitle {
-  	font-size: 30px;
-  	text-align:center;
-  	font-weight:bold;
+    font-size: 30px;
+    text-align:center;
+    font-weight:bold;
  }
 
  .dashboardCourseSub {
-  	font-size: 20px;
-  	text-align:left;
-  	padding-left:10px;
+    font-size: 20px;
+    text-align:left;
+    padding-left:10px;
 }
 
 .dashboard_announcements_container, .dashboard_quizzes_container, .dashboard_discussions_container {
     display: block;
-  	background-color: white;
-  	z-index: 80;
+    background-color: white;
+    z-index: 80;
     height:200px;
     overflow: auto;
 }
 
 .dashboard_new_button_container {
     display: block;
-  	background-color: white;
-  	height: 2em;
-  	font-size: 30px;
-  	font-weight: bold;
-  	padding-left:10px;
-  	z-index: 90;
+    background-color: white;
+    height: 2em;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left:10px;
+    z-index: 90;
     overflow: hidden;
 }
 
 .dashboard_new_button {
-  	font-size: 30px;
-  	font-weight: bold;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .dashboard_new_button_container a {
@@ -514,10 +514,10 @@ input.standardField {
 /** styles for the quiz creation form **/
 
 .questionContainerTable {
-  	width: 100%;
-  	background-color: #dddddd;
-  	padding: 10px;
-  	margin: 10px 5px;
+    width: 100%;
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 10px 5px;
 }
 
 .questionNumberCell {
@@ -527,15 +527,15 @@ input.standardField {
 }
 
 .questionTextFieldCell {
-	  padding: 1px 10px;
+    padding: 1px 10px;
 }
 
 .questionTextField {
-	  width: 100%;
+    width: 100%;
 }
 
 .answerCell, .answerCellBottom {
-	  padding: 1px 10px;
+    padding: 1px 10px;
 }
 
 .answerCellBottom {
