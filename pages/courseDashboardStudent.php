@@ -51,20 +51,20 @@ include_once('includes/dashboardSideNavBar.php');
 
             <div class="rightSmallDiv">
                 <div class="dashboard_title_container">
-                    <h1 class="dashboardCourseTitle">Discussion Board</h1>
+                    <h1 class="dashboardCourseTitle">Question and Answer</h1>
                 </div>          
                 <div class="dashboard_discussions_container">
-                    <!-- Example using multiple topics
-                    <a href=""><h2 class="dashboardCourseSub">Regarding question #2</h2></a>
-                    <a href=""><h2 class="dashboardCourseSub">what is on the exam</h2></a>
-                    <a href=""><h2 class="dashboardCourseSub">mistake on quiz #2, Q9</h2></a>
-                    <a href=""><h2 class="dashboardCourseSub">hello</h2></a>
-                    <a href=""><h2 class="dashboardCourseSub">quiz 3 is hard</h2></a>
-                    <a href=""><h2 class="dashboardCourseSub">test</h2></a>
+                    <!-- Example using multiple questions
+                    <a href=""><h2 class="dashboardCourseSub">Quesion 1</h2></a>
+                    <a href=""><h2 class="dashboardCourseSub">Question 2</h2></a>
+                    <a href=""><h2 class="dashboardCourseSub">Question 3</h2></a>
+                    <a href=""><h2 class="dashboardCourseSub">Question 4/h2></a>
+                    <a href=""><h2 class="dashboardCourseSub">Question 5</h2></a>
+                    <a href=""><h2 class="dashboardCourseSub">Question 6</h2></a>
                     -->
                 </div>
                 <div class="dashboard_new_button_container">
-                    <a href=""><h2 class="dashboard_new_button">+ new topic</h2></a>
+                    <a href="index.php?page=studentAskQuestion"><h2 class="dashboard_new_button">+ new question</h2></a>
                 </div>
 
             </div>
