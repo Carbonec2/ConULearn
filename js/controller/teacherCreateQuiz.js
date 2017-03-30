@@ -97,7 +97,7 @@ function addQuizStudentForStudents(identifiers, Quiz_id) {
                 console.log(identifiers);
                 addQuizStudent(identifiers, Quiz_id);
             });
-            //window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename=' + $_GET('coursename') + '&Course_id=' + $_GET('Course_id');
+            window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename=' + $_GET('coursename') + '&Course_id=' + $_GET('Course_id');
         }
     });
 }
