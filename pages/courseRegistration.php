@@ -1,6 +1,7 @@
 <?php
 include_once('includes/dashboardSideNavBar.php');
 ?>
+
 <body class="dashboard">
     <div class="dashboardContainer  text-center">
         <div id="courseRegistration">

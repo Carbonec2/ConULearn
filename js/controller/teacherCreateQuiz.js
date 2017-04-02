@@ -14,9 +14,113 @@ $(document).ready(function () {
     var content = {questions: [question1]};
 
     Question.counter = 0;
-    //content
-    $("#quizContainer").quizContainer();
+
+//content
+    var quiz = $("#quizContainer").quizContainer();
+
+    $("#saveQuiz").click(function () {
+        var identifiersQuiz = {Course_id: $_GET('Course_id'), date: quiz.$dueDate.val(), name: quiz.$quizName.val()};
+        addQuiz(identifiersQuiz, quiz);
+    });
 });
+
+function addQuestion(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizquestion', method: 'insert', OV: JSON.stringify(identifiers)},
+        async: false,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+        }
+    });
+}
+
+function addQuiz(identifiers, quiz) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quiz', method: 'insert', OV: JSON.stringify(identifiers)},
+        async: false,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            var objects = jQuery.parseJSON(object);
+
+            //console.log(objects.id);
+
+            for (i = 0; i < quiz.questions.length; i++) {
+                //console.log(quiz.questions[i].content.prop1);
+
+                var identifiersQuizQuestion = {
+                    Quiz_id: objects.id,
+                    question: quiz.questions[i].content.name,
+                    prop1: quiz.questions[i].content.prop1,
+                    prop2: quiz.questions[i].content.prop2,
+                    prop3: quiz.questions[i].content.prop3,
+                    prop4: quiz.questions[i].content.prop4,
+                    prop5: quiz.questions[i].content.prop5,
+                    ans: quiz.questions[i].content.ans
+                };
+                addQuestion(identifiersQuizQuestion);
+  
+          }
+
+            var identifiersQuizStudent = {Quiz_id: objects.id};
+            addQuizStudentForStudents(identifiersQuizStudent, objects.id);
+        }
+    });
+}
+
+function addQuizStudentForStudents(identifiers, Quiz_id) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'user', method: 'getmerge', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            var objects = jQuery.parseJSON(object);
+
+            console.log(objects.id);
+
+            objects.forEach(function (entry) {
+                var identifiers = {Quiz_id: Quiz_id, User_id: entry.id};
+                console.log(identifiers);
+                addQuizStudent(identifiers, Quiz_id);
+            });
+            window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename=' + $_GET('coursename') + '&Course_id=' + $_GET('Course_id');
+        }
+    });
+}
+
+function addQuizStudent(identifiers, Quiz_id) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizstudent', method: 'insert', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //window.location = "index.php?page=dashboardTeacher";
+
+            //var objects = jQuery.parseJSON(object);
+
+            //console.log(objects.id);
+        }
+    });
+}
 
 function CreateQuiz(container, content) {
 
@@ -24,14 +128,36 @@ function CreateQuiz(container, content) {
 
     this.container = container;
 
-    this.$dueDate = $('<input type="date" placeholder="Due date" />');
+    this.$quizName = $('<input type="text" id="quizName" placeholder="Example: Quiz 1" />');
+    
+    $('body').on('change', '#quizName', function () {
+        thisObject.quizName = thisObject.$quizName.val();
+    });
 
-    this.$dueDate.on('change', function () {
+    this.$dueDate = $('<input type="date" id="dueDate" placeholder="yyyy-mm-dd" />');
+
+    $('body').on('change', '#dueDate', function () {
         thisObject.dueDate = thisObject.$dueDate.val();
     });
 
-    this.container.append('Due date: ');
+    this.$numberOfQuestions = $('<input type="number" id="numberOfQuestions" value="10" min="1" max="100"/>');
+    
+    this.$numberOfQuestionsButton = $('<button type="button" id="numberOfQuestionsButton">Apply</button>');
+    
+    $('body').on('click', '#numberOfQuestionsButton', function () {
+        updateQuiz(thisObject);
+    });
+    
+    this.container.append('<strong>Quiz Title</strong>: ');
+    this.container.append(this.$quizName);
+
+    this.container.append('<br/><br/><strong>Due Date</strong>: ');
     this.container.append(this.$dueDate);
+
+    this.container.append('<br/><br/><strong>Number of Questions</strong>: ');
+    this.container.append(this.$numberOfQuestions);
+    this.container.append(" ");
+    this.container.append(this.$numberOfQuestionsButton);
 
     this.content = content;
     if (typeof (content) !== "undefined") {
@@ -40,6 +166,9 @@ function CreateQuiz(container, content) {
         }
         if (typeof (content.dueDate) !== "undefined") {
             this.dueDate = content.dueDate;
+        }
+        if (typeof (content.quizName) !== "undefined") {
+            this.quizName = content.quizName;
         }
     }
 
@@ -64,6 +193,43 @@ function CreateQuiz(container, content) {
     }
 
     return this;
+}
+
+function updateQuiz(thisObject) {
+    thisObject.numberOfQuestions = thisObject.$numberOfQuestions.val();
+
+    thisObject.container.html('');
+
+    thisObject.container.append('<strong>Quiz Title</strong>: ');
+    thisObject.container.append(thisObject.$quizName);
+
+    thisObject.container.append('<br/><br/><strong>Due Date</strong>: ');
+    thisObject.container.append(thisObject.$dueDate);
+
+    thisObject.container.append('<br/><br/><strong>Number of Questions</strong>: ');
+    thisObject.container.append(thisObject.$numberOfQuestions);
+    thisObject.container.append(" ");
+    thisObject.container.append(thisObject.$numberOfQuestionsButton);
+
+    if (thisObject.questions.length > thisObject.numberOfQuestions) {
+        var len = thisObject.questions.length;
+        for (var i = 0; i < len - thisObject.numberOfQuestions; i++) {
+            thisObject.questions.pop();
+            Question.counter--;
+        }
+    } else {
+        var len = thisObject.questions.length;
+        for (var i = 0; i < thisObject.numberOfQuestions - len; i++) {
+            var question = new Question();
+            thisObject.questions.push(question);
+        }
+    }
+
+    for (var i = 0; i < thisObject.questions.length; i++) {
+        thisObject.container.append(thisObject.questions[i].getJqueryDom());
+    }
+
+    console.log(thisObject);
 }
 
 CreateQuiz.prototype.getContent = function () {
@@ -153,40 +319,68 @@ Question.prototype.getJqueryDom = function () {
 
 Question.prototype.setJqueryDom = function () {
 
+    this.counter = Question.counter; //counter both for unique radio name (further down) and for the question numbers
+
     var _this = this;
 
-    this.$placeholder = $('<table style="width:100%;"></table>');
+    this.$placeholder = $('<table></table>');
+    this.$placeholder.addClass("questionContainerTable"); //adding class for external CSS
 
-    this.$placeholder.css('background-color', '#dddddd');
-    this.$placeholder.css('padding', '10px');
-    this.$placeholder.css('margin', '5px');
+    //first line for question number
+    this.$questionNumberLine = $('<tr></tr>');
+    this.$questionNumberCell = $('<th colspan="3"></th>');
+    this.$questionNumberCell.addClass("questionNumberCell"); //adding class for external CSS
+    this.$questionNumberCell.append('Question #' + (this.counter + 1));
+    this.$questionNumberLine.append(this.$questionNumberCell);
+    this.$placeholder.append(this.$questionNumberLine);
 
-    //First line for question
+    //second line for question text field
 
-    this.$firstLine = $('<tr></tr>');
-    this.$firstCell = $('<td colspan="5" ></td>');
+    this.$questionTextFieldLine = $('<tr></tr>');
+    this.$questionTextFieldCell = $('<td colspan="10"></td>');
+    this.$questionTextFieldCell.addClass("questionTextFieldCell"); //adding class for external CSS
 
-    this.$name = $('<input type="text" placeholder="Question" style="width:100%;"/>');
+    this.$name = $('<input type="text" placeholder="Question #' + (this.counter + 1) + '"/>');
+    this.$name.addClass("questionTextField"); //adding class for external CSS
 
-    this.$firstCell.append(this.$name);
-    this.$firstLine.append(this.$firstCell);
+    this.$questionTextFieldCell.append(this.$name);
+    this.$questionTextFieldLine.append(this.$questionTextFieldCell);
 
-    this.$placeholder.append(this.$firstLine);
+    this.$placeholder.append(this.$questionTextFieldLine);
 
-    //Second line for propositions
+    //The rows for all the options (A, B, C, D, E)
+    this.$optionARow = $('<tr></tr>');
+    this.$optionBRow = $('<tr></tr>');
+    this.$optionCRow = $('<tr></tr>');
+    this.$optionDRow = $('<tr></tr>');
+    this.$optionERow = $('<tr></tr>');
 
-    this.$secondLine = $('<tr></tr>');
-    this.$secondCell1 = $('<td></td>');
-    this.$secondCell2 = $('<td></td>');
-    this.$secondCell3 = $('<td></td>');
-    this.$secondCell4 = $('<td></td>');
-    this.$secondCell5 = $('<td></td>');
+    //The cells for the propositions
+    this.$optionAAnswerTD = $('<td></td>');
+    this.$optionBAnswerTD = $('<td></td>');
+    this.$optionCAnswerTD = $('<td></td>');
+    this.$optionDAnswerTD = $('<td></td>');
+    this.$optionEAnswerTD = $('<td></td>');
 
-    this.$prop1 = $('<input placeholder="Proposition 1" style="width:100%;"/>');
-    this.$prop2 = $('<input placeholder="Proposition 2" style="width:100%;"/>');
-    this.$prop3 = $('<input placeholder="Proposition 3" style="width:100%;"/>');
-    this.$prop4 = $('<input placeholder="Proposition 4" style="width:100%;"/>');
-    this.$prop5 = $('<input placeholder="Proposition 5" style="width:100%;"/>');
+    //adding class for external CSS
+    this.$optionAAnswerTD.addClass("answerCell");
+    this.$optionBAnswerTD.addClass("answerCell");
+    this.$optionCAnswerTD.addClass("answerCell");
+    this.$optionDAnswerTD.addClass("answerCell");
+    this.$optionEAnswerTD.addClass("answerCellBottom");
+
+    this.$prop1 = $('<input type="text" placeholder="Answer A" />');
+    this.$prop2 = $('<input type="text" placeholder="Answer B" />');
+    this.$prop3 = $('<input type="text" placeholder="Answer C" />');
+    this.$prop4 = $('<input type="text" placeholder="Answer D" />');
+    this.$prop5 = $('<input type="text" placeholder="Answer E" />');
+
+    //adding class for external CSS
+    this.$prop1.addClass("answerTextField");
+    this.$prop2.addClass("answerTextField");
+    this.$prop3.addClass("answerTextField");
+    this.$prop4.addClass("answerTextField");
+    this.$prop5.addClass("answerTextField");
 
     this.$name.change(function () {
         _this.content.name = _this.$name.val();
@@ -208,30 +402,20 @@ Question.prototype.setJqueryDom = function () {
         _this.content.prop5 = _this.$prop5.val();
     });
 
-    this.$secondCell1.append(this.$prop1);
-    this.$secondCell2.append(this.$prop2);
-    this.$secondCell3.append(this.$prop3);
-    this.$secondCell4.append(this.$prop4);
-    this.$secondCell5.append(this.$prop5);
+    this.$optionAAnswerTD.append(this.$prop1);
+    this.$optionBAnswerTD.append(this.$prop2);
+    this.$optionCAnswerTD.append(this.$prop3);
+    this.$optionDAnswerTD.append(this.$prop4);
+    this.$optionEAnswerTD.append(this.$prop5);
 
 
-    this.$secondLine.append(this.$secondCell1);
-    this.$secondLine.append(this.$secondCell2);
-    this.$secondLine.append(this.$secondCell3);
-    this.$secondLine.append(this.$secondCell4);
-    this.$secondLine.append(this.$secondCell5);
+    //The cells for radio buttons
 
-    this.$placeholder.append(this.$secondLine);
-
-    //Third line for answer
-    this.counter = Question.counter; //Unique radio name
-
-    this.$thirdLine = $('<tr></tr>');
-    this.$thirdCell1 = $('<td></td>');
-    this.$thirdCell2 = $('<td></td>');
-    this.$thirdCell3 = $('<td></td>');
-    this.$thirdCell4 = $('<td></td>');
-    this.$thirdCell5 = $('<td></td>');
+    this.$optionARadioTD = $('<td width="30px" colspan="1"></td>');
+    this.$optionBRadioTD = $('<td width="30px" colspan="1"></td>');
+    this.$optionCRadioTD = $('<td width="30px" colspan="1"></td>');
+    this.$optionDRadioTD = $('<td width="30px" colspan="1"></td>');
+    this.$optionERadioTD = $('<td width="30px" colspan="1"></td>');
 
     this.$ans1 = $('<input type="radio" name="ans' + this.counter + '" value="1"/>');
     this.$ans2 = $('<input type="radio" name="ans' + this.counter + '" value="2"/>');
@@ -264,18 +448,50 @@ Question.prototype.setJqueryDom = function () {
         _this.content.ans = $('input[name=ans' + _this.counter + ']:checked').val();
     });
 
-    this.$thirdCell1.append(this.$ans1);
-    this.$thirdCell2.append(this.$ans2);
-    this.$thirdCell3.append(this.$ans3);
-    this.$thirdCell4.append(this.$ans4);
-    this.$thirdCell5.append(this.$ans5);
+    this.$optionARadioTD.append(this.$ans1);
+    this.$optionBRadioTD.append(this.$ans2);
+    this.$optionCRadioTD.append(this.$ans3);
+    this.$optionDRadioTD.append(this.$ans4);
+    this.$optionERadioTD.append(this.$ans5);
 
-    this.$thirdLine.append(this.$thirdCell1);
-    this.$thirdLine.append(this.$thirdCell2);
-    this.$thirdLine.append(this.$thirdCell3);
-    this.$thirdLine.append(this.$thirdCell4);
-    this.$thirdLine.append(this.$thirdCell5);
 
-    this.$placeholder.append(this.$thirdLine);
+    // Cells for the letters for denoting question options (A, B, C, D, E)
+    this.$optionALetterTD = $('<td width="30px" colspan="1"></td>');
+    this.$optionBLetterTD = $('<td width="30px" colspan="1"></td>');
+    this.$optionCLetterTD = $('<td width="30px" colspan="1"></td>');
+    this.$optionDLetterTD = $('<td width="30px" colspan="1"></td>');
+    this.$optionELetterTD = $('<td width="30px" colspan="1"></td>');
+
+    this.$optionALetterTD.append('A. ');
+    this.$optionBLetterTD.append('B. ');
+    this.$optionCLetterTD.append('C. ');
+    this.$optionDLetterTD.append('D. ');
+    this.$optionELetterTD.append('E. ');
+
+    //appending all cells into rows
+    this.$optionARow.append(this.$optionARadioTD);
+    this.$optionBRow.append(this.$optionBRadioTD);
+    this.$optionCRow.append(this.$optionCRadioTD);
+    this.$optionDRow.append(this.$optionDRadioTD);
+    this.$optionERow.append(this.$optionERadioTD);
+
+    this.$optionARow.append(this.$optionALetterTD);
+    this.$optionBRow.append(this.$optionBLetterTD);
+    this.$optionCRow.append(this.$optionCLetterTD);
+    this.$optionDRow.append(this.$optionDLetterTD);
+    this.$optionERow.append(this.$optionELetterTD);
+
+    this.$optionARow.append(this.$optionAAnswerTD);
+    this.$optionBRow.append(this.$optionBAnswerTD);
+    this.$optionCRow.append(this.$optionCAnswerTD);
+    this.$optionDRow.append(this.$optionDAnswerTD);
+    this.$optionERow.append(this.$optionEAnswerTD);
+
+    //appending all rows back in table
+    this.$placeholder.append(this.$optionARow);
+    this.$placeholder.append(this.$optionBRow);
+    this.$placeholder.append(this.$optionCRow);
+    this.$placeholder.append(this.$optionDRow);
+    this.$placeholder.append(this.$optionERow);
 }
 

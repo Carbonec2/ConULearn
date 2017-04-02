@@ -16,7 +16,7 @@ function bind() {
     });
 
     $("#course_selection").change(function () {
-            $("#messageBox").html("");
+        $("#messageBox").html("");
         if ($("#course_selection").val()) {
             getCourseDescription();
         } else {
@@ -43,7 +43,7 @@ function getCourseDescription() {
 
             $('#courseName').html(objects.name + " Course Description");
             $('#courseDescription').html(objects.description);
-            $('#courseTeacher').html('<h4>Teacher: '+objects.user+'</h4>');
+            $('#courseTeacher').html('<h4>Teacher: ' + objects.user + '</h4>');
         }
     });
 }
@@ -66,14 +66,46 @@ function getCourses(filters, successCallback, errorCallback) {
             for (var i = 0; i < objects.length; i++) {
                 $('#course_selection').html($('#course_selection').html() + '<option value="' + objects[i].id + '">' + objects[i].name + '</option>');
             }
+        }
+    });
+}
 
-            /*
-             if (typeof objects.error.ok === "undefined" || objects.error.ok !== true) {
-             errorCallback();
-             } else {
-             successCallback(objects);
-             }
-             */
+function addQuizStudent(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizstudent', method: 'insertcurrentuserid', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            //var objects = jQuery.parseJSON(object);
+            
+            //console.log(objects.id);
+        }
+    });
+}
+
+function addQuizStudentForAllQuizzes(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'course', method: 'getmerge', OV: JSON.stringify(identifiers)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            var objects = jQuery.parseJSON(object);
+
+            objects.forEach(function (entry) {
+                var identifiers = {Quiz_id: entry.id};
+                
+                addQuizStudent(identifiers);
+            });
+            
+            console.log(objects.id);
         }
     });
 }
@@ -98,6 +130,9 @@ function addCourse(identifiers, successCallback, errorCallback) {
             if (typeof objects.error.ok === "undefined" || objects.error.ok !== true) {
                 errorCallback();
             } else {
+                var identifiers = {Course_id: objects.obj.Course_id};
+                addQuizStudentForAllQuizzes(identifiers);
+
                 successCallback(objects);
             }
 
