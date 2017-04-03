@@ -36,6 +36,9 @@ switch (strtolower($_POST['DAO'])) {
     case 'quizstudent':
         relegateQuizStudent();
         break;
+    case 'questionsanswers':
+        relegateQuestionsAnswers();
+        break;
 }
 
 function relegateUser() {
@@ -267,6 +270,26 @@ function relegateQuizStudent() {
         case 'updatecurrentuser':
             echo json_encode(QuizStudentDAO::updateCurrentUser(getOV()));
             break;
+        case 'insert':
+            echo json_encode(QuizStudentDAO::insert(getOV()));
+            break;
+        case 'update':
+            echo json_encode(QuizStudentDAO::update(getOV()));
+            break;
+        case 'save':
+            echo json_encode(QuizStudentDAO::save(getOV()));
+            break;
+        case 'getall':
+            echo json_encode(QuizStudentDAO::getAll(getFilters()));
+            break;
+        case 'get':
+            echo json_encode(QuizStudentDAO::get(getId()));
+            break;
+    }
+}
+
+function relegateQuestionsAnswers(){
+    switch (strtolower($_POST['method'])) {
         case 'insert':
             echo json_encode(QuizStudentDAO::insert(getOV()));
             break;
