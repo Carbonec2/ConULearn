@@ -291,19 +291,19 @@ function relegateQuizStudent() {
 function relegateQuestionsAnswers(){
     switch (strtolower($_POST['method'])) {
         case 'insert':
-            echo json_encode(QuizStudentDAO::insert(getOV()));
+            echo json_encode(QuestionsAnswersDAO::insert(getOV()));
             break;
         case 'update':
-            echo json_encode(QuizStudentDAO::update(getOV()));
+            echo json_encode(QuestionsAnswersDAO::update(getOV()));
             break;
         case 'save':
-            echo json_encode(QuizStudentDAO::save(getOV()));
+            echo json_encode(QuestionsAnswersDAO::save(getOV()));
             break;
         case 'getall':
-            echo json_encode(QuizStudentDAO::getAll(getFilters()));
+            echo json_encode(QuestionsAnswersDAO::getAll(getFilters()));
             break;
         case 'get':
-            echo json_encode(QuizStudentDAO::get(getId()));
+            echo json_encode(QuestionsAnswersDAO::get(getId()));
             break;
     }
 }

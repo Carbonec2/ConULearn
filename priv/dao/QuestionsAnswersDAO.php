@@ -6,7 +6,7 @@ class QuestionsAnswersDAO implements DAO {
 
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT id, question, answer, CourseUser_id FROM QuestionsAnswers WHERE id = :id');
+        $sql = $conn->prepare('SELECT id, question, answer, Course_id, User_id FROM QuestionsAnswers WHERE id = :id');
 
         $sql->bindValue(':id', $id);
 
@@ -20,6 +20,10 @@ class QuestionsAnswersDAO implements DAO {
         $conn = pdo_connect();
 
         $requestString = '';
+        
+        if (isset($filters->User_id) && (int)$filters->User_id == -1) {
+            $filters->User_id = $SESSION['userId'];
+        }
 
         if (isset($filters->Course_id)) {
             $requestString += ' AND Course_id = :Course_id';
@@ -47,6 +51,10 @@ class QuestionsAnswersDAO implements DAO {
 
     public static function insert($object) {
         $conn = pdo_connect();
+        
+        if (isset($object->User_id) && (int)$object->User_id == -1) {
+            $object->User_id = $SESSION['userId'];
+        }
 
         $sql = $conn->prepare('INSERT INTO QuestionsAnswers 
             (question, answer, Course_id, User_id) 
@@ -73,6 +81,10 @@ class QuestionsAnswersDAO implements DAO {
 
     public static function update($object) {
         $conn = pdo_connect();
+        
+        if (isset($object->User_id) && (int)$object->User_id == -1) {
+            $object->User_id = $SESSION['userId'];
+        }
         
         $sql = $conn->prepare('UPDATE QuestionsAnswers SET question = :question, 
             answer = :answer, User_id = :User_id, Course_id = :Course_id

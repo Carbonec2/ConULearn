@@ -42,10 +42,11 @@ include_once('includes/dashboardSideNavBar.php');
                 <div class="dashboard_discussions_container" id="questionsAnswersContainer">
                     
                 </div>
+                <!--
                 <div class="dashboard_new_button_container">
                     <a href="index.php?page=studentAskQuestion"><h2 class="dashboard_new_button">+ new question</h2></a>
                 </div>
-
+-->
             </div>
         </div>
     </div>
