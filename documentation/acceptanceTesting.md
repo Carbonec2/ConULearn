@@ -1,14 +1,30 @@
 ## 1.1 Sign Up as a Teacher
 ### **User Story:** As a teacher, I should be able to select the teacher account when I sign up, so that I can have the right privileges.
 
+**Happy Ending:** The user successfully creates a teacher account
+
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
 1.1.1 Click on "Sign Up" in the top navigation bar	|  |	The user should be redirected to the sign-up page | Pass
 1.1.2 Enter the username in the first textbox. | Username: Teacher	| The username should be displayed in the textbox. | Pass
 1.1.3 Enter a password in the second textbox.	|Password: 123456	| The password should be displayed in the textbox. (Hidden as asterisk) | Pass
-1.1.4 Confirm the password in the third textbox by entering the same password as step #1.4.	| Password: 123456 |	The password should be displayed in the textbox. (Hidden as asterisk) | Pass
+1.1.4 Confirm the password in the third textbox by entering the same password as step 1.1.3.	| Password: 123456 |	The password should be displayed in the textbox. (Hidden as asterisk) | Pass
 1.1.5 Select the radio button teacher.		|  Radio button: Teacher		| The radio button of Teacher should be checked. | Pass
 1.1.6 Click on the button "Sign Up"		|  	| 	The message "Registration successful" should appear on top of the username text box. | Pass
+
+**Unhappy Ending 1**: Username already exist
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|-----------
+1.1.7 Click on “Sign Up” in the top navigation bar | | The user should be redirected to the sign-up page  | Pass
+1.1.8 Enter the username in the first textbox.  | Username: Teacher  | The username should be displayed in the textbox.  | Pass 
+1.1.9 Enter a password in the second textbox.  | Password: 123456  | The password should be displayed in the textbox. (Hidden as asterisks)  | Pass 
+1.1.10 Confirm the password in the third textbox by entering the same password as step 1.1.9  | Password: 123456  | The password should be displayed in the textbox.  (Hidden as asterisks)  | Pass 
+1.1.11 Select the radio button teacher.  | Radio button: Teacher  | The radio button of Teacher should be checked.  | Pass 
+1.1.12 Click on the button “Sign Up”  |  |  The message “Registration error: this username already exists.” should appear on top of the username text box.  | Pass 
+
+
+
 
 
 ## 1.2	Sign Up as a Student
@@ -19,7 +35,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.2.1 Click on "Sign Up" in the top navigation bar		| 	| 	The user should be redirected to the sign-up page | Pass
 1.2.2 Enter the username in the first textbox.	| 	Username: Student		| The username should be displayed in the textbox. | Pass
 1.2.3 Enter a password in the second textbox.	| 	Password: 123456		| The password should be displayed in the textbox. (Hidden as asterisk) | Pass
-1.2.4 Confirm the password in the third textbox by entering the same password as step 2.4		| Password: 123456		| The password should be displayed in the textbox. (Hidden as asterisk) | Pass
+1.2.4 Confirm the password in the third textbox by entering the same password as step 1.2.3		| Password: 123456		| The password should be displayed in the textbox. (Hidden as asterisk) | Pass
 1.2.5 Select the radio button teacher.		| Radio button: Student		| The radio button of Teacher should be checked. | Pass
 1.2.6 Click on the button "Sign Up"			| 	| The message "Registration successful" should appear on top of the username text box. | Pass
 
