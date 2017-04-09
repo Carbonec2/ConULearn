@@ -5,6 +5,8 @@ $(document).ready(function () {
     fillQuizzes({Course_id: $_GET('courseid')});
 
     fillQuestionsAnswers();
+    
+    consoleLogger = new ConsoleLogger($("#consoleLoggerContainer"));
 });
 
 
@@ -123,7 +125,7 @@ function fillQuestionsAnswers() {
 
                 $announcement.html('<b>' + entry.question + '</b><br/>Answer: ' + entry.answer);
 
-                if (entry.question != null && entry.description.length > 0) {
+                if (entry.question != null && entry.question.length > 0) {
                     $("#questionsAnswersContainer").append($announcement);
                 }
             });
@@ -162,4 +164,24 @@ function saveQuestion() {
 
     //Send the content to the BDD
 
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'questionsanswers', method: 'save', OV: JSON.stringify(content)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            var objects = jQuery.parseJSON(object);
+            
+            console.log(objects);
+            
+            consoleLogger.goodNotice("Question registered in the database!");
+            
+            $("#questionsAnswersContainer").empty();
+            
+            fillQuestionsAnswers();
+        }
+    });
 }

@@ -22,18 +22,18 @@ class QuestionsAnswersDAO implements DAO {
         $requestString = '';
         
         if (isset($filters->User_id) && (int)$filters->User_id == -1) {
-            $filters->User_id = $SESSION['userId'];
+            $filters->User_id = $_SESSION['userId'];
         }
 
         if (isset($filters->Course_id)) {
-            $requestString += ' AND Course_id = :Course_id';
+            $requestString .= ' AND Course_id = :Course_id';
         }
 
         if (isset($filters->User_id)) {
-            $requestString += ' AND User_id = :User_id';
+            $requestString .= ' AND User_id = :User_id';
         }
 
-        $sql = $conn->prepare('SELECT id, question, answer, CourseUser_id 
+        $sql = $conn->prepare('SELECT id, question, answer, User_id, Course_id 
             FROM QuestionsAnswers WHERE 1 = 1 ' . $requestString);
 
         if (isset($filters->Course_id)) {
@@ -53,7 +53,7 @@ class QuestionsAnswersDAO implements DAO {
         $conn = pdo_connect();
         
         if (isset($object->User_id) && (int)$object->User_id == -1) {
-            $object->User_id = $SESSION['userId'];
+            $object->User_id = $_SESSION['userId'];
         }
 
         $sql = $conn->prepare('INSERT INTO QuestionsAnswers 
@@ -61,10 +61,10 @@ class QuestionsAnswersDAO implements DAO {
             VALUES 
             (:question, :answer, :Course_id, :User_id)');
 
-        $sql->bindValue(':question', $filters->question);
-        $sql->bindValue(':answer', $filters->answer);
-        $sql->bindValue(':Course_id', $filters->Course_id);
-        $sql->bindValue(':User_id', $filters->User_id);
+        $sql->bindValue(':question', $object->question);
+        $sql->bindValue(':answer', $object->answer);
+        $sql->bindValue(':Course_id', $object->Course_id);
+        $sql->bindValue(':User_id', $object->User_id);
 
         $sql->execute();
 
@@ -83,7 +83,7 @@ class QuestionsAnswersDAO implements DAO {
         $conn = pdo_connect();
         
         if (isset($object->User_id) && (int)$object->User_id == -1) {
-            $object->User_id = $SESSION['userId'];
+            $object->User_id = $_SESSION['userId'];
         }
         
         $sql = $conn->prepare('UPDATE QuestionsAnswers SET question = :question, 
