@@ -231,25 +231,23 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 ### User Story: As a teacher, I must be able to create quizzes with a desired number of multiple-choice questions, write the questions & possible choices, indicate the correct answer, and set the submission due dates for students.
 **Precondition:** 
 - Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
-- And a course must be created by teacher. [See 5. Create a Course].
+- And a course must be created by teacher. [See 3. Create a Course].
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
-10.1 Click on the course you desire to create a quiz. |  | 	The user should be directed to the course dashboard.
- | Pass
-10.2 Click on the “New Quiz” button found at the bottom of the Quiz frame |  | The user should be redirected to the quiz creation form | Pass
-10.3 Click on the textbox of “Quiz Name” to give the name of the quiz. And select the due day from the calendar | Quiz 1
-Sep 11th | 	Input the quiz name and due date  | Pass
-10.4 Click on the textbox of “Number of Questions” to give the number of questions that a teacher wants, and click the “Apply” ｜10 ｜Input the number of quiz a teacher wants. The # of boxes should change directly.｜ Pass
+10.1 Click on the course you desire to create a quiz. |  | 	The user should be directed to the course dashboard. | Pass 
+10.2 Click on the “New Quiz” button found at the bottom of the Quiz frame |  | The user should be redirected to the quiz creation form |Pass 
+10.3 Click on the textbox of “Quiz Name” to give the name of the quiz. And select the due day from the calendar | Quiz 1. September 11 2017 | 	input the quiz name and due date | Pass 
+10.4 Click on the textbox of “Number of Questions” to give the number of questions that a teacher wants, and click the “Apply” | 10 | Input the number of quiz a teacher wants. The # of boxes should change directly.| Pass |
 10.5 Sequentially enter multiple questions and 5 possible answers for each of them. Indicate the right answer by clicking the radio button. | Q: Suppose that nominal wages fall and productivity rises in a particular economy. Other things equal, the aggregate: A. demand curve will shift leftward. B. supply curve will shift rightward. C. supply curve will shift leftward. D. expenditures curve will shift downward | A list of desired questions are made | Pass
 10.6 Click on “Submit” button at the bottom of editable textbox to finish creating the new quiz. | | The new quiz should be displayed in the Quiz field with its name and due date. |Pass
 
-## 11.Quiz creation
+## 11.Ability for students to take quizzes
 ### User Story:  As a student, I must be able to take quizzes that teachers have posted in courses that I have registered in.
                  
 **Precondition:** 
-- Must be signed in as a student.  [See 2.2. Sign in as Teacher]
-- And a course must be created by teacher. [See 5. Create a Course].
+- Must be signed in as a student.  [See 2.2. Sign in as Student]
+- And a course must be created by teacher. [See 3. Create a Course].
 - And the student should register this course [See 5. Course registration].
 
 Test Steps | Test Data | Expected Result | Pass/Fail
@@ -258,3 +256,19 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 11.2 Click on the quiz that need to be taken.  | | The user should be redirected to the quiz form. | Pass
 11.3 By clicking on radio buttons, one answer can be selected for each question | |One radio button will be selected for each question |Pass
 11.4 Click on “Submit” button at the bottom to submit the quiz  | | The modified announcement description should be displayed in the textbox. | Pass
+
+## 13. Choosing amount of questions for quizzes.
+### User Story: As a teacher, I want to choose the amount of questions in my quizzes.
+
+**Precondition:** 
+- Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
+- And a course must be created by teacher. [See 3. Create a Course].
+
+Happy ending:
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+13.1 Click on the course for which you desire to make a quiz.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course page with the course number (Soen341) on top of the page and “Announcements”, “Quizzes” and “Questions and Answers” as options to access.  | Pass
+13.2 Click on the “new quiz” in the Quizzes field, to create a quiz.  |  |  The user should be directed to the quiz creation page. | Pass
+13.3 Click on the text box of number of questions and put in the number that you want  | 35 |   | Pass
+13.4 Click on apply |  |  The user should see the number of questions numbered 1..amount where he can start adding the questions and multiple choice answers. | Pass
