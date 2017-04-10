@@ -236,7 +236,7 @@ function fillQuestionsAnswers() {
                     saveAnswer(content);
                 });
 
-                $announcement.html(entry.user + ' has asked: <b>' + entry.question + '</b><br/>Answer: ');// + entry.answer
+                $announcement.html(entry.user + ' as asked: <b>' + entry.question + '</b><br/>Answer: ');// + entry.answer
 
                 //No answer yet
                 if (entry.answer == null || entry.answer.length <= 0) {
