@@ -26,15 +26,22 @@ class QuestionsAnswersDAO implements DAO {
         }
 
         if (isset($filters->Course_id)) {
-            $requestString .= ' AND Course_id = :Course_id';
+            $requestString .= ' AND QuestionsAnswers.Course_id = :Course_id';
         }
 
         if (isset($filters->User_id)) {
-            $requestString .= ' AND User_id = :User_id';
+            $requestString .= ' AND QuestionsAnswers.User_id = :User_id';
         }
 
-        $sql = $conn->prepare('SELECT id, question, answer, User_id, Course_id 
-            FROM QuestionsAnswers WHERE 1 = 1 ' . $requestString);
+        $sql = $conn->prepare('SELECT QuestionsAnswers.id AS id, 
+            QuestionsAnswers.question AS question, 
+            QuestionsAnswers.answer AS answer, 
+            QuestionsAnswers.User_id AS User_id, 
+            QuestionsAnswers.Course_id AS Course_id,
+            User.user AS user
+            FROM QuestionsAnswers AS QuestionsAnswers 
+            LEFT JOIN User AS User ON User.id = QuestionsAnswers.User_id
+            WHERE 1 = 1 ' . $requestString);
 
         if (isset($filters->Course_id)) {
             $sql->bindValue(':Course_id', $filters->Course_id);
