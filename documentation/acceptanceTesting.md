@@ -13,7 +13,9 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.1.6 Click on the button "Sign Up"		|  	| 	The message "Registration successful" should appear on top of the username text box. | Pass
 
 **Unhappy Ending 1**: Username already exist
-- **Preconditions:** steps 1.1.1 to 1.1.6 must be done.
+
+**Preconditions:** 
+- Steps 1.1.1 to 1.1.6 must be done.
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -35,9 +37,6 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.1.17 Select the radio button teacher.  | Radio button: Teacher  | The radio button of Teacher should be checked.  | Pass 
 1.1.18 Click on the button “Sign Up”   |   | The message “Passwords don't match.” should appear on top of the username text box. | Pass 
 
-
-
-
 ## 1.2	Sign Up as a Student
 ### **User Story:** As a student, I should be able to select the student account when I sign up, so that I can have the right privileges.
 
@@ -53,7 +52,9 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.2.6 Click on the button "Sign Up"			| 	| The message "Registration successful" should appear on top of the username text box. | Pass
 
 **Unhappy Ending 1 :** Username already exist 
-- **Precondition:** Steps 1.2.1 to 1.2.5 must be done. 
+
+**Precondition:** 
+- Steps 1.2.1 to 1.2.5 must be done. 
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -78,7 +79,8 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 2.1 Sign in as a Teacher
 ### **User Story:** As a teacher, I want to sign in as a teacher so that I can create quiz, announcements, answer to students’ questions.  
-- **Precondition:** A teacher account must be created following the steps 1.1.1 to 1.1.6 [See 1.1 Sign Up as Teacher]
+**Precondition:** 
+- A teacher account must be created following the steps 1.1.1 to 1.1.6 [See 1.1 Sign Up as Teacher]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -91,7 +93,8 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 2.2	Sign in as a Student
 ### **User Story:** As a student, I want to sign in as a student so that I can take quizzes, ask questions and see important announcements.
-- **Precondition:** A student account must be created following the steps 1.2.1 to 1.2.6 [See 1.1 Sign Up as Student]
+**Precondition:** 
+- A student account must be created following the steps 1.2.1 to 1.2.6 [See 1.1 Sign Up as Student]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -101,12 +104,10 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 2.2.4 Confirm the password by re-entering the same password as step 2.2.3		| Password: 123456		| The password should be displayed in the textbox. (Hidden as asterisk) | Pass
 2.2.5 Click on the button "Connect"		| 	| 	The student is redirected to another page where he should see all his registered courses. Since the student hasn’t registered to any course yet, the student should see the button "Register for a class" in the middle of the page. | Pass
 
-
-
-
 ## 3.	Course Creation
 ### **User Story:** As a teacher, I want to create a course so that students can register to it.
-- **Precondition:**  Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
+**Precondition:**  
+- Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -117,7 +118,8 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 4.	Teacher Course List
 ### User Story: As a teacher, I want to see all the courses that I have created so that I can makes quizzes and announcements for the appropriate courses.
-- **Precondition:** Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
+**Precondition:** 
+- Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -147,7 +149,9 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 5.4 Click on the button "Submit"	 |  | 	The student should be redirected to the courses page and a button with the course that he just registered to should appear in the course list.  | Pass
 
 **Unhappy Ending 1:** Student cannot register to the same course more than once. 
-- **Precondition:** steps 5.1 to 5.4 must be done  
+
+**Precondition:** 
+- Steps 5.1 to 5.4 must be done  
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -156,10 +160,78 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 5.7 Click on the course of your choice.  | Course to register: Soen 341 [ Same course created in 5.3]   | The course is selected.  | Pass 
 5.8 Click on the button “Submit”  |  | A message "You are already registered to this course" should appear below the course description.   | Pass 
 
+## 6.	Teacher dashboard 
+### User Story: As a teacher, I want to be able to see the announcements/quizzes I have created and Questions of my students. 
+**Precondition:**
+- Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
+- A course must be created by teacher [See 3. Create a Course]. 
+- Announcements must be created. [See 7.Teacher Announcement]
+- Quizzes must be created. [See 10. Quiz Creation] 
+- Students must have posted questions. [See 14. Question and Answers]
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+6.1 Click on “Courses” on the left navigation bar or “DASHBOARD” on the top navigation bar to access the course list.  |  |  The user should be directed to the course list page.  | Pass
+6.2 Click on the course for which you desire to view the announcements, quizzes and questions.  |	 Course Number: Soen341  |  The user should be directed to the course page (Soen341) that display three text fields with “Announcements”, “Quizzes” and “Questions and Answers” as titles respectively.  | Pass
+6.3 View in the Announcement field.  |  |  The user should see a list of announcements that were already created.  | Pass
+6.4 View in the Quizzes field found on the bottom right of Announcement field.  |  |  The user should see a list of Quiz’s titles that were already created.  | Pass
+6.5 View in the Question and Answers field found on the bottom left of Announcement field.  |  |  The user should see a list of questions that students posted.  | Pass
+
+## 7. Create Teacher Announcements 
+### User Story: As a teacher, I want to make important announcements, to keep the students registered to my classes updated.
+**Precondition:**       
+ - Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
+ - And a course must be created by teacher [See 3. Create a Course]. 
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+7.1 Click on “Courses” on the left navigation bar or “DASHBOARD” on the top navigation bar to access the course list.  |  |  The user should be directed to the course list page.  | Pass
+7.2 Click on the course for which you desire to make an announcement.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course page with the course number (Soen341) on top of the page and “Announcements”, “Quizzes” and “Questions and Answers” as options to access.  | Pass
+7.3 Click on the “new announcement” in the Announcements field, to create an announcement.  |  |  The user should be directed to the “Announcement Form” page with a big textbox to be filled with unlimited number of words.  | Pass
+7.4 Enter in the textbox, the description of the announcement.  |  Announcement Description: The announcement will be deared.  |  The announcement description should be displayed in the textbox.  | Pass
+7.5 Click on “Clear” button at the bottom of the textbox to remove the unsaved announcement.  |  |  An empty textbox should be displayed and the announcement description can be entered again.  | Pass
+7.6 Enter in the textbox, the description of the announcement.  |  Announcement Description: cThe final project is due in a week.  |  The announcement description should be displayed in the textbox.  |Pass
+7.7 Click on “Submit” button to save announcement.  |  | The user should be redirected back to the course number (Soen341) page where he should see all the announcements that he created in the Announcements field. | Pass
+
+## 8.	Student dashboard 
+### User Story: As a student, I want to see my teachers' announcements, quizzes and discussion board.
+**Precondition:**
+- Must be signed in as a student.  [See 2.2. Sign in as a Student]
+- Student must be registered in course [See 5. Course Registration]. 
+- Announcements must be created. [See 7.Teacher Announcement]
+- Quizzes must be created. [See 10. Quiz Creation] 
+- Students must have posted questions. [See 14. Question and Answers]
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+8.1 Click on “Courses” on the left navigation bar or “DASHBOARD” on the top navigation bar to access the course list.  |  |  The user should be directed to the course list page.  | Pass
+8.2 Click on the course for which you desire to view the announcements, quizzes and questions.  |  Course Number: Soen341  |  The user should be directed to the course page (Soen341) that display three text fields with “Announcements”, “Quizzes” and “Questions and Answers” as titles respectively.  | Pass
+8.3 View in the Announcement field.  |  |  The user should see a list of announcements that were posted.  | Pass
+8.4 View in the Quizzes field found on the bottom right of Announcement field.  |  |  The user should see a list of Quiz’s titles that were posted.  | Pass
+8.5 View in the Question and Answers field found on the bottom left of Announcement field.  |  |  The user should see a list of questions that students posted.  | Pass
+
+## 9.	Edit or Delete Teacher Announcements 
+### User Story: - As a teacher, I would like to edit the announcements so that I can correct any spelling mistake or add missing information and also delete announcements from any of my courses. 
+**Precondition:**
+- Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
+- And a course must be created by teacher [See 3. Create a Course].
+- And an announcement must have been created by teacher [7. Create Teacher Announcement]
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+9.1 Click on the course you desire to change or delete announcement.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course (Soen341) page and within the Announcement field, a list of already created announcements is displayed.  | Pass
+9.2 Click on the “Edit” button found besides the announcement to modify announcement.  |  [See the announcement created in 7. Create Teacher Announcement]  |  The announcement description should be displayed in an editable textbox.  | Pass
+9.3 Click “Cancel” button at the bottom of editable textbox go back to unmodified description.  |  |  The unmodified announcement description should still be displayed in the Announcement field.  | Pass
+9.4 Click on the “Edit” button found besides the announcement to modify announcement.  |  |  The announcement description should be displayed in an editable textbox.  | Pass
+9.5 Enter in the textbox any modification in the announcement description.  |  Announcement Description: “The final is due on April 5th ”  |  The modified announcement description should be displayed in the textbox.  | Pass
+9.6 Click on “Submit” button at the bottom of editable textbox to save modified announcement.  |  |  The new announcement should be displayed in the Announcement field along with other announcements (if there are others).  | Pass
+9.7 Click on the “Delete” button found besides the announcement to delete announcement.  |  |  The announcement should be removed (disappear) from the Announcement field.  | Pass
+
 ## 10.	Quiz creation
 ### User Story: As a teacher, I must be able to create quizzes with a desired number of multiple-choice questions, write the questions & possible choices, indicate the correct answer, and set the submission due dates for students.
-- **Precondition:** Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
- And a course must be created by teacher [See 5. Create a Course].
+**Precondition:** 
+- Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
+- And a course must be created by teacher. [See 5. Create a Course].
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
