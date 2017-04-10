@@ -194,3 +194,104 @@ function deleteAnnouncement(content, successCallback, errorCallback) {
         }
     });
 }
+
+function fillQuestionsAnswers() {
+
+    var content = {Course_id: $_GET('Course_id')};
+
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'questionsanswers', method: 'getall', filters: JSON.stringify(content)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            var objects = jQuery.parseJSON(object);
+
+            console.log(object);
+            console.log(objects);
+
+            $("#questionsAnswersContainer").css('overflow-y', 'scroll');
+
+            objects.forEach(function (entry) {
+                console.log(entry);
+                var $announcement = $('<div></div>');
+
+                $announcement.css('background-color', '#dddddd');
+                $announcement.css('padding', '10px');
+                $announcement.css('margin', '5px');
+
+                var $answer = $('<textarea id="' + entry.id + '" placeholder="Answer" ></textarea>');
+                var $save = $('<input type="button" value="Save" />');
+
+                $save.data('content', entry);
+
+                $save.click(function () {
+
+                    var content = $(this).data('content');
+
+                    content.answer = $answer.val();
+                    saveAnswer(content);
+                });
+
+                $announcement.html(entry.user + ' has asked: <b>' + entry.question + '</b><br/>Answer: ');// + entry.answer
+
+                //No answer yet
+                if (entry.answer == null || entry.answer.length <= 0) {
+                    $announcement.append($('<br/>'));
+                    $announcement.append($answer);
+                    $announcement.append($('<br/>'));
+                    $announcement.append($save);
+                } else {
+                    $announcement.append($('<br/>'));
+                    $announcement.append('<i>' + entry.answer + '</i>');
+                }
+
+                if (entry.question != null && entry.question.length > 0) {
+                    $("#questionsAnswersContainer").append($announcement);
+                }
+            });
+
+            var $announcement = $('<div></div>');
+
+            $announcement.css('background-color', '#dddddd');
+            $announcement.css('padding', '10px');
+            $announcement.css('margin', '5px');
+
+            $announcement.append('<br/>');
+
+            $("#questionsAnswersContainer").append($announcement);
+        }
+    });
+}
+
+function saveAnswer(content) {
+
+    //Send the content to the BDD
+
+    console.log(content);
+
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'questionsanswers', method: 'save', OV: JSON.stringify(content)},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+            var objects = jQuery.parseJSON(object);
+
+            console.log(objects);
+
+            consoleLogger.goodNotice("Question registered in the database!");
+
+            $("#questionsAnswersContainer").empty();
+
+            fillQuestionsAnswers();
+        }
+    });
+}
+
