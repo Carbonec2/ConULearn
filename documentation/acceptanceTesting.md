@@ -13,6 +13,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.1.6 Click on the button "Sign Up"		|  	| 	The message "Registration successful" should appear on top of the username text box. | Pass
 
 **Unhappy Ending 1**: Username already exist
+- **Preconditions:** steps 1.1.1 to 1.1.6 must be done.
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -23,6 +24,16 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.1.11 Select the radio button teacher.  | Radio button: Teacher  | The radio button of Teacher should be checked.  | Pass 
 1.1.12 Click on the button “Sign Up”  |  |  The message “Registration error: this username already exists.” should appear on top of the username text box.  | Pass 
 
+**Unhappy Ending 2**: Confirmation password does not match
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|-----------
+1.1.13 Click on “Sign Up” in the top navigation bar  |   | The user should be redirected to the sign-up page  | Pass 
+1.1.14 Enter the username in the first textbox.  | Username: NewTeacher  | The username should be displayed in the textbox.  | Pass 
+1.1.15 Enter a password in the second textbox.  | Password: 123456  | The password should be displayed in the textbox. (Hidden as asterisks)  | Pass 
+1.1.16 Confirm the password in the third textbox by entering a different password as step 1.1.15  | Password: 12345678  | The password should be displayed in the textbox. (Hidden as asterisks)  | Pass 
+1.1.17 Select the radio button teacher.  | Radio button: Teacher  | The radio button of Teacher should be checked.  | Pass 
+1.1.18 Click on the button “Sign Up”   |   | The message “Passwords don't match.” should appear on top of the username text box. | Pass 
 
 
 
