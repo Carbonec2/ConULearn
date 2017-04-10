@@ -13,7 +13,9 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.1.6 Click on the button "Sign Up"		|  	| 	The message "Registration successful" should appear on top of the username text box. | Pass
 
 **Unhappy Ending 1**: Username already exist
-- **Preconditions:** steps 1.1.1 to 1.1.6 must be done.
+
+**Preconditions:** 
+- Steps 1.1.1 to 1.1.6 must be done.
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -35,9 +37,6 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.1.17 Select the radio button teacher.  | Radio button: Teacher  | The radio button of Teacher should be checked.  | Pass 
 1.1.18 Click on the button “Sign Up”   |   | The message “Passwords don't match.” should appear on top of the username text box. | Pass 
 
-
-
-
 ## 1.2	Sign Up as a Student
 ### **User Story:** As a student, I should be able to select the student account when I sign up, so that I can have the right privileges.
 
@@ -53,7 +52,9 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 1.2.6 Click on the button "Sign Up"			| 	| The message "Registration successful" should appear on top of the username text box. | Pass
 
 **Unhappy Ending 1 :** Username already exist 
-- **Precondition:** Steps 1.2.1 to 1.2.5 must be done. 
+
+**Precondition:** 
+- Steps 1.2.1 to 1.2.5 must be done. 
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -78,7 +79,8 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 2.1 Sign in as a Teacher
 ### **User Story:** As a teacher, I want to sign in as a teacher so that I can create quiz, announcements, answer to students’ questions.  
-- **Precondition:** A teacher account must be created following the steps 1.1.1 to 1.1.6 [See 1.1 Sign Up as Teacher]
+**Precondition:** 
+- A teacher account must be created following the steps 1.1.1 to 1.1.6 [See 1.1 Sign Up as Teacher]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -91,7 +93,8 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 2.2	Sign in as a Student
 ### **User Story:** As a student, I want to sign in as a student so that I can take quizzes, ask questions and see important announcements.
-- **Precondition:** A student account must be created following the steps 1.2.1 to 1.2.6 [See 1.1 Sign Up as Student]
+**Precondition:** 
+- A student account must be created following the steps 1.2.1 to 1.2.6 [See 1.1 Sign Up as Student]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -101,12 +104,10 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 2.2.4 Confirm the password by re-entering the same password as step 2.2.3		| Password: 123456		| The password should be displayed in the textbox. (Hidden as asterisk) | Pass
 2.2.5 Click on the button "Connect"		| 	| 	The student is redirected to another page where he should see all his registered courses. Since the student hasn’t registered to any course yet, the student should see the button "Register for a class" in the middle of the page. | Pass
 
-
-
-
 ## 3.	Course Creation
 ### **User Story:** As a teacher, I want to create a course so that students can register to it.
-- **Precondition:**  Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
+**Precondition:**  
+- Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -117,7 +118,8 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 4.	Teacher Course List
 ### User Story: As a teacher, I want to see all the courses that I have created so that I can makes quizzes and announcements for the appropriate courses.
-- **Precondition:** Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
+**Precondition:** 
+- Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -147,7 +149,9 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 5.4 Click on the button "Submit"	 |  | 	The student should be redirected to the courses page and a button with the course that he just registered to should appear in the course list.  | Pass
 
 **Unhappy Ending 1:** Student cannot register to the same course more than once. 
-- **Precondition:** steps 5.1 to 5.4 must be done  
+
+**Precondition:** 
+- Steps 5.1 to 5.4 must be done  
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -191,7 +195,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 8.	Student dashboard 
 ### User Story: As a student, I want to see my teachers' announcements, quizzes and discussion board.
-- **Precondition:**
+**Precondition:**
 - Must be signed in as a student.  [See 2.2. Sign in as a Student]
 - Student must be registered in course [See 5. Course Registration]. 
 - Announcements must be created. [See 7.Teacher Announcement]
@@ -225,8 +229,9 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 10.	Quiz creation
 ### User Story: As a teacher, I must be able to create quizzes with a desired number of multiple-choice questions, write the questions & possible choices, indicate the correct answer, and set the submission due dates for students.
-- **Precondition:** Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
- And a course must be created by teacher [See 5. Create a Course].
+**Precondition:** 
+- Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
+- And a course must be created by teacher. [See 5. Create a Course].
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
