@@ -156,6 +156,23 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 5.7 Click on the course of your choice.  | Course to register: Soen 341 [ Same course created in 5.3]   | The course is selected.  | Pass 
 5.8 Click on the button “Submit”  |  | A message "You are already registered to this course" should appear below the course description.   | Pass 
 
+## 6.	Teacher dashboard 
+### User Story: As a teacher, I want to be able to see the announcements/quizzes I have created and Questions of my students. 
+**Precondition:**
+- Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
+- A course must be created by teacher [See 3. Create a Course]. 
+- Announcements must be created. [See 7.Teacher Announcement]
+- Quizzes must be created. [See 10. Quiz Creation] 
+- Students must have posted questions. [See 14. Question and Answers]
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+6.1 Click on “Courses” on the left navigation bar or “DASHBOARD” on the top navigation bar to access the course list.  |  |  The user should be directed to the course list page.  | Pass
+6.2 Click on the course for which you desire to view the announcements, quizzes and questions.  |	 Course Number: Soen341  |  The user should be directed to the course page (Soen341) that display three text fields with “Announcements”, “Quizzes” and “Questions and Answers” as titles respectively.  | Pass
+6.3 View in the Announcement field.  |  |  The user should see a list of announcements that were already created.  | Pass
+6.4 View in the Quizzes field found on the bottom right of Announcement field.  |  |  The user should see a list of Quiz’s titles that were already created.  | Pass
+6.5 View in the Question and Answers field found on the bottom left of Announcement field.  |  |  The user should see a list of questions that students posted.  | Pass
+
 ## 10.	Quiz creation
 ### User Story: As a teacher, I must be able to create quizzes with a desired number of multiple-choice questions, write the questions & possible choices, indicate the correct answer, and set the submission due dates for students.
 - **Precondition:** Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
