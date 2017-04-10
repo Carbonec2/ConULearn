@@ -78,7 +78,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 2.1 Sign in as a Teacher
 ### **User Story:** As a teacher, I want to sign in as a teacher so that I can create quiz, announcements, answer to students’ questions.  
-- **Precondition:** A teacher acount must be created following the steps 1.1.1 to 1.1.6 [See 1.1 Sign Up as Teacher]
+- **Precondition:** A teacher account must be created following the steps 1.1.1 to 1.1.6 [See 1.1 Sign Up as Teacher]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
@@ -91,7 +91,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 ## 2.2	Sign in as a Student
 ### **User Story:** As a student, I want to sign in as a student so that I can take quizzes, ask questions and see important announcements.
-- **Precondition:** A student acount must be created following the steps 1.2.1 to 1.2.6 [See 1.1 Sign Up as Student]
+- **Precondition:** A student account must be created following the steps 1.2.1 to 1.2.6 [See 1.1 Sign Up as Student]
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
