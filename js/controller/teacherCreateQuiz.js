@@ -86,7 +86,6 @@ function addQuizStudentForStudents(identifiers, Quiz_id) {
             //error 500
         },
         success: function (object) {
-            //window.location = "index.php?page=dashboardTeacher";
 
             var objects = jQuery.parseJSON(object);
 
@@ -97,7 +96,7 @@ function addQuizStudentForStudents(identifiers, Quiz_id) {
                 console.log(identifiers);
                 addQuizStudent(identifiers, Quiz_id);
             });
-            window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename=' + $_GET('coursename') + '&Course_id=' + $_GET('Course_id');
+            //window.location = 'index.php?page=courseDashboardTeacher&id=1&coursename=' + $_GET('coursename') + '&Course_id=' + $_GET('Course_id');
         }
     });
 }
@@ -339,7 +338,7 @@ Question.prototype.setJqueryDom = function () {
     this.$questionTextFieldCell = $('<td colspan="10"></td>');
     this.$questionTextFieldCell.addClass("questionTextFieldCell"); //adding class for external CSS
 
-    this.$name = $('<input type="text" placeholder="Question #' + (this.counter + 1) + '"/>');
+    this.$name = $('<input id="question'+this.counter+'name" type="text" placeholder="Question #' + (this.counter + 1) + '"/>');
     this.$name.addClass("questionTextField"); //adding class for external CSS
 
     this.$questionTextFieldCell.append(this.$name);
@@ -368,11 +367,11 @@ Question.prototype.setJqueryDom = function () {
     this.$optionDAnswerTD.addClass("answerCell");
     this.$optionEAnswerTD.addClass("answerCellBottom");
 
-    this.$prop1 = $('<input type="text" placeholder="Answer A" />');
-    this.$prop2 = $('<input type="text" placeholder="Answer B" />');
-    this.$prop3 = $('<input type="text" placeholder="Answer C" />');
-    this.$prop4 = $('<input type="text" placeholder="Answer D" />');
-    this.$prop5 = $('<input type="text" placeholder="Answer E" />');
+    this.$prop1 = $('<input type="text" id="question'+this.counter+'prop1" placeholder="Answer A" />');
+    this.$prop2 = $('<input type="text" id="question'+this.counter+'prop2" placeholder="Answer B" />');
+    this.$prop3 = $('<input type="text" id="question'+this.counter+'prop3" placeholder="Answer C" />');
+    this.$prop4 = $('<input type="text" id="question'+this.counter+'prop4" placeholder="Answer D" />');
+    this.$prop5 = $('<input type="text" id="question'+this.counter+'prop5" placeholder="Answer E" />');
 
     //adding class for external CSS
     this.$prop1.addClass("answerTextField");
@@ -381,23 +380,23 @@ Question.prototype.setJqueryDom = function () {
     this.$prop4.addClass("answerTextField");
     this.$prop5.addClass("answerTextField");
 
-    this.$name.change(function () {
+    $('body').on('change', '#question'+this.counter+'name', function () {
         _this.content.name = _this.$name.val();
     });
 
-    this.$prop1.change(function () {
+    $('body').on('change', '#question'+this.counter+'prop1', function () {
         _this.content.prop1 = _this.$prop1.val();
     });
-    this.$prop2.change(function () {
+    $('body').on('change', '#question'+this.counter+'prop2', function () {
         _this.content.prop2 = _this.$prop2.val();
     });
-    this.$prop3.change(function () {
+    $('body').on('change', '#question'+this.counter+'prop3', function () {
         _this.content.prop3 = _this.$prop3.val();
     });
-    this.$prop4.change(function () {
+    $('body').on('change', '#question'+this.counter+'prop4', function () {
         _this.content.prop4 = _this.$prop4.val();
     });
-    this.$prop5.change(function () {
+    $('body').on('change', '#question'+this.counter+'prop5', function () {
         _this.content.prop5 = _this.$prop5.val();
     });
 
@@ -416,34 +415,35 @@ Question.prototype.setJqueryDom = function () {
     this.$optionDRadioTD = $('<td width="30px" colspan="1"></td>');
     this.$optionERadioTD = $('<td width="30px" colspan="1"></td>');
 
-    this.$ans1 = $('<input type="radio" name="ans' + this.counter + '" value="1"/>');
-    this.$ans2 = $('<input type="radio" name="ans' + this.counter + '" value="2"/>');
-    this.$ans3 = $('<input type="radio" name="ans' + this.counter + '" value="3"/>');
-    this.$ans4 = $('<input type="radio" name="ans' + this.counter + '" value="4"/>');
-    this.$ans5 = $('<input type="radio" name="ans' + this.counter + '" value="5"/>');
+    this.$ans1 = $('<input type="radio" id="question'+this.counter+'ans1" name="ans' + this.counter + '" value="1"/>');
+    this.$ans2 = $('<input type="radio" id="question'+this.counter+'ans2" name="ans' + this.counter + '" value="2"/>');
+    this.$ans3 = $('<input type="radio" id="question'+this.counter+'ans3" name="ans' + this.counter + '" value="3"/>');
+    this.$ans4 = $('<input type="radio" id="question'+this.counter+'ans4" name="ans' + this.counter + '" value="4"/>');
+    this.$ans5 = $('<input type="radio" id="question'+this.counter+'ans5" name="ans' + this.counter + '" value="5"/>');
 
-    this.$name.change(function () {
+    this.$name.on('change', function () {
         _this.content.name = _this.$name.val();
     });
 
     //Do something to store checked answer
-    this.$ans1.change(function () {
+    this.$ans1.on('change', function () {
         _this.content.ans = _this.$ans1.val();
     });
-
-    this.$ans1.on('change', function () {
+    
+    $('body').on('change', '#question'+this.counter+'ans1', function () {
         _this.content.ans = $('input[name=ans' + _this.counter + ']:checked').val();
     });
-    this.$ans2.on('change', function () {
+    
+    $('body').on('change', '#question'+this.counter+'ans2', function () {
         _this.content.ans = $('input[name=ans' + _this.counter + ']:checked').val();
     });
-    this.$ans3.on('change', function () {
+    $('body').on('change', '#question'+this.counter+'ans3', function () {
         _this.content.ans = $('input[name=ans' + _this.counter + ']:checked').val();
     });
-    this.$ans4.on('change', function () {
+    $('body').on('change', '#question'+this.counter+'ans4', function () {
         _this.content.ans = $('input[name=ans' + _this.counter + ']:checked').val();
     });
-    this.$ans5.on('change', function () {
+    $('body').on('change', '#question'+this.counter+'ans5', function () {
         _this.content.ans = $('input[name=ans' + _this.counter + ']:checked').val();
     });
 
