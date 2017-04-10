@@ -62,15 +62,16 @@ function fillQuizQuestions(identifiers) {
                 this.$singleQuestionContainer.css("text-align","left");
 
                 this.$singleQuestionContainer.append('<h3 class="quizQuestionsFont">Question #' + (questionNumber++) + ': ' + entry.question + '</h3>');
-                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '" disabled=disabled> <strong>A.</strong> ' + entry.prop1 + '<br/>');
-                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 2 + '" disabled=disabled> <strong>B.</strong> ' + entry.prop2 + '<br/>');
-                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 3 + '" disabled=disabled> <strong>C.</strong> ' + entry.prop3 + '<br/>');
-                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 4 + '" disabled=disabled> <strong>D.</strong> ' + entry.prop4 + '<br/>');
-                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 5 + '" disabled=disabled> <strong>E.</strong> ' + entry.prop5 + '<br/><br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '" disabled=disabled> <span id="quiz' + entry.Quiz_id + 'question' + entry.id + 'prop1"> <strong>A.</strong> ' + entry.prop1 + '</span><br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 2 + '" disabled=disabled> <span id="quiz' + entry.Quiz_id + 'question' + entry.id + 'prop2"> <strong>B.</strong> ' + entry.prop2 + '</span><br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 3 + '" disabled=disabled> <span id="quiz' + entry.Quiz_id + 'question' + entry.id + 'prop3"> <strong>C.</strong> ' + entry.prop3 + '</span><br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 4 + '" disabled=disabled> <span id="quiz' + entry.Quiz_id + 'question' + entry.id + 'prop4"> <strong>D.</strong> ' + entry.prop4 + '</span><br/>');
+                this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 5 + '" disabled=disabled> <span id="quiz' + entry.Quiz_id + 'question' + entry.id + 'prop5"> <strong>E.</strong> ' + entry.prop5 + '</span><br/><br/>');
                 
                 $('#questionsContainer').append(this.$singleQuestionContainer);
                 
                 checkStudentAnswers({QuizQuestion_id: entry.id});
+                highlightAnswers(entry.id)
             });
         }
     });
@@ -132,7 +133,30 @@ function checkStudentAnswers(identifiers) {
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
                 $('input[name="quiz' + entry.Quiz_id + 'question' + entry.QuizQuestion_id + '"][value="' + entry.answer + '"]').prop("checked", true);
+                $('#quiz' + entry.Quiz_id + 'question' + entry.QuizQuestion_id + 'prop' + entry.answer).css("background-color", "HotPink");
             });
+
+            //console.log(objects);
+        }
+    });
+}
+
+function highlightAnswers(identifiers) {
+    $.ajax({
+        type: "POST",
+        url: "database-model.php",
+        data: {DAO: 'quizquestion', method: 'get', id: identifiers},
+        async: true,
+        error: function () {
+            //error 500
+        },
+        success: function (object) {
+
+            var objects = jQuery.parseJSON(object);
+
+            console.log(objects);
+
+            $('#quiz' + objects.Quiz_id + 'question' + objects.id + 'prop' + objects.ans).css("background-color", "Lime");
 
             //console.log(objects);
         }
