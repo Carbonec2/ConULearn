@@ -156,3 +156,18 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 5.7 Click on the course of your choice.  | Course to register: Soen 341 [ Same course created in 5.3]   | The course is selected.  | Pass 
 5.8 Click on the button “Submit”  |  | A message "You are already registered to this course" should appear below the course description.   | Pass 
 
+## 10.	Quiz creation
+### User Story: As a teacher, I must be able to create quizzes with a desired number of multiple-choice questions, write the questions & possible choices, indicate the correct answer, and set the submission due dates for students.
+- **Precondition:** Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
+ And a course must be created by teacher [See 5. Create a Course].
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|-----------
+10.1 Click on the course you desire to create a quiz. |  | 	The user should be directed to the course dashboard.
+ | Pass
+10.2 Click on the “New Quiz” button found at the bottom of the Quiz frame |  | The user should be redirected to the quiz creation form | Pass
+10.3 Click on the textbox of “Quiz Name” to give the name of the quiz. And select the due day from the calendar | Quiz 1
+Sep 11th | 	Input the quiz name and due date  | Pass
+10.4 Click on the textbox of “Number of Questions” to give the number of questions that a teacher wants, and click the “Apply” ｜10 ｜Input the number of quiz a teacher wants. The # of boxes should change directly.｜ Pass
+10.5 Sequentially enter multiple questions and 5 possible answers for each of them. Indicate the right answer by clicking the radio button. | Q: Suppose that nominal wages fall and productivity rises in a particular economy. Other things equal, the aggregate: A. demand curve will shift leftward. B. supply curve will shift rightward. C. supply curve will shift leftward. D. expenditures curve will shift downward | A list of desired questions are made | Pass
+10.6 Click on “Submit” button at the bottom of editable textbox to finish creating the new quiz. | | The new quiz should be displayed in the Quiz field with its name and due date. |Pass
