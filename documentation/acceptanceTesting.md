@@ -189,6 +189,24 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 7.6 Enter in the textbox, the description of the announcement.  |  Announcement Description: cThe final project is due in a week.  |  The announcement description should be displayed in the textbox.  |Pass
 7.7 Click on “Submit” button to save announcement.  |  | The user should be redirected back to the course number (Soen341) page where he should see all the announcements that he created in the Announcements field. | Pass
 
+## 8.	Student dashboard 
+### User Story: As a student, I want to see my teachers' announcements, quizzes and discussion board.
+- **Precondition:**
+- Must be signed in as a student.  [See 2.2. Sign in as a Student]
+- Student must be registered in course [See 5. Course Registration]. 
+- Announcements must be created. [See 7.Teacher Announcement]
+- Quizzes must be created. [See 10. Quiz Creation] 
+- Students must have posted questions. [See 14. Question and Answers]
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+8.1 Click on “Courses” on the left navigation bar or “DASHBOARD” on the top navigation bar to access the course list.  |  |  The user should be directed to the course list page.  | Pass
+8.2 Click on the course for which you desire to view the announcements, quizzes and questions.  |  Course Number: Soen341  |  The user should be directed to the course page (Soen341) that display three text fields with “Announcements”, “Quizzes” and “Questions and Answers” as titles respectively.  | Pass
+8.3 View in the Announcement field.  |  |  The user should see a list of announcements that were posted.  | Pass
+8.4 View in the Quizzes field found on the bottom right of Announcement field.  |  |  The user should see a list of Quiz’s titles that were posted.  | Pass
+8.5 View in the Question and Answers field found on the bottom left of Announcement field.  |  |  The user should see a list of questions that students posted.  | Pass
+
+
 ## 10.	Quiz creation
 ### User Story: As a teacher, I must be able to create quizzes with a desired number of multiple-choice questions, write the questions & possible choices, indicate the correct answer, and set the submission due dates for students.
 - **Precondition:** Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
