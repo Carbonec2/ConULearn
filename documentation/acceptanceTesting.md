@@ -206,6 +206,22 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 8.4 View in the Quizzes field found on the bottom right of Announcement field.  |  |  The user should see a list of Quiz’s titles that were posted.  | Pass
 8.5 View in the Question and Answers field found on the bottom left of Announcement field.  |  |  The user should see a list of questions that students posted.  | Pass
 
+## 9.	Edit or Delete Teacher Announcements 
+### User Story: - As a teacher, I would like to edit the announcements so that I can correct any spelling mistake or add missing information and also delete announcements from any of my courses. 
+**Precondition:**
+- Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
+- And a course must be created by teacher [See 3. Create a Course].
+- And an announcement must have been created by teacher [7. Create Teacher Announcement]
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+9.1 Click on the course you desire to change or delete announcement.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course (Soen341) page and within the Announcement field, a list of already created announcements is displayed.  | Pass
+9.2 Click on the “Edit” button found besides the announcement to modify announcement.  |  [See the announcement created in 7. Create Teacher Announcement]  |  The announcement description should be displayed in an editable textbox.  | Pass
+9.3 Click “Cancel” button at the bottom of editable textbox go back to unmodified description.  |  |  The unmodified announcement description should still be displayed in the Announcement field.  | Pass
+9.4 Click on the “Edit” button found besides the announcement to modify announcement.  |  |  The announcement description should be displayed in an editable textbox.  | Pass
+9.5 Enter in the textbox any modification in the announcement description.  |  Announcement Description: “The final is due on April 5th ”  |  The modified announcement description should be displayed in the textbox.  | Pass
+9.6 Click on “Submit” button at the bottom of editable textbox to save modified announcement.  |  |  The new announcement should be displayed in the Announcement field along with other announcements (if there are others).  | Pass
+9.7 Click on the “Delete” button found besides the announcement to delete announcement.  |  |  The announcement should be removed (disappear) from the Announcement field.  | Pass
 
 ## 10.	Quiz creation
 ### User Story: As a teacher, I must be able to create quizzes with a desired number of multiple-choice questions, write the questions & possible choices, indicate the correct answer, and set the submission due dates for students.
