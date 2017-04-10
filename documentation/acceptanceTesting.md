@@ -173,6 +173,22 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 6.4 View in the Quizzes field found on the bottom right of Announcement field.  |  |  The user should see a list of Quiz’s titles that were already created.  | Pass
 6.5 View in the Question and Answers field found on the bottom left of Announcement field.  |  |  The user should see a list of questions that students posted.  | Pass
 
+## 7. Create Teacher Announcements 
+### User Story: As a teacher, I want to make important announcements, to keep the students registered to my classes updated.
+**Precondition:**       
+ - Must be signed in as a teacher. [See 2.1. Sign in as Teacher]
+ - And a course must be created by teacher [See 3. Create a Course]. 
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+7.1 Click on “Courses” on the left navigation bar or “DASHBOARD” on the top navigation bar to access the course list.  |  |  The user should be directed to the course list page.  | Pass
+7.2 Click on the course for which you desire to make an announcement.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course page with the course number (Soen341) on top of the page and “Announcements”, “Quizzes” and “Questions and Answers” as options to access.  | Pass
+7.3 Click on the “new announcement” in the Announcements field, to create an announcement.  |  |  The user should be directed to the “Announcement Form” page with a big textbox to be filled with unlimited number of words.  | Pass
+7.4 Enter in the textbox, the description of the announcement.  |  Announcement Description: The announcement will be deared.  |  The announcement description should be displayed in the textbox.  | Pass
+7.5 Click on “Clear” button at the bottom of the textbox to remove the unsaved announcement.  |  |  An empty textbox should be displayed and the announcement description can be entered again.  | Pass
+7.6 Enter in the textbox, the description of the announcement.  |  Announcement Description: cThe final project is due in a week.  |  The announcement description should be displayed in the textbox.  |Pass
+7.7 Click on “Submit” button to save announcement.  |  | The user should be redirected back to the course number (Soen341) page where he should see all the announcements that he created in the Announcements field. | Pass
+
 ## 10.	Quiz creation
 ### User Story: As a teacher, I must be able to create quizzes with a desired number of multiple-choice questions, write the questions & possible choices, indicate the correct answer, and set the submission due dates for students.
 - **Precondition:** Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
