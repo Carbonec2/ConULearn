@@ -106,7 +106,7 @@ function gradeQuizQuestions(identifiers) {
                 }
             }
 
-            $('#quizInfo').append("<b>GRADE: " + point + "/10</b>");
+            $('#quizInfo').append("<b>GRADE: " + point + "/" + objects.length + "</b>");
 
             console.log(point);
         }
