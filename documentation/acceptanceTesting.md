@@ -257,6 +257,22 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 11.3 By clicking on radio buttons, one answer can be selected for each question | |One radio button will be selected for each question |Pass
 11.4 Click on “Submit” button at the bottom to submit the quiz  | | The modified announcement description should be displayed in the textbox. | Pass
 
+## 12. Grades
+### User Story: As a student , I want to see my grades so that I can know how well I did on the quizzes.
+
+**Precondition:**
+- Must be a signed in as a student. [See 2.2	Sign in as a Student]
+- And a course must be created by teacher. [See 3. Create a Course]
+- Teacher must have created a quiz for that course. [See 10. Quiz creation]
+- Student must be enrolled in that course. [See 5. Course Registration]
+- Student must have taken that quiz from that course. [See 11. Ability for students to take quizzes]
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|-----------
+12.1 Click on a course in which you have already taken a quiz | |  The user should be directed to the course dashboard | Pass
+12.2 Click on a quiz you have already taken | | The student should see the quiz page for the quiz that was taken, with an appropriate grade on top and disabled radio buttons. | Pass
+
+
 ## 13. Choosing amount of questions for quizzes.
 ### User Story: As a teacher, I want to choose the amount of questions in my quizzes.
 
