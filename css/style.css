@@ -477,15 +477,15 @@ input.standardField {
     width: 630px;
 }
 
-/* Course Registration div*/
+/* Course Registration div */
 #courseRegistration {
-    margin-top: 4em;
-    background: rgba(255, 255, 255, 0.75);
-    color: #5B5B5B;
-    width: 800px;
-    padding: 50px;
-    border: 2px ;
-    border-radius: 12px;
+  margin-top: 4em;
+  background: rgba(255, 255, 255, 0.75);
+  color: #5B5B5B;
+  width: 800px;
+  padding: 50px;
+  border: 2px ;
+  border-radius: 12px;
 }
 
 #courseName {
@@ -554,16 +554,12 @@ input.standardField {
     height: 50px;
 }
 
-
-
-
 /* announcement, quiz, question&answer display in dashboard */
 .dashboardItem {
     background-color: #DDDDDD;
     padding: 10px;
     margin: 5px;
 }
-
 
 /* Q & A in dashboard */
 #questionsAnswersContainer {

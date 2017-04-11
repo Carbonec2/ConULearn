@@ -15,5 +15,3 @@
 - Always move to a new line after finishing with a ';'
 - Always close the div tag on a new line and align it with its opening tag.
 - Always use curly braces when using an if statement (even if it is not required)
-
-

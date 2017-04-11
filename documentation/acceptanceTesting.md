@@ -272,7 +272,6 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 12.1 Click on a course in which you have already taken a quiz | |  The user should be directed to the course dashboard | Pass
 12.2 Click on a quiz you have already taken | | The student should see the quiz page for the quiz that was taken, with an appropriate grade on top and disabled radio buttons. | Pass
 
-
 ## 13. Choosing amount of questions for quizzes.
 ### User Story: As a teacher, I want to choose the amount of questions in my quizzes.
 
@@ -305,4 +304,4 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|----------
 15.1 Click on the course for which you would like to check your corrected solutions.  |  Course: SOEN341 [See 3. Create a Course]  |  The user should be directed to the course page with the course number (SOEN341) on top of the page and “Announcements”, “Quizzes” and “Questions and Answers” as options to access where there is an quiz that's completed in the "Quizzes" section.  | Pass
 15.2 Click on the [View Results] of the completed quiz in the Quizzes section, to view corrected answers.  | Quiz 1 Due Date: 2017-04-11  |  The user should be directed the display of the completed quiz. | Pass
-15.3 Scroll through the quiz  | Question 1 and 2 |  See student's answers in green. If there is no more colour in that question it means the student's answer was correct. If there is red on another answer, it means that the student's answer was incorrect and the red one is the correct one.  | Pass
+15.3 Scroll through the quiz  | Question 1 and 2 |  See student's answers in green. If there is no more colour in that question it means the student's answer was correct. If there is red on the student's answer, it means that the student's answer was incorrect and the green one is the correct one.  | Pass
