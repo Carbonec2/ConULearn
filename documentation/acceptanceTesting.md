@@ -272,7 +272,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 12.1 Click on a course in which you have already taken a quiz | |  The user should be directed to the course dashboard | Pass
 12.2 Click on a quiz you have already taken | | The student should see the quiz page for the quiz that was taken, with an appropriate grade on top and disabled radio buttons. | Pass
 
-## 13. Choosing amount of questions for quizzes
+## 13. Choose the amount of questions for quizzes
 ### User Story: As a teacher, I want to choose the amount of questions in my quizzes.
 
 **Precondition:**
@@ -283,7 +283,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|----------
 13.1 Click on the course for which you desire to make a quiz.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course page with the course number (Soen341) on top of the page and “Announcements”, “Quizzes” and “Questions and Answers” as options to access.  | Pass
 13.2 Click on the “new quiz” in the Quizzes field, to create a quiz.  |  |  The user should be directed to the quiz creation page. | Pass
-13.3 Click on the text box of number of questions and put in the number that you want  | 35 |   | Pass
+13.3 Click on the textbox of number of questions and put in the number that you want  | 35 |   | Pass
 13.4 Click on apply |  |  The user should see the number of questions numbered 1..amount where he can start adding the questions and multiple choice answers. | Pass
 
 ## 14. Question & Answer 
