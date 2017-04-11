@@ -10,14 +10,17 @@ include_once('includes/dashboardSideNavBar.php');
               <h3>The question will be sent to the professor and will be answered as soon as possible. </h3>
 
               <form>
+                  <br/>
 
                   <textarea class="studentQuestion" id="studentQuestion"></textarea>
 
                   <br/>
+                  <br/>
+                  <br/>
 
                   <input type="button" value="Submit" id="sendQuestion" />
 
-                  <input type="reset" value="Clear" />
+                  <input type="reset" value="Clear" id="ClearQuestion" />
 
               </form>
         </div>

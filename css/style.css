@@ -549,3 +549,20 @@ input.standardField {
     width: 900px;
     height: 50px;
 }
+/** styles for the textarea of asking questions by students **/
+#studentQuestion{
+  width: 800px;
+   height: 200px;
+}
+#sendQuestion,#ClearQuestion{
+  height: 50px;
+  width: 100px;
+  background-color: #66d9ff;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
