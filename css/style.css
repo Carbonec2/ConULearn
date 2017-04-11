@@ -339,6 +339,10 @@ h3.lighter {
     overflow: auto;
 }
 
+#announcementsContainer {
+    overflow-y: scroll;
+}
+
 .dashboard_new_button_container {
     display: block;
     background-color: white;
@@ -548,4 +552,29 @@ input.standardField {
 .dashboard_teacher_textarea {
     width: 900px;
     height: 50px;
+}
+
+
+
+
+/* announcement, quiz, question&answer display in dashboard */
+.dashboardItem {
+    background-color: #DDDDDD;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+/* Q & A in dashboard */
+#questionsAnswersContainer {
+    overflow-y: scroll;
+}
+
+.questionAnswerTextBox {
+    float: left;
+    width: 100%;
+}
+
+.questionAnswerButton {
+    margin-top: 5px;
 }
