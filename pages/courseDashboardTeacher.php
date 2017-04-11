@@ -51,7 +51,7 @@ include_once('includes/dashboardSideNavBar.php');
             <div class="rightSmallDiv">
 
                 <div class="dashboard_title_container">
-                    <h1 class="dashboardCourseTitle">Question and Answer</h1>
+                    <h1 class="dashboardCourseTitle">Question & Answer</h1>
                 </div>
 
                 <div class="dashboard_discussions_container">
