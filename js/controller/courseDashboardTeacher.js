@@ -37,9 +37,7 @@ function fillQuizzes(identifiers) {
             objects.forEach(function (entry) {
                 var $quiz = $('<div id="div' + entry.id + '"></div>');
 
-                $quiz.css('background-color', '#dddddd');
-                $quiz.css('padding', '10px');
-                $quiz.css('margin', '5px');
+                $quiz.addClass("dashboardItem");
 
                 $quiz.html('<a href="index.php?page=teacherDisplayQuiz&Quiz_id=' + entry.id + '">' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a> <button id="deleteText' + entry.id + '">Delete</button>');
 
@@ -104,9 +102,7 @@ function fillAnnouncements(content) {
                 console.log(entry);
                 var $announcement = $('<div id="div' + entry.id + '"></div>');
 
-                $announcement.css('background-color', '#dddddd');
-                $announcement.css('padding', '10px');
-                $announcement.css('margin', '5px');
+                $announcement.addClass("dashboardItem");
 
                 $announcement.html(entry.description + ' <button id="editText' + entry.id + '">Edit</button> <button id="deleteText' + entry.id + '">Delete</button>');
 
@@ -225,12 +221,13 @@ function fillQuestionsAnswers() {
                 console.log(entry);
                 var $announcement = $('<div></div>');
 
-                $announcement.css('background-color', '#dddddd');
-                $announcement.css('padding', '10px');
-                $announcement.css('margin', '5px');
+                $announcement.addClass("dashboardItem");
 
-                var $answer = $('<textarea id="' + entry.id + '" placeholder="Answer" ></textarea>');
-                var $save = $('<input type="button" value="Save" />');
+                var $answer = $('<textarea id="' + entry.id + '" placeholder="Your answer" ></textarea>');
+                var $save = $('<input type="button" value="Reply" />');
+
+                $answer.addClass("questionAnswerTextBox");
+                $save.addClass("questionAnswerButton");
 
                 $save.data('content', entry);
 
@@ -242,7 +239,7 @@ function fillQuestionsAnswers() {
                     saveAnswer(content);
                 });
 
-                $announcement.html(entry.user + ' as asked: <b>' + entry.question + '</b><br/>Answer: ');// + entry.answer
+                $announcement.html(entry.user + ' asked: <b>' + entry.question + '</b><br/>');// + entry.answer
 
                 //No answer yet
                 if (entry.answer == null || entry.answer.length <= 0) {
@@ -262,9 +259,7 @@ function fillQuestionsAnswers() {
 
             var $announcement = $('<div></div>');
 
-            $announcement.css('background-color', '#dddddd');
-            $announcement.css('padding', '10px');
-            $announcement.css('margin', '5px');
+            $announcement.addClass("dashboardItem");
 
             $announcement.append('<br/>');
 
