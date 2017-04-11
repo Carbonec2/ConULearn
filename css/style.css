@@ -60,11 +60,11 @@ h3.lighter {
 }
 
 /* Logout button on nav bar */
-#logoutbutton {
+#logoutButton {
     background-color:red;
 }
 
-#headerdiv {
+#headerDiv {
     background-color:#81D0E1;
     color:white;
     padding-top:75px;
@@ -96,7 +96,7 @@ h3.lighter {
 
 /* The "ABOUT US" section */
 
-#Aboutus {
+#aboutUs {
     background: #FF5722;
     color: white;
     position: relative;
@@ -105,12 +105,12 @@ h3.lighter {
     padding-bottom:50px;
 }
 
-#Aboutus h1 {
+#aboutUs h1 {
     font-size: 40px;
     font-weight: bold;
 }
 
-#Aboutus h2 {
+#aboutUs h2 {
     color:#81D0E1;
 }
 
@@ -262,7 +262,7 @@ h3.lighter {
     background-attachment: fixed;
 }
 
-.dashboardcontainer {
+.dashboardContainer {
     position:absolute;
     top:100px;
     left:300px;
@@ -285,16 +285,16 @@ h3.lighter {
     left:68.5%;
     width:65%;
     background-color: white;
-   color:#004A7F;
+    color:#004A7F;
     height:300px;
 }
 
-.dashboardcontainer2 {
+.dashboardContainer2 {
     position:relative;
     width:75%;
 }
 
-.dashboardcourseDiv {
+.dashboardCourseDiv {
     background-color: white;
     height:300px;
     color:#004A7F;
@@ -303,64 +303,66 @@ h3.lighter {
 }
 
 /* for the course dashboard: name of course, announcements, quizzes, discussion board */
-.dashboardcourse {
-	color: white;
-	font-size: 30px;
-	padding: 10px;
-	text-align: center;
+.dashboardCourse {
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
  }
 
 .dashboard_title_container {
-	display: block;
-	background-color: white;
+    display: block;
+    background-color: white;
     height: 50px;
     z-index: 90;
     overflow: hidden;
-	height: 4em;
+    height: 4em;
 }
 
- .dashboardcoursetitle {
-	font-size: 30px;
-	text-align:center;
-	font-weight:bold;
+ .dashboardCourseTitle {
+    font-size: 30px;
+    text-align:center;
+    font-weight:bold;
  }
 
- .dashboardcoursesub {
-	font-size: 20px;
-	text-align:left;
-	padding-left:10px;
+ .dashboardCourseSub {
+    font-size: 20px;
+    text-align:left;
+    padding-left:10px;
 }
 
 .dashboard_announcements_container, .dashboard_quizzes_container, .dashboard_discussions_container {
     display: block;
-	background-color: white;
-	z-index: 80;
+    background-color: white;
+    z-index: 80;
     height:200px;
     overflow: auto;
 }
 
-.dashboard_add_new_button_container {
+#announcementsContainer {
+    overflow-y: scroll;
+}
+
+.dashboard_new_button_container {
     display: block;
-	background-color: white;
-	height: 2em;
-
-	font-size: 30px;
-	font-weight: bold;
-	padding-left:10px;
-
-	z-index: 90;
+    background-color: white;
+    height: 2em;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left:10px;
+    z-index: 90;
     overflow: hidden;
 }
 
-.dashboard_add_new_button {
-	font-size: 30px;
-	font-weight: bold;
+.dashboard_new_button {
+    font-size: 30px;
+    font-weight: bold;
 }
 
-.dashboard_add_new_button_container a {
+.dashboard_new_button_container a {
     text-decoration: none;
 }
-.dashboard_add_new_button_container a:hover {
+.dashboard_new_button_container a:hover {
     text-decoration: none;
 }
 
@@ -369,7 +371,6 @@ h3.lighter {
     color:#004A7F;
     padding:100px;
     width:100%;
-    margin-bottom: 25px;
 }
 
 .dashboardDiv h1 {
@@ -442,7 +443,6 @@ h3.lighter {
 }
 
 /*this is the CSS for connection page and registration page */
-
 input.standardField {
     width: 25%;
     background-color: #ffffff;
@@ -473,8 +473,8 @@ input.standardField {
 
 /* Teacher Announcement Form */
 .announcement {
-  height: 236px;
-  width: 630px;
+    height: 236px;
+    width: 630px;
 }
 
 /* Course Registration div */
@@ -486,24 +486,91 @@ input.standardField {
   padding: 50px;
   border: 2px ;
   border-radius: 12px;
-
 }
 
 #courseName {
-  font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
 }
 
 /** Styles for Quiz Questions **/
 
 #quizQuestionsFont {
-
+    font-size: 15px;
+    font-weight: bold;
+    color: #0099ff;
 }
 
-#quizAnswersMultipleChoiceFont {
-
+.quizMultipleChoices {
+    font-size: 12px;
+    font-weight: normal;
+    color: #ff6600;
 }
 
-#courseInfoOnTopOfPageFont {
+.quizCourseInfo {
+  /* Including course name, professor name, the name of the student,
+  could be on top right corner of the page */
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
 
+/** styles for the quiz creation form **/
+
+.questionContainerTable {
+    width: 100%;
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 10px 5px;
+}
+
+.questionNumberCell {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.questionTextFieldCell {
+    padding: 1px 10px;
+}
+
+.questionTextField {
+    width: 100%;
+}
+
+.answerCell, .answerCellBottom {
+    padding: 1px 10px;
+}
+
+.answerCellBottom {
+    padding-bottom: 10px;
+}
+
+.answerTextField {
+    width: 100%;
+}
+.dashboard_teacher_textarea {
+    width: 900px;
+    height: 50px;
+}
+
+/* announcement, quiz, question&answer display in dashboard */
+.dashboardItem {
+    background-color: #DDDDDD;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Q & A in dashboard */
+#questionsAnswersContainer {
+    overflow-y: scroll;
+}
+
+.questionAnswerTextBox {
+    float: left;
+    width: 100%;
+}
+
+.questionAnswerButton {
+    margin-top: 5px;
 }

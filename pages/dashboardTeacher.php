@@ -1,9 +1,14 @@
 <?php
 include_once('includes/dashboardSideNavBar.php');
 ?>
-<body class="dashboard">
 
-    <div class="dashboardcontainer  text-center">
+<body class="dashboard">
+    <?php
+    echo '<input type="hidden" name="userId" id="userId" value="' . $_SESSION['userId'] . '">';
+    ?>
+
+    <div class="dashboardContainer  text-center">
+
         <h1>Courses</h1>
 
         <div id="courses_container">
@@ -16,7 +21,8 @@ include_once('includes/dashboardSideNavBar.php');
             -->
         </div>
 
-        <a href="index.php?page=courseRegistration" class="dashboard_box_link"><div class="dashboard_add_course_box">Register for a class<br/><span class="box_plus_sign">+</span></div></a>
+        <a href="index.php?page=courseCreation" class="dashboard_box_link"><div class="dashboard_add_course_box">Create a course<br/><span class="box_plus_sign">+</span></div></a>
+
     </div>
 
 </body>
