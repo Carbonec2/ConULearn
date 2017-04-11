@@ -286,6 +286,20 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 13.3 Click on the text box of number of questions and put in the number that you want  | 35 |   | Pass
 13.4 Click on apply |  |  The user should see the number of questions numbered 1..amount where he can start adding the questions and multiple choice answers. | Pass
 
+## 14. Question & Answer .
+### User Story: As a student, I want to be able to post my questions and let the teacher answer.
+
+**Precondition:**
+- Must be signed in as a student.  [See 1.2. Sign in as Teacher]
+- And a course must be created by teacher [See 5. Create a Course].
+- And the student should register this course [See 5. Course registration].
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|----------
+14.1 Click on the course you desire to ask a question. | | The user should be directed to the course dashboard.|Pass
+14.2 Click in the empty text box of the Question & Answer div. And write a question that you want to ask | I don’t know how to install the Z/EVEs. | The question you want to ask is typed in the text area.| Pass
+14.3 Click on the submit button at the bottom of the text area to submit the question. | |The question is recorded in the Question & Answer div. And a message is shown at top of the page. “Question Registered in the database!” A new text box is shown for the future questions| Pass
+
 ## 15. Quiz Solution for Students.
 ### User Story: As a student, I want to be able to see if I chose the wrong answer as well as the correct one.
 
