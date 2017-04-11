@@ -49,7 +49,7 @@ class UserDAO implements DAO {
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }
     
-    public static function insert($ov){
+    public static function insert($ov) {
         $conn = pdo_connect();
         
         $sql = $conn->prepare('SELECT * FROM User 
@@ -89,29 +89,7 @@ class UserDAO implements DAO {
         }
             
     }
-/*
-    public static function insert($object) {
 
-        //If we have an array
-        if (is_array($object)) {
-            foreach ($object AS $entry) {
-                insert($entry);
-            }
-        } else {
-            //If we have a single object (stdClass), not an array
-            $conn = pdo_connect();
-
-            $sql = $conn->prepare('INSERT INTO User (user, email, passwordMD5) 
-            VALUES (:user, :email, :passwordMD5)');
-
-            $sql->bindValue(':user', $object->user);
-            $sql->bindValue(':email', $object->email);
-            $sql->bindValue(':passwordMD5', $object->passwordMD5);
-
-            $sql->execute();
-        }
-    }
-*/
     public static function save($object) {
         //If we have an array, we save the array, else we have an object, so we save the object itself
         if (is_array($object)) {

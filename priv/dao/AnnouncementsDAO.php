@@ -18,11 +18,11 @@ class AnnouncementsDAO implements DAO {
         $sql = $conn->prepare('SELECT 
             id, 
             Course_id,
-		User_id,
-		description
+            User_id, 
+            description 
             FROM Announcements 
             WHERE User_id = :User_id');
-
+ 
         $sql->bindValue(':User_id', $ov->User_id);
 
         $sql->execute();
@@ -38,10 +38,10 @@ class AnnouncementsDAO implements DAO {
         $sql = $conn->prepare('SELECT 
             id, 
             Course_id,
-		User_id,
-		description
+            User_id, 
+            description 
             FROM Announcements 
-            WHERE Course_id = :Course_id');
+            WHERE Course_id = :Course_id'); 
 
         $sql->bindValue(':Course_id', $ov->Course_id);
 
@@ -58,11 +58,11 @@ class AnnouncementsDAO implements DAO {
         $sql = $conn->prepare('SELECT 
             id, 
             Course_id,
-            User_id,
-		 description,  
+            User_id, 
+            description 
             FROM Announcements 
-            WHERE id = :id');
-
+            WHERE id = :id'); 
+            
         $sql->bindValue(':id', $id);
 
         $sql->execute();
