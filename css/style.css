@@ -599,5 +599,10 @@ input.standardField {
 }
 
 .questionAnswerButton {
-    margin-top: 5px;
+  background-color:#81D0E1 ;
+  border-radius: 25px;
+   margin: 4px 2px;
+   font-size: 12px;
+   font-family: Arial, Helvetica, sans-serif;
+   color:white;  
 }
