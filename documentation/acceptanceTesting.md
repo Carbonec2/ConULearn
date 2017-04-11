@@ -279,8 +279,6 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 - Must be signed in as a teacher.  [See 2.1. Sign in as Teacher]
 - And a course must be created by teacher. [See 3. Create a Course].
 
-Happy ending:
-
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|----------
 13.1 Click on the course for which you desire to make a quiz.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course page with the course number (Soen341) on top of the page and “Announcements”, “Quizzes” and “Questions and Answers” as options to access.  | Pass
@@ -297,8 +295,6 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 - Teacher must have created a quiz for that course. [See 10. Quiz creation]
 - Student must be enrolled in that course. [See 5. Course Registration]
 - Student must have taken that quiz from that course. [See 11. Ability for students to take quizzes]
-
-Happy ending:
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|----------
