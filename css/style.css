@@ -475,6 +475,16 @@ input.standardField {
 .announcement {
     height: 236px;
     width: 630px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Used for the headers that go above announcement send form */
+.textFormHeader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
 }
 
 /* Course Registration div */
@@ -552,6 +562,23 @@ input.standardField {
 .dashboard_teacher_textarea {
     width: 900px;
     height: 50px;
+}
+
+/* for quiz display/taking/solutions */
+.quizQuestionContainer {
+    display: block;
+    background-color: #FFFFFF;
+    margin-left: 50px;
+    text-align: left;
+}
+
+/*highlighting to denote right & wrong answer in quizzes*/
+.wrongAnswerHighlighter {
+    background-color: HotPink;
+}
+
+.rightAnswerHighlighter {
+    background-color: Lime;
 }
 
 /* announcement, quiz, question&answer display in dashboard */
