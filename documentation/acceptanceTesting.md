@@ -283,8 +283,8 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|----------
 13.1 Click on the course for which you desire to make a quiz.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course page with the course number (Soen341) on top of the page and “Announcements”, “Quizzes” and “Questions and Answers” as options to access.  | Pass
 13.2 Click on the “new quiz” in the Quizzes field, to create a quiz.  |  |  The user should be directed to the quiz creation page. | Pass
-13.3 Click on the textbox of number of questions and put in the number that you want  | 35 |   | Pass
-13.4 Click on apply |  |  The user should see the number of questions numbered 1..amount where he can start adding the questions and multiple choice answers. | Pass
+13.3 Click on the textbox of number of questions and put in the number that you want  | 35 | The number "35" should appear in the text box  | Pass
+13.4 Click on apply |  |  The user should see 35 questions boxes where he can start adding the questions and multiple choice answers. | Pass
 
 ## 14. Question & Answer 
 ### User Story: As a student, I want to be able to post my questions and let the teacher answer.
