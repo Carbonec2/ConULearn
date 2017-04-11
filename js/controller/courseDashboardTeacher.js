@@ -96,8 +96,6 @@ function fillAnnouncements(content) {
 
             console.log(objects);
 
-            $("#announcementsContainer").css('overflow-y', 'scroll');
-
             objects.forEach(function (entry) {
                 console.log(entry);
                 var $announcement = $('<div id="div' + entry.id + '"></div>');
@@ -214,8 +212,6 @@ function fillQuestionsAnswers() {
 
             console.log(object);
             console.log(objects);
-
-            $("#questionsAnswersContainer").css('overflow-y', 'scroll');
 
             objects.forEach(function (entry) {
                 console.log(entry);
