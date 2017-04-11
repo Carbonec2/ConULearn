@@ -6,8 +6,10 @@ include_once('includes/dashboardSideNavBar.php');
   <body class="dashboard">
       <div class="dashboardContainer">
           <div class="dashboardDiv container-fluid text-center">
-              <h2>Announcement Form</h2>
-              <h3>Please note that you will be able to edit and/or delete announcements once they have been posted </h3>
+              <div class="textFormHeader">
+                <h2>Announcement Form</h2>
+                <h3>Please note that you will be able to edit and/or delete announcements once they have been posted </h3>
+              </div>
 
               <form>
                   <textarea class="announcement" id="announcement"></textarea>
