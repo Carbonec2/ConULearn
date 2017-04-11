@@ -82,7 +82,7 @@ function addQuizStudentForStudents(identifiers, Quiz_id) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'user', method: 'getmerge', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -107,7 +107,7 @@ function addQuizStudent(identifiers, Quiz_id) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'quizstudent', method: 'insert', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },

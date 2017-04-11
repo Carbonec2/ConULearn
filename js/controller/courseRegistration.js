@@ -32,7 +32,7 @@ function getCourseDescription() {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'course', method: 'get', id: $("#course_selection").val()},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -54,7 +54,7 @@ function getCourses(filters, successCallback, errorCallback) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'course', method: 'getall', filters: JSON.stringify(filters)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -75,7 +75,7 @@ function addQuizStudent(identifiers) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'quizstudent', method: 'insertcurrentuserid', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -92,7 +92,7 @@ function addQuizStudentForAllQuizzes(identifiers) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'course', method: 'getmerge', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
@@ -115,7 +115,7 @@ function addCourse(identifiers, successCallback, errorCallback) {
         type: "POST",
         url: "database-model.php",
         data: {DAO: 'courseuser', method: 'insert', OV: JSON.stringify(identifiers)},
-        async: true,
+        async: false,
         error: function () {
             //error 500
         },
