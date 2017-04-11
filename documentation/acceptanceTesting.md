@@ -272,7 +272,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 12.1 Click on a course in which you have already taken a quiz | |  The user should be directed to the course dashboard | Pass
 12.2 Click on a quiz you have already taken | | The student should see the quiz page for the quiz that was taken, with an appropriate grade on top and disabled radio buttons. | Pass
 
-## 13. Choosing amount of questions for quizzes.
+## 13. Choose the amount of questions for quizzes
 ### User Story: As a teacher, I want to choose the amount of questions in my quizzes.
 
 **Precondition:**
@@ -283,22 +283,22 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|----------
 13.1 Click on the course for which you desire to make a quiz.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course page with the course number (Soen341) on top of the page and “Announcements”, “Quizzes” and “Questions and Answers” as options to access.  | Pass
 13.2 Click on the “new quiz” in the Quizzes field, to create a quiz.  |  |  The user should be directed to the quiz creation page. | Pass
-13.3 Click on the text box of number of questions and put in the number that you want  | 35 |   | Pass
+13.3 Click on the textbox of number of questions and put in the number that you want  | 35 |   | Pass
 13.4 Click on apply |  |  The user should see the number of questions numbered 1..amount where he can start adding the questions and multiple choice answers. | Pass
 
-## 14. Question & Answer .
+## 14. Question & Answer 
 ### User Story: As a student, I want to be able to post my questions and let the teacher answer.
 
 **Precondition:**
 - Must be signed in as a student.  [See 1.2. Sign in as Teacher]
-- And a course must be created by teacher [See 5. Create a Course].
+- And a course must be created by teacher [See 3. Create a Course].
 - And the student should register this course [See 5. Course registration].
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|----------
-14.1 Click on the course you desire to ask a question. | | The user should be directed to the course dashboard.|Pass
-14.2 Click in the empty text box of the Question & Answer div. And write a question that you want to ask | I don’t know how to install the Z/EVEs. | The question you want to ask is typed in the text area.| Pass
-14.3 Click on the submit button at the bottom of the text area to submit the question. | |The question is recorded in the Question & Answer div. And a message is shown at top of the page. “Question Registered in the database!” A new text box is shown for the future questions| Pass
+14.1 Click on the course you desire to ask a question.  |  Course: Soen341 [See 3. Create a Course]  |  The user should be directed to the course dashboard.|Pass
+14.2 Click in the empty textbox of the Question & Answer div. and write a question that you want to ask | I don’t know how to install the Z/EVEs. | The question you want to ask is typed in the text area.| Pass
+14.3 Click on the submit button at the bottom of the text area to submit the question. | |The question is recorded in the Question & Answer div. and a message is shown at top of the page. “Question Registered in the database!” A new textbox is shown for future questions| Pass
 
 ## 15. Quiz Solution for Students.
 ### User Story: As a student, I want to be able to see if I chose the wrong answer as well as the correct one.
