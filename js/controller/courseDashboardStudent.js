@@ -37,9 +37,7 @@ function fillQuizzes(identifiers) {
             objects.forEach(function (entry) {
                 var $quiz = $('<div id="div' + entry.id + '"></div>');
 
-                $quiz.css('background-color', '#dddddd');
-                $quiz.css('padding', '10px');
-                $quiz.css('margin', '5px');
+                $quiz.addClass("dashboardItem");
 
                 if (entry.submitted == 0) {
                     $quiz.html('<a href="index.php?page=studentTakeQuiz&Quiz_id=' + entry.id + '">' + entry.name + ' <b>Due date:</b> ' + entry.date + '</a>');
@@ -70,15 +68,11 @@ function fillAnnouncements(content) {
 
             console.log(objects);
 
-            $("#announcementsContainer").css('overflow-y', 'scroll');
-
             objects.forEach(function (entry) {
                 console.log(entry);
                 var $announcement = $('<div></div>');
 
-                $announcement.css('background-color', '#dddddd');
-                $announcement.css('padding', '10px');
-                $announcement.css('margin', '5px');
+                $announcement.addClass("dashboardItem");
 
                 $announcement.html(entry.description);
 
@@ -109,21 +103,18 @@ function fillQuestionsAnswers() {
 
             console.log(objects);
 
-            $("#questionsAnswersContainer").css('overflow-y', 'scroll');
-
             objects.forEach(function (entry) {
                 console.log(entry);
                 var $announcement = $('<div></div>');
 
-                $announcement.css('background-color', '#dddddd');
-                $announcement.css('padding', '10px');
-                $announcement.css('margin', '5px');
+                $announcement.addClass("dashboardItem");
 
                 if (entry.answer == null || entry.answer.length <= 0) {
-                    entry.answer = 'Not answered yet';
+                    entry.answer = 'Teacher has not answered yet';
                 }
+                else entry.answer = '<strong>Teacher responded:</strong> ' + entry.answer;
 
-                $announcement.html('<b>' + entry.question + '</b><br/>Answer: ' + entry.answer);
+                $announcement.html('<b>' + entry.question + '</b><br/>' + entry.answer);
 
                 if (entry.question != null && entry.question.length > 0) {
                     $("#questionsAnswersContainer").append($announcement);
@@ -132,13 +123,13 @@ function fillQuestionsAnswers() {
 
             var $announcement = $('<div></div>');
 
-            $announcement.css('background-color', '#dddddd');
-            $announcement.css('padding', '10px');
-            $announcement.css('margin', '5px');
+            $announcement.addClass("dashboardItem");
 
-            $questionContainer = $('<textarea placeholder="Type a new question here" ></textarea><br/>');
-            $sendButton = $('<input type="button" value="Send question" />');
+            $questionContainer = $('<textarea placeholder="Type a new question for your teacher here" ></textarea><br/>');
+            $sendButton = $('<input type="button" value="Submit" />');
 
+            $questionContainer.addClass("questionAnswerTextBox");
+            $sendButton.addClass("questionAnswerButton");
             $sendButton.click(function () {
                 //Send the new question to the BDD when we click on the button
                 saveQuestion();

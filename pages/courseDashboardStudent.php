@@ -38,16 +38,16 @@ include_once('includes/dashboardSideNavBar.php');
 
             <div class="rightSmallDiv">
                 <div class="dashboard_title_container">
-                    <h1 class="dashboardCourseTitle">Question and Answer</h1>
+                    <h1 class="dashboardCourseTitle">Question & Answer</h1>
                 </div>          
                 <div class="dashboard_discussions_container" id="questionsAnswersContainer">
                     
                 </div>
-                <!--
                 <div class="dashboard_new_button_container">
+                <!--
                     <a href="index.php?page=studentAskQuestion"><h2 class="dashboard_new_button">+ new question</h2></a>
+				-->
                 </div>
--->
             </div>
         </div>
     </div>
