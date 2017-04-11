@@ -62,10 +62,7 @@ function fillQuizQuestions(identifiers) {
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
                 this.$singleQuestionContainer = $('<div></div>')
-                this.$singleQuestionContainer.css("display","block");
-                this.$singleQuestionContainer.css("background-color","#FFFFFF");
-                this.$singleQuestionContainer.css("margin-left","50px");
-                this.$singleQuestionContainer.css("text-align","left");
+                this.$singleQuestionContainer.addClass("quizQuestionContainer");
                 
                 this.$singleQuestionContainer.append('<h3 class="quizQuestionsFont">Question #' + (questionNumber++) + ': ' + entry.question + '</h3>');
                 this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '"> <strong>A.</strong> ' + entry.prop1 + '<br/>');

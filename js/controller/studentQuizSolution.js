@@ -56,10 +56,7 @@ function fillQuizQuestions(identifiers) {
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
                 this.$singleQuestionContainer = $('<div></div>')
-                this.$singleQuestionContainer.css("display","block");
-                this.$singleQuestionContainer.css("background-color","#FFFFFF");
-                this.$singleQuestionContainer.css("margin-left","50px");
-                this.$singleQuestionContainer.css("text-align","left");
+                this.$singleQuestionContainer.addClass("quizQuestionContainer");
 
                 this.$singleQuestionContainer.append('<h3 class="quizQuestionsFont">Question #' + (questionNumber++) + ': ' + entry.question + '</h3>');
                 this.$singleQuestionContainer.append('<input type="radio" class="quizMultipleChoices" name="quiz' + entry.Quiz_id + 'question' + entry.id + '" value="' + 1 + '" disabled=disabled> <span id="quiz' + entry.Quiz_id + 'question' + entry.id + 'prop1"> <strong>A.</strong> ' + entry.prop1 + '</span><br/>');
@@ -133,7 +130,7 @@ function checkStudentAnswers(identifiers) {
             //$(quizInfo).html(objects.name + " Due date: " + objects.date);
             objects.forEach(function (entry) {
                 $('input[name="quiz' + entry.Quiz_id + 'question' + entry.QuizQuestion_id + '"][value="' + entry.answer + '"]').prop("checked", true);
-                $('#quiz' + entry.Quiz_id + 'question' + entry.QuizQuestion_id + 'prop' + entry.answer).css("background-color", "HotPink");
+                $('#quiz' + entry.Quiz_id + 'question' + entry.QuizQuestion_id + 'prop' + entry.answer).addClass("wrongAnswerHighlighter");
             });
 
             //console.log(objects);
@@ -156,7 +153,7 @@ function highlightAnswers(identifiers) {
 
             console.log(objects);
 
-            $('#quiz' + objects.Quiz_id + 'question' + objects.id + 'prop' + objects.ans).css("background-color", "Lime");
+            $('#quiz' + objects.Quiz_id + 'question' + objects.id + 'prop' + objects.ans).addClass("rightAnswerHighlighter");
 
             //console.log(objects);
         }
