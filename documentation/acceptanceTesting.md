@@ -241,7 +241,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 10.4 Click on the textbox of “Number of Questions” to give the number of questions that a teacher wants, and click the “Apply” | 10 | Input the number of quiz a teacher wants. The # of boxes should change directly.| Pass |
 10.5 Sequentially enter multiple questions and 5 possible answers for each of them. Indicate the right answer by clicking the radio button. | Q: Suppose that nominal wages fall and productivity rises in a particular economy. Other things equal, the aggregate: A. demand curve will shift leftward. B. supply curve will shift rightward. C. supply curve will shift leftward. D. expenditures curve will shift downward | A list of desired questions are made | Pass
 10.6 Click on “Submit” button at the bottom of editable textbox to finish creating the new quiz. | | The new quiz should be displayed in the Quiz field with its name and due date. |Pass
-10.7 Click on the quiz in the Quiz box. || The user should be redirected to a new page where he will see the quiz that he/she just created, with all the right answers' radio button selected(disabled). |Pass
+10.7 Click on the quiz in the Quiz box. || The user should be redirected to a new page where he will see the quiz that he just created, with the radio buttons of the right answers selected and disabled. |Pass
 
 ## 11.Ability for students to take quizzes
 ### User Story:  As a student, I must be able to take quizzes that teachers have posted in courses that I have registered in.
