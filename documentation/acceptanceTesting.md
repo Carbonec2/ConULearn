@@ -241,6 +241,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 10.4 Click on the textbox of “Number of Questions” to give the number of questions that a teacher wants, and click the “Apply” | 10 | Input the number of quiz a teacher wants. The # of boxes should change directly.| Pass |
 10.5 Sequentially enter multiple questions and 5 possible answers for each of them. Indicate the right answer by clicking the radio button. | Q: Suppose that nominal wages fall and productivity rises in a particular economy. Other things equal, the aggregate: A. demand curve will shift leftward. B. supply curve will shift rightward. C. supply curve will shift leftward. D. expenditures curve will shift downward | A list of desired questions are made | Pass
 10.6 Click on “Submit” button at the bottom of editable textbox to finish creating the new quiz. | | The new quiz should be displayed in the Quiz field with its name and due date. |Pass
+10.7 Click on the quiz in the Quiz box. || The user should be redirected to a new page where he will see the quiz that he/she just created, with all the right answers' radio button selected(disabled). |Pass
 
 ## 11.Ability for students to take quizzes
 ### User Story:  As a student, I must be able to take quizzes that teachers have posted in courses that I have registered in.
@@ -255,7 +256,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 11.1 Click on the course you desire to take quiz. | |The user should be directed to the course dashboard.| Pass
 11.2 Click on the quiz that need to be taken.  | | The user should be redirected to the quiz form. | Pass
 11.3 By clicking on radio buttons, one answer can be selected for each question | |One radio button will be selected for each question |Pass
-11.4 Click on “Submit” button at the bottom to submit the quiz  | | The modified announcement description should be displayed in the textbox. | Pass
+11.4 Click on “Submit” button at the bottom to submit the quiz  | | The grade should appear below the quiz description | Pass
 
 ## 12. Grades
 ### User Story: As a student , I want to see my grades so that I can know how well I did on the quizzes.
