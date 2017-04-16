@@ -257,9 +257,9 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
-10.1 Click on the course you desire to create a quiz. | Soen341 [See 3. Create a Course] | 	The user should be directed to the course dashboard. | Pass
-10.2 Click on the “New Quiz” button found at the bottom of the Quiz frame |  | The user should be redirected to the quiz creation form |Pass
-10.3 Click on the textbox of “Quiz Name” to give the name of the quiz. | Quiz 1| 	The quiz name should appear in the quiz name text box | Pass
+10.0 Click on the course you desire to create a quiz. | Soen341 [See 3. Create a Course] | 	The user should be directed to the course dashboard. | Pass
+10.1 Click on the “New Quiz” button found at the bottom of the Quiz frame |  | The user should be redirected to the quiz creation form |Pass
+10.2 Click on the textbox of “Quiz Name” to give the name of the quiz. | Quiz 1| 	The quiz name should appear in the quiz name text box | Pass
 10.3 Select the due day from the calendar |2017-04-20 | The due date should appear in the date box | Pass
 10.4 Click on the textbox of “Number of Questions” to give the number of questions that a teacher wants, and click the “Apply” | Number of questions: 1 | The # of question boxes should change to 1 directly.| Pass |
 10.5 Enter the question in the first text box| Q: Suppose that nominal wages fall and productivity rises in a particular economy.  Other things equal, the aggregate:| The question should appear in the first text box | Pass
