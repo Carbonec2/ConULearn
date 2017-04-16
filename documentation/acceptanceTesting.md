@@ -90,6 +90,17 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 2.1.4 Confirm the password by re-entering the same password as step 2.1.3		| Password: 123456		| The password should be displayed in the textbox. (Hidden as asterisk) | Pass
 2.1.5 Click on the button "Connect"		| 	| 	The teacher is redirected to another page where he should see the courses that he has created. Since the teacher has not created any course yet, the teacher should see the button "Create a course" in the middle of the page. | Pass
 
+**Unhappy ending 1**: Username or password does not exist
+
+**Precondition:** The account must not exist
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|-----------
+2.1.6 Click on the “Sign in” button in the top navigation bar |	 |		The user should be redirected to the sign in page	 |	Pass
+2.1.7 Enter your username in the first text box |		Username: Professor	 |	The username should be written in the text box |		Pass
+2.1.8 Enter your password in the second textbox |		Password: 123456	 |	The password should appear in the textbox hidden as asterisks	 |	Pass
+2.1.9 Click on the “Connect” button	 |		The message “Error while connecting: wrong username or password” should appear on top of the username text box.  |		Pass
+
 
 ## 2.2	Sign in as a Student
 ### **User Story:** As a student, I want to sign in as a student so that I can take quizzes, ask questions and see important announcements.
@@ -104,6 +115,17 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 2.2.4 Confirm the password by re-entering the same password as step 2.2.3		| Password: 123456		| The password should be displayed in the textbox. (Hidden as asterisk) | Pass
 2.2.5 Click on the button "Connect"		| 	| 	The student is redirected to another page where he should see all his registered courses. Since the student hasn’t registered to any course yet, the student should see the button "Register for a class" in the middle of the page. | Pass
 
+**Unhappy ending 1**: Username or password does not exist
+
+**Precondition:** The account must not exist
+
+Test Steps | Test Data | Expected Result | Pass/Fail
+-----------|-----------|-----------------|-----------
+2.2.6 Click on the “Sign in” button in the top navigation bar |	 |		The user should be redirected to the sign in page	 |	Pass
+2.2.7 Enter your username in the first text box |		Username: Student |	The username should be written in the text box |		Pass
+2.2.8 Enter your password in the second textbox |		Password: 98765432	 |	The password should appear in the textbox hidden as asterisks	 |	Pass
+2.2.9 Click on the “Connect” button	 |		The message “Error while connecting: wrong username or password” should appear on top of the username text box.  |		Pass
+
 ## 3.	Course Creation
 ### **User Story:** As a teacher, I want to create a course so that students can register to it.
 **Precondition:**  
@@ -114,7 +136,7 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 3.1 Click on the button "Create a course" in the side navigation bar or in the middle of the page. |  | 		The user should be redirected to the course creation page. | Pass
 3.2 Enter the Course Number in the first textbox. | 	Course Number: Soen341 | 	The Course Number should be displayed in the textbox. | Pass
 3.3 Enter the course description in the bigger textbox | 	Course Description:This is a course description for the course Soen 341. | 	The course description should be displayed in the bigger textbox. | Pass
-3.4 Click on the button "Submit"	 |  | 	The user should be redirected back to the course page where he should see a new button with the name of the course that he just created (Soen 341 winter 2017) at the left of the button "Create a Course". | Pass
+3.4 Click on the button "Connect"	 |  | 	The user should be redirected back to the course page where he should see a new button with the name of the course that he just created (Soen 341 winter 2017) at the left of the button "Create a Course". | Pass
 
 ## 4.	Teacher Course List
 ### User Story: As a teacher, I want to see all the courses that I have created so that I can makes quizzes and announcements for the appropriate courses.
@@ -235,13 +257,16 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
-10.1 Click on the course you desire to create a quiz. |  | 	The user should be directed to the course dashboard. | Pass
-10.2 Click on the “New Quiz” button found at the bottom of the Quiz frame |  | The user should be redirected to the quiz creation form |Pass
-10.3 Click on the textbox of “Quiz Name” to give the name of the quiz. And select the due day from the calendar | Quiz 1. September 11 2017 | 	input the quiz name and due date | Pass
-10.4 Click on the textbox of “Number of Questions” to give the number of questions that a teacher wants, and click the “Apply” | 10 | Input the number of quiz a teacher wants. The # of boxes should change directly.| Pass |
-10.5 Sequentially enter multiple questions and 5 possible answers for each of them. Indicate the right answer by clicking the radio button. | Q: Suppose that nominal wages fall and productivity rises in a particular economy. Other things equal, the aggregate: A. demand curve will shift leftward. B. supply curve will shift rightward. C. supply curve will shift leftward. D. expenditures curve will shift downward | A list of desired questions are made | Pass
-10.6 Click on “Submit” button at the bottom of editable textbox to finish creating the new quiz. | | The new quiz should be displayed in the Quiz field with its name and due date. |Pass
-10.7 Click on the quiz in the Quiz box. || The user should be redirected to a new page where he will see the quiz that he just created, with the radio buttons of the right answers selected and disabled. |Pass
+10.0 Click on the course you desire to create a quiz. | Soen341 [See 3. Create a Course] | 	The user should be directed to the course dashboard. | Pass
+10.1 Click on the “New Quiz” button found at the bottom of the Quiz frame |  | The user should be redirected to the quiz creation form |Pass
+10.2 Click on the textbox of “Quiz Name” to give the name of the quiz. | Quiz 1| 	The quiz name should appear in the quiz name text box | Pass
+10.3 Select the due day from the calendar |2017-04-20 | The due date should appear in the date box | Pass
+10.4 Click on the textbox of “Number of Questions” to give the number of questions that a teacher wants, and click the “Apply” | Number of questions: 1 | The # of question boxes should change to 1 directly.| Pass |
+10.5 Enter the question in the first text box| Q: Suppose that nominal wages fall and productivity rises in a particular economy.  Other things equal, the aggregate:| The question should appear in the first text box | Pass
+10.6 Sequentially enter multiple questions and 5 possible answers for each of them.  | A. demand curve will shift leftward. B. supply curve will shift rightward. C. supply curve will shift leftward. D. expenditures curve will shift downward | A list of desired questions are made | Pass
+10.7  Indicate the right answer by clicking the radio button. | Select the first radio button | A list of desired questions are made | Pass
+10.8 Click on “Submit” button at the bottom of editable textbox to finish creating the new quiz. | | The new quiz should be displayed in the Quiz field with its name and due date. |Pass
+10.9 Click on the quiz name in the Quiz box. || The user should be redirected to a new page where he will see the quiz that he just created, with the radio buttons of the right answers selected and disabled. |Pass
 
 ## 11.Ability for students to take quizzes
 ### User Story:  As a student, I must be able to take quizzes that teachers have posted in courses that I have registered in.
@@ -253,10 +278,10 @@ Test Steps | Test Data | Expected Result | Pass/Fail
 
 Test Steps | Test Data | Expected Result | Pass/Fail
 -----------|-----------|-----------------|-----------
-11.1 Click on the course you desire to take quiz. | |The user should be directed to the course dashboard.| Pass
-11.2 Click on the quiz that need to be taken.  | | The user should be redirected to the quiz form. | Pass
-11.3 By clicking on radio buttons, one answer can be selected for each question | |One radio button will be selected for each question |Pass
-11.4 Click on “Submit” button at the bottom to submit the quiz  | | The grade should appear below the quiz description | Pass
+11.1 Click on the course you desire to take quiz. | soen 341 [See 5. Course registration].| The user should be directed to the course dashboard.| Pass
+11.2 Click on the quiz that need to be taken.  | Quiz 1 Due date: 2017-04-20 [See 10. Quiz creation]| The user should be redirected to the quiz form. | Pass
+11.3 Select your answer by choosing the appropriate radio button | Select the second radio button | The radio button should be selected |Pass
+11.4 Click on “Submit” button at the bottom to submit the quiz  | | The grade 0/1 should appear below the due date and the first answer should be highligted in green (right answer) and the second answer should be highlighted in pink (wrong answer) | Pass
 
 ## 12. Grades
 ### User Story: As a student , I want to see my grades so that I can know how well I did on the quizzes.
