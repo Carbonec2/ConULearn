@@ -1,27 +1,31 @@
 <?php
 
-class AnnouncementsDAO implements DAO {
+class AnnouncementsDAO implements DAO
+{
     
     //Added this function to get all the announcements of a teacher
-    public static function getAllFromUserId($ov) {
+    public static function getAllFromUserId($ov) 
+    {
         $conn = pdo_connect();
         
-        if(empty($ov)){
+        if (empty($ov)) {
             $ov = new stdClass();
             
             $ov->User_id = $_SESSION['userId'];
         }
-        if(empty($ov->User_id)){
+        if (empty($ov->User_id)) {
             $ov->User_id = $_SESSION['userId'];
         }
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             Course_id,
             User_id, 
             description 
             FROM Announcements 
-            WHERE User_id = :User_id');
+            WHERE User_id = :User_id'
+        );
  
         $sql->bindValue(':User_id', $ov->User_id);
 
@@ -32,16 +36,19 @@ class AnnouncementsDAO implements DAO {
         return $result;
     }
     
-    public static function getAllFromCourseId($ov) {
+    public static function getAllFromCourseId($ov) 
+    {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             Course_id,
             User_id, 
             description 
             FROM Announcements 
-            WHERE Course_id = :Course_id'); 
+            WHERE Course_id = :Course_id'
+        ); 
 
         $sql->bindValue(':Course_id', $ov->Course_id);
 
@@ -52,16 +59,19 @@ class AnnouncementsDAO implements DAO {
         return $result;
     }
 
-    public static function get($id) {
+    public static function get($id) 
+    {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             Course_id,
             User_id, 
             description 
             FROM Announcements 
-            WHERE id = :id'); 
+            WHERE id = :id'
+        ); 
             
         $sql->bindValue(':id', $id);
 
@@ -70,15 +80,18 @@ class AnnouncementsDAO implements DAO {
         return $sql->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function getAll($filters) {
+    public static function getAll($filters) 
+    {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT id, 
+        $sql = $conn->prepare(
+            'SELECT id, 
             Course_id, 
             User_id,      
             description 
             FROM Announcements 
-            ORDER BY id');
+            ORDER BY id'
+        );
 
         $sql->execute();
 
@@ -87,14 +100,17 @@ class AnnouncementsDAO implements DAO {
         return $result;
     }
 
-    public static function insert($object) {
+    public static function insert($object) 
+    {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('INSERT INTO Announcements (id,  Course_id, User_id, description) 
-            VALUES (:id, :Course_id, :User_id, :description)');
+        $sql = $conn->prepare(
+            'INSERT INTO Announcements (id,  Course_id, User_id, description) 
+            VALUES (:id, :Course_id, :User_id, :description)'
+        );
         
-        $sql->bindValue(':id',$object->id);
-        $sql->bindValue(':Course_id',$object->Course_id);
+        $sql->bindValue(':id', $object->id);
+        $sql->bindValue(':Course_id', $object->Course_id);
         $sql->bindValue(':User_id', $_SESSION['userId']);			   
         $sql->bindValue(':description', $object->description);
         
@@ -103,7 +119,8 @@ class AnnouncementsDAO implements DAO {
         return true;
     }
 
-    public static function save($object) {
+    public static function save($object) 
+    {
         if (is_array($object)) {
             foreach ($object AS $entry) {
                 AnnouncementsDAO::save($entry);
@@ -117,18 +134,21 @@ class AnnouncementsDAO implements DAO {
         }
     }
 
-    public static function update($object) {
+    public static function update($object) 
+    {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('UPDATE Announcements
+        $sql = $conn->prepare(
+            'UPDATE Announcements
             SET Course_id = :Course_id,
-        	  User_id = :User_id,
-		  description = :description
+              User_id = :User_id,
+          description = :description
            
-            WHERE id = :id');
+            WHERE id = :id'
+        );
         
-        $sql->bindValue(':id',$object->id);
-        $sql->bindValue(':Course_id',$object->Course_id);
+        $sql->bindValue(':id', $object->id);
+        $sql->bindValue(':Course_id', $object->Course_id);
         $sql->bindValue(':User_id', $object->User_id);
         $sql->bindValue(':description', $object->description);
 
@@ -137,12 +157,13 @@ class AnnouncementsDAO implements DAO {
         return true;
     }
     
-    public static function remove($object) {
+    public static function remove($object) 
+    {
         $conn = pdo_connect();
         
         $sql = $conn->prepare('DELETE FROM Announcements WHERE id = :id');
         
-        $sql->bindValue(':id',$object->id);
+        $sql->bindValue(':id', $object->id);
 
         $sql->execute();
         

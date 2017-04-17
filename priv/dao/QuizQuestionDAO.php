@@ -1,8 +1,10 @@
 <?php
 
-class QuizQuestionDAO implements DAO {
+class QuizQuestionDAO implements DAO
+{
     
-    public static function getMerge($ov) {
+    public static function getMerge($ov) 
+    {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT * FROM QuizQuestion q JOIN QuizAnswerStudent a ON q.id = a.QuizQuestion_id WHERE q.Quiz_id = :Quiz_id and a.User_id = :User_id');							
@@ -18,10 +20,12 @@ class QuizQuestionDAO implements DAO {
     }
     
     //Added this function to get all the quiz questions of a quiz
-    public static function getAllFromQuizId($ov) {
+    public static function getAllFromQuizId($ov) 
+    {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             question,
             prop1, 
@@ -32,7 +36,8 @@ class QuizQuestionDAO implements DAO {
             ans, 
             Quiz_id 
             FROM QuizQuestion 
-            WHERE Quiz_id = :Quiz_id');							
+            WHERE Quiz_id = :Quiz_id'
+        );							
 
         $sql->bindValue(':Quiz_id', $ov->Quiz_id);
 
@@ -43,10 +48,12 @@ class QuizQuestionDAO implements DAO {
         return $result;
     }
 
-    public static function get($id) {
+    public static function get($id) 
+    {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             question,
             prop1, 
@@ -57,7 +64,8 @@ class QuizQuestionDAO implements DAO {
             ans, 
             Quiz_id 
             FROM QuizQuestion 
-            WHERE id = :id');
+            WHERE id = :id'
+        );
 
         $sql->bindValue(':id', $id);
 
@@ -66,7 +74,8 @@ class QuizQuestionDAO implements DAO {
         return $sql->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function getAll($filters) {
+    public static function getAll($filters) 
+    {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT id, question, prop1, prop2, prop3, prop4, prop5, ans, Quiz_id FROM QuizQuestion 	ORDER BY id');
@@ -78,13 +87,14 @@ class QuizQuestionDAO implements DAO {
         return $result;
     }
 
-    public static function insert($object) {
+    public static function insert($object) 
+    {
         $conn = pdo_connect();
         
         $sql = $conn->prepare('INSERT INTO QuizQuestion (Quiz_id, question, prop1, prop2, prop3, prop4, prop5, ans) VALUES (:Quiz_id, :question, :prop1, :prop2, :prop3, :prop4, :prop5, :ans)');
         
         $sql->bindValue(':Quiz_id', $object->Quiz_id);
-        $sql->bindValue(':question',$object->question);
+        $sql->bindValue(':question', $object->question);
         $sql->bindValue(':prop1', $object->prop1);
         $sql->bindValue(':prop2', $object->prop2);
         $sql->bindValue(':prop3', $object->prop3);
@@ -97,7 +107,8 @@ class QuizQuestionDAO implements DAO {
         return true;
     }
 
-    public static function save($object) {
+    public static function save($object) 
+    {
         if (is_array($object)) {
             foreach ($object AS $entry) {
                 QuizQuestionDAO::save($entry);
@@ -111,10 +122,12 @@ class QuizQuestionDAO implements DAO {
         }
     }
 
-    public static function update($object) {
+    public static function update($object) 
+    {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('UPDATE QuizQuestion
+        $sql = $conn->prepare(
+            'UPDATE QuizQuestion
             SET question = :question,
             prop1 = :prop1,
             prop2 = :prop2,
@@ -124,10 +137,11 @@ class QuizQuestionDAO implements DAO {
             ans = :ans,
             Quiz_id = :Quiz_id
             
-            WHERE id = :id');
+            WHERE id = :id'
+        );
         
-        $sql->bindValue(':id',$object->id);
-        $sql->bindValue(':question',$object->question);
+        $sql->bindValue(':id', $object->id);
+        $sql->bindValue(':question', $object->question);
         $sql->bindValue(':prop1', $object->prop1);
         $sql->bindValue(':prop2', $object->prop2);
         $sql->bindValue(':prop3', $object->prop3);
