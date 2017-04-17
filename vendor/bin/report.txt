@@ -1,0 +1,17 @@
+
+FILE: C:\xampp\htdocs\git\ConULearn\priv\dao\QuestionsAnswersDAO.php
+--------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 1 | WARNING | File has mixed line endings; this may cause incorrect results
+--------------------------------------------------------------------------------
+
+
+FILE: C:\xampp\htdocs\git\ConULearn\priv\dao\QuizAnswerStudentDAO.php
+--------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 1 | WARNING | File has mixed line endings; this may cause incorrect results
+--------------------------------------------------------------------------------
+
+
