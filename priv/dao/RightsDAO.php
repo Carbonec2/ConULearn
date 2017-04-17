@@ -1,8 +1,10 @@
 <?php
 
-class RightsDAO implements DAO {
+class RightsDAO implements DAO
+{
 
-    public static function get($id) {
+    public static function get($id) 
+    {
 
         $conn = pdo_connect();
 
@@ -17,7 +19,8 @@ class RightsDAO implements DAO {
         return $result;
     }
 
-    public static function getAll($filters) {
+    public static function getAll($filters) 
+    {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT id, name FROM Rights ORDER BY id');
@@ -29,7 +32,8 @@ class RightsDAO implements DAO {
         return $result;
     }
 
-    public static function insert($object) {
+    public static function insert($object) 
+    {
         $conn = pdo_connect();
 
         $sql->prepare('INSERT INTO Rights (name) VALUES (:name)');
@@ -41,7 +45,8 @@ class RightsDAO implements DAO {
         return true;
     }
 
-    public static function save($object) {
+    public static function save($object) 
+    {
 
         if (is_array($object)) {
             foreach ($object AS $entry) {
@@ -56,7 +61,8 @@ class RightsDAO implements DAO {
         }
     }
 
-    public static function update($object) {
+    public static function update($object) 
+    {
         
         $conn = pdo_connect();
         

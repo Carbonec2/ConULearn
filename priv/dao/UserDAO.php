@@ -1,8 +1,10 @@
 <?php
 
-class UserDAO implements DAO {
+class UserDAO implements DAO
+{
 
-    static function getMerge($ov) {
+    static function getMerge($ov) 
+    {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT u.id FROM user u JOIN courseuser cu ON u.id = cu.User_id JOIN course c ON cu.Course_id = c.id JOIN quiz qz ON c.id = qz.Course_id WHERE qz.id = :Quiz_id');
@@ -14,16 +16,19 @@ class UserDAO implements DAO {
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }
     
-    static function get($id) {
+    static function get($id) 
+    {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             email,
             user, 
             passwordMD5 
             FROM User 
-            WHERE id = :id');
+            WHERE id = :id'
+        );
 
         $sql->bindValue(':id', $id);
 
@@ -32,28 +37,34 @@ class UserDAO implements DAO {
         return $sql->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function getAll($filters = NULL) {
+    public static function getAll($filters = NULL) 
+    {
         //TODO: We can add filters later, if needed
 
         $conn = pdo_connect();
 
         //TODO: Without limit, there is a risk of overflow, we will need to add paging later if needed
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             user, 
             passwordMD5 
-            FROM User');
+            FROM User'
+        );
 
         $sql->execute();
 
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }
     
-    public static function insert($ov) {
+    public static function insert($ov) 
+    {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('SELECT * FROM User 
-                               WHERE user = :user');
+        $sql = $conn->prepare(
+            'SELECT * FROM User 
+                               WHERE user = :user'
+        );
 
         $sql->bindValue(':user', $ov->user);
 
@@ -61,9 +72,11 @@ class UserDAO implements DAO {
         
         $result = $sql->fetchAll();
         
-        if(!$result){
-            $sql = $conn->prepare('INSERT INTO User (user, passwordMD5, Rights_id) 
-                                    VALUES (:user, :passwordMD5, :Rights_id) ');
+        if (!$result) {
+            $sql = $conn->prepare(
+                'INSERT INTO User (user, passwordMD5, Rights_id) 
+                                    VALUES (:user, :passwordMD5, :Rights_id) '
+            );
             
         $sql->bindValue(':user', $ov->user);
         $sql->bindValue(':passwordMD5', md5($ov->password));
@@ -82,7 +95,7 @@ class UserDAO implements DAO {
             $returnObject->error->existingUser = true;
 
             return $returnObject;
-        }else{
+        } else {
             $returnObject->error->ok = true;
             //Return OK
             return $returnObject;
@@ -90,7 +103,8 @@ class UserDAO implements DAO {
             
     }
 
-    public static function save($object) {
+    public static function save($object) 
+    {
         //If we have an array, we save the array, else we have an object, so we save the object itself
         if (is_array($object)) {
             foreach ($object AS $entry) {
@@ -105,7 +119,8 @@ class UserDAO implements DAO {
         }
     }
 
-    public static function update($object) {
+    public static function update($object) 
+    {
 
         //If we have an array
         if (is_array($object)) {
@@ -116,10 +131,12 @@ class UserDAO implements DAO {
             //If we have a single object (stdClass), not an array
             $conn = pdo_connect();
 
-            $sql = $conn->prepare('UPDATE User 
+            $sql = $conn->prepare(
+                'UPDATE User 
                 SET user = :user, 
                 passwordMD5 = :passwordMD5
-                WHERE id = :id'); //id is important, or else, we overwrite all the table!
+                WHERE id = :id'
+            ); //id is important, or else, we overwrite all the table!
 
             $sql->bindValue(':id', $object->id);
             $sql->bindValue(':user', $object->user);
@@ -129,17 +146,20 @@ class UserDAO implements DAO {
         }
     }
 
-    public static function checkUsernameAndPassword($ov) {
+    public static function checkUsernameAndPassword($ov) 
+    {
 
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id,
             user, 
             passwordMD5,
             Rights_id
             FROM User 
-            WHERE user = :user');
+            WHERE user = :user'
+        );
 
         $sql->bindValue(':user', $ov->user);
 

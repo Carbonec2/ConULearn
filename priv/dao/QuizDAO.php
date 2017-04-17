@@ -1,8 +1,10 @@
 <?php
 
-class QuizDAO implements DAO {
+class QuizDAO implements DAO
+{
     
-    public static function getAllFromId($ov) {
+    public static function getAllFromId($ov) 
+    {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT * FROM Quiz WHERE id = :Quiz_id');
@@ -15,7 +17,8 @@ class QuizDAO implements DAO {
     }
     
     //Added this function to get all the quizzes of a course
-    public static function getAllFromCourseIdStudent($ov) {
+    public static function getAllFromCourseIdStudent($ov) 
+    {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT q.id, q.name, q.date, qs.submitted FROM Quiz q JOIN QuizStudent qs ON q.id = qs.Quiz_id WHERE q.Course_id = :Course_id AND qs.User_id = :User_id');
@@ -31,16 +34,19 @@ class QuizDAO implements DAO {
     }
     
     //Added this function to get all the quizzes of a course
-    public static function getAllFromCourseId($ov) {
+    public static function getAllFromCourseId($ov) 
+    {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             name,
             date, 
             Course_id 
             FROM Quiz 
-            WHERE Course_id = :Course_id');
+            WHERE Course_id = :Course_id'
+        );
 
         $sql->bindValue(':Course_id', $ov->Course_id);
 
@@ -52,46 +58,50 @@ class QuizDAO implements DAO {
     }
     
     //Added this to remove by id
-    public static function remove($object) {
+    public static function remove($object) 
+    {
         $conn = pdo_connect();
         
         $sql = $conn->prepare('DELETE FROM QuizStudent WHERE Quiz_id = :id');
         
-        $sql->bindValue(':id',$object->id);
+        $sql->bindValue(':id', $object->id);
 
         $sql->execute();
         
         $sql = $conn->prepare('DELETE FROM QuizAnswerStudent WHERE Quiz_id = :id');
         
-        $sql->bindValue(':id',$object->id);
+        $sql->bindValue(':id', $object->id);
 
         $sql->execute();
         
         $sql = $conn->prepare('DELETE FROM QuizQuestion WHERE Quiz_id = :id');
         
-        $sql->bindValue(':id',$object->id);
+        $sql->bindValue(':id', $object->id);
 
         $sql->execute();
         
         $sql = $conn->prepare('DELETE FROM Quiz WHERE id = :id');
         
-        $sql->bindValue(':id',$object->id);
+        $sql->bindValue(':id', $object->id);
 
         $sql->execute();
         
         return true;
     }
 
-    public static function get($id) {
+    public static function get($id) 
+    {
         $conn = pdo_connect();
 
-        $sql = $conn->prepare('SELECT 
+        $sql = $conn->prepare(
+            'SELECT 
             id, 
             name,
             date, 
             Course_id 
             FROM Quiz 
-            WHERE id = :id');
+            WHERE id = :id'
+        );
 
         $sql->bindValue(':id', $id);
 
@@ -100,7 +110,8 @@ class QuizDAO implements DAO {
         return $sql->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function getAll($filters) {
+    public static function getAll($filters) 
+    {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT id, name, date, Course_id FROM Quiz ORDER BY id');
@@ -112,13 +123,16 @@ class QuizDAO implements DAO {
         return $result;
     }
 
-    public static function insert($object) {
+    public static function insert($object) 
+    {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('INSERT INTO Quiz (Course_id, date, name) 
-            VALUES (:Course_id, :date, :name)');
+        $sql = $conn->prepare(
+            'INSERT INTO Quiz (Course_id, date, name) 
+            VALUES (:Course_id, :date, :name)'
+        );
         
-        $sql->bindValue(':name',$object->name);
+        $sql->bindValue(':name', $object->name);
         $sql->bindValue(':date', $object->date);
         $sql->bindValue(':Course_id', $object->Course_id);
         
@@ -131,7 +145,8 @@ class QuizDAO implements DAO {
         return $sql->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function save($object) {
+    public static function save($object) 
+    {
         if (is_array($object)) {
             foreach ($object AS $entry) {
                 QuizDAO::save($entry);
@@ -145,18 +160,21 @@ class QuizDAO implements DAO {
         }
     }
 
-    public static function update($object) {
+    public static function update($object) 
+    {
         $conn = pdo_connect();
         
-        $sql = $conn->prepare('UPDATE Quiz
+        $sql = $conn->prepare(
+            'UPDATE Quiz
             SET name = :name,
             date = :date,
             Course_id = :Course_id
             
-            WHERE id = :id');
+            WHERE id = :id'
+        );
         
-        $sql->bindValue(':id',$object->id);
-        $sql->bindValue(':name',$object->name);
+        $sql->bindValue(':id', $object->id);
+        $sql->bindValue(':name', $object->name);
         $sql->bindValue(':date', $object->date);
         $sql->bindValue(':Course_id', $object->Course_id);
         
@@ -165,12 +183,13 @@ class QuizDAO implements DAO {
         return true;
     }
     
-    public static function getMerge($o) {
+    public static function getMerge($o) 
+    {
         $conn = pdo_connect();
 
         $sql = $conn->prepare('SELECT * FROM Quiz q JOIN QuizAnswerStudent a ON q.id = a.Quiz_id WHERE q.id = :Quiz_id');
 
-        $sql->bindValue(':Quiz_id',$o->Quiz_id);
+        $sql->bindValue(':Quiz_id', $o->Quiz_id);
 
         $sql->execute();
 

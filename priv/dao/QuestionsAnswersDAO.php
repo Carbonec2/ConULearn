@@ -1,8 +1,10 @@
 <?php
 
-class QuestionsAnswersDAO implements DAO {
+class QuestionsAnswersDAO implements DAO
+{
 
-    public static function get($id) {
+    public static function get($id) 
+    {
 
         $conn = pdo_connect();
 
@@ -15,7 +17,8 @@ class QuestionsAnswersDAO implements DAO {
         return $sql->fetch(PDO::FETCH_OBJ);
     }
 
-    public static function getAll($filters) {
+    public static function getAll($filters) 
+    {
 
         $conn = pdo_connect();
 
@@ -33,7 +36,8 @@ class QuestionsAnswersDAO implements DAO {
             $requestString .= ' AND QuestionsAnswers.User_id = :User_id';
         }
 
-        $sql = $conn->prepare('SELECT QuestionsAnswers.id AS id, 
+        $sql = $conn->prepare(
+            'SELECT QuestionsAnswers.id AS id, 
             QuestionsAnswers.question AS question, 
             QuestionsAnswers.answer AS answer, 
             QuestionsAnswers.User_id AS User_id, 
@@ -41,7 +45,8 @@ class QuestionsAnswersDAO implements DAO {
             User.user AS user
             FROM QuestionsAnswers AS QuestionsAnswers 
             LEFT JOIN User AS User ON User.id = QuestionsAnswers.User_id
-            WHERE 1 = 1 ' . $requestString);
+            WHERE 1 = 1 ' . $requestString
+        );
 
         if (isset($filters->Course_id)) {
             $sql->bindValue(':Course_id', $filters->Course_id);
@@ -56,17 +61,20 @@ class QuestionsAnswersDAO implements DAO {
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public static function insert($object) {
+    public static function insert($object) 
+    {
         $conn = pdo_connect();
         
         if (isset($object->User_id) && (int)$object->User_id == -1) {
             $object->User_id = $_SESSION['userId'];
         }
 
-        $sql = $conn->prepare('INSERT INTO QuestionsAnswers 
+        $sql = $conn->prepare(
+            'INSERT INTO QuestionsAnswers 
             (question, answer, Course_id, User_id) 
             VALUES 
-            (:question, :answer, :Course_id, :User_id)');
+            (:question, :answer, :Course_id, :User_id)'
+        );
 
         $sql->bindValue(':question', $object->question);
         $sql->bindValue(':answer', $object->answer);
@@ -78,7 +86,8 @@ class QuestionsAnswersDAO implements DAO {
         return $conn->lastInsertId();
     }
 
-    public static function save($object) {
+    public static function save($object) 
+    {
         if (isset($object->id)) {
             return QuestionsAnswersDAO::update($object);
         } else {
@@ -86,16 +95,19 @@ class QuestionsAnswersDAO implements DAO {
         }
     }
 
-    public static function update($object) {
+    public static function update($object) 
+    {
         $conn = pdo_connect();
         
         if (isset($object->User_id) && (int)$object->User_id == -1) {
             $object->User_id = $_SESSION['userId'];
         }
         
-        $sql = $conn->prepare('UPDATE QuestionsAnswers SET question = :question, 
+        $sql = $conn->prepare(
+            'UPDATE QuestionsAnswers SET question = :question, 
             answer = :answer, User_id = :User_id, Course_id = :Course_id
-            WHERE id = :id');
+            WHERE id = :id'
+        );
         
         $sql->bindValue(':id', $object->id);
         $sql->bindValue(':question', $object->question);
